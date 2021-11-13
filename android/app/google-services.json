@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "404502349747",
+    "project_id": "instamarket-4a083",
+    "storage_bucket": "instamarket-4a083.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:404502349747:android:1fd96171c44ce2f0e5edc6",
+        "android_client_info": {
+          "package_name": "com.bgheorghiu.instamarket.instamarket"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "404502349747-f3tklufr4e3be5dc5p3r18cf2gk9dtd5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bgheorghiu.instamarket.instamarket",
+            "certificate_hash": "a2d6e02c85ed5057d4802c459f05563b8a22938b"
+          }
+        },
+        {
+          "client_id": "404502349747-989tdamp7tfr33ojbhuqodaj8qp78epf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-2GwLkkXFXbIJCfheskT_f7xNfgOynNw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "404502349747-989tdamp7tfr33ojbhuqodaj8qp78epf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

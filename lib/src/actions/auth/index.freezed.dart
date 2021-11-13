@@ -1,0 +1,2603 @@
+// coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+
+part of auth_actions;
+
+// **************************************************************************
+// FreezedGenerator
+// **************************************************************************
+
+T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
+/// @nodoc
+class _$LoginWithEmailTearOff {
+  const _$LoginWithEmailTearOff();
+
+  LoginWithEmail$ call({required String email, required String password, required ActionResponse response}) {
+    return LoginWithEmail$(
+      email: email,
+      password: password,
+      response: response,
+    );
+  }
+
+  LoginWithEmailSuccessful successful(AppUser user) {
+    return LoginWithEmailSuccessful(
+      user,
+    );
+  }
+
+  LoginWithEmailError error(Object error) {
+    return LoginWithEmailError(
+      error,
+    );
+  }
+}
+
+/// @nodoc
+const $LoginWithEmail = _$LoginWithEmailTearOff();
+
+/// @nodoc
+mixin _$LoginWithEmail {
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String email, String password, ActionResponse response) $default, {
+    required TResult Function(AppUser user) successful,
+    required TResult Function(Object error) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult Function(String email, String password, ActionResponse response)? $default, {
+    TResult Function(AppUser user)? successful,
+    TResult Function(Object error)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String email, String password, ActionResponse response)? $default, {
+    TResult Function(AppUser user)? successful,
+    TResult Function(Object error)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(LoginWithEmail$ value) $default, {
+    required TResult Function(LoginWithEmailSuccessful value) successful,
+    required TResult Function(LoginWithEmailError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult Function(LoginWithEmail$ value)? $default, {
+    TResult Function(LoginWithEmailSuccessful value)? successful,
+    TResult Function(LoginWithEmailError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(LoginWithEmail$ value)? $default, {
+    TResult Function(LoginWithEmailSuccessful value)? successful,
+    TResult Function(LoginWithEmailError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $LoginWithEmailCopyWith<$Res> {
+  factory $LoginWithEmailCopyWith(LoginWithEmail value, $Res Function(LoginWithEmail) then) =
+      _$LoginWithEmailCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$LoginWithEmailCopyWithImpl<$Res> implements $LoginWithEmailCopyWith<$Res> {
+  _$LoginWithEmailCopyWithImpl(this._value, this._then);
+
+  final LoginWithEmail _value;
+  // ignore: unused_field
+  final $Res Function(LoginWithEmail) _then;
+}
+
+/// @nodoc
+abstract class $LoginWithEmail$CopyWith<$Res> {
+  factory $LoginWithEmail$CopyWith(LoginWithEmail$ value, $Res Function(LoginWithEmail$) then) =
+      _$LoginWithEmail$CopyWithImpl<$Res>;
+  $Res call({String email, String password, ActionResponse response});
+}
+
+/// @nodoc
+class _$LoginWithEmail$CopyWithImpl<$Res> extends _$LoginWithEmailCopyWithImpl<$Res>
+    implements $LoginWithEmail$CopyWith<$Res> {
+  _$LoginWithEmail$CopyWithImpl(LoginWithEmail$ _value, $Res Function(LoginWithEmail$) _then)
+      : super(_value, (v) => _then(v as LoginWithEmail$));
+
+  @override
+  LoginWithEmail$ get _value => super._value as LoginWithEmail$;
+
+  @override
+  $Res call({
+    Object? email = freezed,
+    Object? password = freezed,
+    Object? response = freezed,
+  }) {
+    return _then(LoginWithEmail$(
+      email: email == freezed
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      password: password == freezed
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String,
+      response: response == freezed
+          ? _value.response
+          : response // ignore: cast_nullable_to_non_nullable
+              as ActionResponse,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$LoginWithEmail$ implements LoginWithEmail$ {
+  const _$LoginWithEmail$({required this.email, required this.password, required this.response});
+
+  @override
+  final String email;
+  @override
+  final String password;
+  @override
+  final ActionResponse response;
+
+  @override
+  String toString() {
+    return 'LoginWithEmail(email: $email, password: $password, response: $response)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is LoginWithEmail$ &&
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.password, password) || other.password == password) &&
+            (identical(other.response, response) || other.response == response));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, email, password, response);
+
+  @JsonKey(ignore: true)
+  @override
+  $LoginWithEmail$CopyWith<LoginWithEmail$> get copyWith =>
+      _$LoginWithEmail$CopyWithImpl<LoginWithEmail$>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String email, String password, ActionResponse response) $default, {
+    required TResult Function(AppUser user) successful,
+    required TResult Function(Object error) error,
+  }) {
+    return $default(email, password, response);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult Function(String email, String password, ActionResponse response)? $default, {
+    TResult Function(AppUser user)? successful,
+    TResult Function(Object error)? error,
+  }) {
+    return $default?.call(email, password, response);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String email, String password, ActionResponse response)? $default, {
+    TResult Function(AppUser user)? successful,
+    TResult Function(Object error)? error,
+    required TResult orElse(),
+  }) {
+    if ($default != null) {
+      return $default(email, password, response);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(LoginWithEmail$ value) $default, {
+    required TResult Function(LoginWithEmailSuccessful value) successful,
+    required TResult Function(LoginWithEmailError value) error,
+  }) {
+    return $default(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult Function(LoginWithEmail$ value)? $default, {
+    TResult Function(LoginWithEmailSuccessful value)? successful,
+    TResult Function(LoginWithEmailError value)? error,
+  }) {
+    return $default?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(LoginWithEmail$ value)? $default, {
+    TResult Function(LoginWithEmailSuccessful value)? successful,
+    TResult Function(LoginWithEmailError value)? error,
+    required TResult orElse(),
+  }) {
+    if ($default != null) {
+      return $default(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LoginWithEmail$ implements LoginWithEmail {
+  const factory LoginWithEmail$({required String email, required String password, required ActionResponse response}) =
+      _$LoginWithEmail$;
+
+  String get email;
+  String get password;
+  ActionResponse get response;
+  @JsonKey(ignore: true)
+  $LoginWithEmail$CopyWith<LoginWithEmail$> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $LoginWithEmailSuccessfulCopyWith<$Res> {
+  factory $LoginWithEmailSuccessfulCopyWith(
+          LoginWithEmailSuccessful value, $Res Function(LoginWithEmailSuccessful) then) =
+      _$LoginWithEmailSuccessfulCopyWithImpl<$Res>;
+  $Res call({AppUser user});
+}
+
+/// @nodoc
+class _$LoginWithEmailSuccessfulCopyWithImpl<$Res> extends _$LoginWithEmailCopyWithImpl<$Res>
+    implements $LoginWithEmailSuccessfulCopyWith<$Res> {
+  _$LoginWithEmailSuccessfulCopyWithImpl(LoginWithEmailSuccessful _value, $Res Function(LoginWithEmailSuccessful) _then)
+      : super(_value, (v) => _then(v as LoginWithEmailSuccessful));
+
+  @override
+  LoginWithEmailSuccessful get _value => super._value as LoginWithEmailSuccessful;
+
+  @override
+  $Res call({
+    Object? user = freezed,
+  }) {
+    return _then(LoginWithEmailSuccessful(
+      user == freezed
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as AppUser,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$LoginWithEmailSuccessful implements LoginWithEmailSuccessful {
+  const _$LoginWithEmailSuccessful(this.user);
+
+  @override
+  final AppUser user;
+
+  @override
+  String toString() {
+    return 'LoginWithEmail.successful(user: $user)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is LoginWithEmailSuccessful &&
+            (identical(other.user, user) || other.user == user));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, user);
+
+  @JsonKey(ignore: true)
+  @override
+  $LoginWithEmailSuccessfulCopyWith<LoginWithEmailSuccessful> get copyWith =>
+      _$LoginWithEmailSuccessfulCopyWithImpl<LoginWithEmailSuccessful>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String email, String password, ActionResponse response) $default, {
+    required TResult Function(AppUser user) successful,
+    required TResult Function(Object error) error,
+  }) {
+    return successful(user);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult Function(String email, String password, ActionResponse response)? $default, {
+    TResult Function(AppUser user)? successful,
+    TResult Function(Object error)? error,
+  }) {
+    return successful?.call(user);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String email, String password, ActionResponse response)? $default, {
+    TResult Function(AppUser user)? successful,
+    TResult Function(Object error)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(user);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(LoginWithEmail$ value) $default, {
+    required TResult Function(LoginWithEmailSuccessful value) successful,
+    required TResult Function(LoginWithEmailError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult Function(LoginWithEmail$ value)? $default, {
+    TResult Function(LoginWithEmailSuccessful value)? successful,
+    TResult Function(LoginWithEmailError value)? error,
+  }) {
+    return successful?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(LoginWithEmail$ value)? $default, {
+    TResult Function(LoginWithEmailSuccessful value)? successful,
+    TResult Function(LoginWithEmailError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LoginWithEmailSuccessful implements LoginWithEmail {
+  const factory LoginWithEmailSuccessful(AppUser user) = _$LoginWithEmailSuccessful;
+
+  AppUser get user;
+  @JsonKey(ignore: true)
+  $LoginWithEmailSuccessfulCopyWith<LoginWithEmailSuccessful> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $LoginWithEmailErrorCopyWith<$Res> {
+  factory $LoginWithEmailErrorCopyWith(LoginWithEmailError value, $Res Function(LoginWithEmailError) then) =
+      _$LoginWithEmailErrorCopyWithImpl<$Res>;
+  $Res call({Object error});
+}
+
+/// @nodoc
+class _$LoginWithEmailErrorCopyWithImpl<$Res> extends _$LoginWithEmailCopyWithImpl<$Res>
+    implements $LoginWithEmailErrorCopyWith<$Res> {
+  _$LoginWithEmailErrorCopyWithImpl(LoginWithEmailError _value, $Res Function(LoginWithEmailError) _then)
+      : super(_value, (v) => _then(v as LoginWithEmailError));
+
+  @override
+  LoginWithEmailError get _value => super._value as LoginWithEmailError;
+
+  @override
+  $Res call({
+    Object? error = freezed,
+  }) {
+    return _then(LoginWithEmailError(
+      error == freezed
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as Object,
+    ));
+  }
+}
+
+/// @nodoc
+
+@Implements<ErrorAction>()
+class _$LoginWithEmailError implements LoginWithEmailError {
+  const _$LoginWithEmailError(this.error);
+
+  @override
+  final Object error;
+
+  @override
+  String toString() {
+    return 'LoginWithEmail.error(error: $error)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is LoginWithEmailError &&
+            const DeepCollectionEquality().equals(other.error, error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error));
+
+  @JsonKey(ignore: true)
+  @override
+  $LoginWithEmailErrorCopyWith<LoginWithEmailError> get copyWith =>
+      _$LoginWithEmailErrorCopyWithImpl<LoginWithEmailError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String email, String password, ActionResponse response) $default, {
+    required TResult Function(AppUser user) successful,
+    required TResult Function(Object error) error,
+  }) {
+    return error(this.error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult Function(String email, String password, ActionResponse response)? $default, {
+    TResult Function(AppUser user)? successful,
+    TResult Function(Object error)? error,
+  }) {
+    return error?.call(this.error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String email, String password, ActionResponse response)? $default, {
+    TResult Function(AppUser user)? successful,
+    TResult Function(Object error)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(LoginWithEmail$ value) $default, {
+    required TResult Function(LoginWithEmailSuccessful value) successful,
+    required TResult Function(LoginWithEmailError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult Function(LoginWithEmail$ value)? $default, {
+    TResult Function(LoginWithEmailSuccessful value)? successful,
+    TResult Function(LoginWithEmailError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(LoginWithEmail$ value)? $default, {
+    TResult Function(LoginWithEmailSuccessful value)? successful,
+    TResult Function(LoginWithEmailError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LoginWithEmailError implements LoginWithEmail, ErrorAction {
+  const factory LoginWithEmailError(Object error) = _$LoginWithEmailError;
+
+  Object get error;
+  @JsonKey(ignore: true)
+  $LoginWithEmailErrorCopyWith<LoginWithEmailError> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+class _$LoginWithGoogleTearOff {
+  const _$LoginWithGoogleTearOff();
+
+  LoginWithGoogle$ call(ActionResponse response) {
+    return LoginWithGoogle$(
+      response,
+    );
+  }
+
+  LoginWithGoogleSuccessful successful(AppUser? user) {
+    return LoginWithGoogleSuccessful(
+      user,
+    );
+  }
+
+  LoginWithGoogleError error(Object error) {
+    return LoginWithGoogleError(
+      error,
+    );
+  }
+}
+
+/// @nodoc
+const $LoginWithGoogle = _$LoginWithGoogleTearOff();
+
+/// @nodoc
+mixin _$LoginWithGoogle {
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(ActionResponse response) $default, {
+    required TResult Function(AppUser? user) successful,
+    required TResult Function(Object error) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult Function(ActionResponse response)? $default, {
+    TResult Function(AppUser? user)? successful,
+    TResult Function(Object error)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(ActionResponse response)? $default, {
+    TResult Function(AppUser? user)? successful,
+    TResult Function(Object error)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(LoginWithGoogle$ value) $default, {
+    required TResult Function(LoginWithGoogleSuccessful value) successful,
+    required TResult Function(LoginWithGoogleError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult Function(LoginWithGoogle$ value)? $default, {
+    TResult Function(LoginWithGoogleSuccessful value)? successful,
+    TResult Function(LoginWithGoogleError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(LoginWithGoogle$ value)? $default, {
+    TResult Function(LoginWithGoogleSuccessful value)? successful,
+    TResult Function(LoginWithGoogleError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $LoginWithGoogleCopyWith<$Res> {
+  factory $LoginWithGoogleCopyWith(LoginWithGoogle value, $Res Function(LoginWithGoogle) then) =
+      _$LoginWithGoogleCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$LoginWithGoogleCopyWithImpl<$Res> implements $LoginWithGoogleCopyWith<$Res> {
+  _$LoginWithGoogleCopyWithImpl(this._value, this._then);
+
+  final LoginWithGoogle _value;
+  // ignore: unused_field
+  final $Res Function(LoginWithGoogle) _then;
+}
+
+/// @nodoc
+abstract class $LoginWithGoogle$CopyWith<$Res> {
+  factory $LoginWithGoogle$CopyWith(LoginWithGoogle$ value, $Res Function(LoginWithGoogle$) then) =
+      _$LoginWithGoogle$CopyWithImpl<$Res>;
+  $Res call({ActionResponse response});
+}
+
+/// @nodoc
+class _$LoginWithGoogle$CopyWithImpl<$Res> extends _$LoginWithGoogleCopyWithImpl<$Res>
+    implements $LoginWithGoogle$CopyWith<$Res> {
+  _$LoginWithGoogle$CopyWithImpl(LoginWithGoogle$ _value, $Res Function(LoginWithGoogle$) _then)
+      : super(_value, (v) => _then(v as LoginWithGoogle$));
+
+  @override
+  LoginWithGoogle$ get _value => super._value as LoginWithGoogle$;
+
+  @override
+  $Res call({
+    Object? response = freezed,
+  }) {
+    return _then(LoginWithGoogle$(
+      response == freezed
+          ? _value.response
+          : response // ignore: cast_nullable_to_non_nullable
+              as ActionResponse,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$LoginWithGoogle$ implements LoginWithGoogle$ {
+  const _$LoginWithGoogle$(this.response);
+
+  @override
+  final ActionResponse response;
+
+  @override
+  String toString() {
+    return 'LoginWithGoogle(response: $response)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is LoginWithGoogle$ &&
+            (identical(other.response, response) || other.response == response));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, response);
+
+  @JsonKey(ignore: true)
+  @override
+  $LoginWithGoogle$CopyWith<LoginWithGoogle$> get copyWith =>
+      _$LoginWithGoogle$CopyWithImpl<LoginWithGoogle$>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(ActionResponse response) $default, {
+    required TResult Function(AppUser? user) successful,
+    required TResult Function(Object error) error,
+  }) {
+    return $default(response);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult Function(ActionResponse response)? $default, {
+    TResult Function(AppUser? user)? successful,
+    TResult Function(Object error)? error,
+  }) {
+    return $default?.call(response);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(ActionResponse response)? $default, {
+    TResult Function(AppUser? user)? successful,
+    TResult Function(Object error)? error,
+    required TResult orElse(),
+  }) {
+    if ($default != null) {
+      return $default(response);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(LoginWithGoogle$ value) $default, {
+    required TResult Function(LoginWithGoogleSuccessful value) successful,
+    required TResult Function(LoginWithGoogleError value) error,
+  }) {
+    return $default(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult Function(LoginWithGoogle$ value)? $default, {
+    TResult Function(LoginWithGoogleSuccessful value)? successful,
+    TResult Function(LoginWithGoogleError value)? error,
+  }) {
+    return $default?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(LoginWithGoogle$ value)? $default, {
+    TResult Function(LoginWithGoogleSuccessful value)? successful,
+    TResult Function(LoginWithGoogleError value)? error,
+    required TResult orElse(),
+  }) {
+    if ($default != null) {
+      return $default(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LoginWithGoogle$ implements LoginWithGoogle {
+  const factory LoginWithGoogle$(ActionResponse response) = _$LoginWithGoogle$;
+
+  ActionResponse get response;
+  @JsonKey(ignore: true)
+  $LoginWithGoogle$CopyWith<LoginWithGoogle$> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $LoginWithGoogleSuccessfulCopyWith<$Res> {
+  factory $LoginWithGoogleSuccessfulCopyWith(
+          LoginWithGoogleSuccessful value, $Res Function(LoginWithGoogleSuccessful) then) =
+      _$LoginWithGoogleSuccessfulCopyWithImpl<$Res>;
+  $Res call({AppUser? user});
+}
+
+/// @nodoc
+class _$LoginWithGoogleSuccessfulCopyWithImpl<$Res> extends _$LoginWithGoogleCopyWithImpl<$Res>
+    implements $LoginWithGoogleSuccessfulCopyWith<$Res> {
+  _$LoginWithGoogleSuccessfulCopyWithImpl(
+      LoginWithGoogleSuccessful _value, $Res Function(LoginWithGoogleSuccessful) _then)
+      : super(_value, (v) => _then(v as LoginWithGoogleSuccessful));
+
+  @override
+  LoginWithGoogleSuccessful get _value => super._value as LoginWithGoogleSuccessful;
+
+  @override
+  $Res call({
+    Object? user = freezed,
+  }) {
+    return _then(LoginWithGoogleSuccessful(
+      user == freezed
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as AppUser?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$LoginWithGoogleSuccessful implements LoginWithGoogleSuccessful {
+  const _$LoginWithGoogleSuccessful(this.user);
+
+  @override
+  final AppUser? user;
+
+  @override
+  String toString() {
+    return 'LoginWithGoogle.successful(user: $user)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is LoginWithGoogleSuccessful &&
+            (identical(other.user, user) || other.user == user));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, user);
+
+  @JsonKey(ignore: true)
+  @override
+  $LoginWithGoogleSuccessfulCopyWith<LoginWithGoogleSuccessful> get copyWith =>
+      _$LoginWithGoogleSuccessfulCopyWithImpl<LoginWithGoogleSuccessful>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(ActionResponse response) $default, {
+    required TResult Function(AppUser? user) successful,
+    required TResult Function(Object error) error,
+  }) {
+    return successful(user);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult Function(ActionResponse response)? $default, {
+    TResult Function(AppUser? user)? successful,
+    TResult Function(Object error)? error,
+  }) {
+    return successful?.call(user);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(ActionResponse response)? $default, {
+    TResult Function(AppUser? user)? successful,
+    TResult Function(Object error)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(user);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(LoginWithGoogle$ value) $default, {
+    required TResult Function(LoginWithGoogleSuccessful value) successful,
+    required TResult Function(LoginWithGoogleError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult Function(LoginWithGoogle$ value)? $default, {
+    TResult Function(LoginWithGoogleSuccessful value)? successful,
+    TResult Function(LoginWithGoogleError value)? error,
+  }) {
+    return successful?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(LoginWithGoogle$ value)? $default, {
+    TResult Function(LoginWithGoogleSuccessful value)? successful,
+    TResult Function(LoginWithGoogleError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LoginWithGoogleSuccessful implements LoginWithGoogle {
+  const factory LoginWithGoogleSuccessful(AppUser? user) = _$LoginWithGoogleSuccessful;
+
+  AppUser? get user;
+  @JsonKey(ignore: true)
+  $LoginWithGoogleSuccessfulCopyWith<LoginWithGoogleSuccessful> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $LoginWithGoogleErrorCopyWith<$Res> {
+  factory $LoginWithGoogleErrorCopyWith(LoginWithGoogleError value, $Res Function(LoginWithGoogleError) then) =
+      _$LoginWithGoogleErrorCopyWithImpl<$Res>;
+  $Res call({Object error});
+}
+
+/// @nodoc
+class _$LoginWithGoogleErrorCopyWithImpl<$Res> extends _$LoginWithGoogleCopyWithImpl<$Res>
+    implements $LoginWithGoogleErrorCopyWith<$Res> {
+  _$LoginWithGoogleErrorCopyWithImpl(LoginWithGoogleError _value, $Res Function(LoginWithGoogleError) _then)
+      : super(_value, (v) => _then(v as LoginWithGoogleError));
+
+  @override
+  LoginWithGoogleError get _value => super._value as LoginWithGoogleError;
+
+  @override
+  $Res call({
+    Object? error = freezed,
+  }) {
+    return _then(LoginWithGoogleError(
+      error == freezed
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as Object,
+    ));
+  }
+}
+
+/// @nodoc
+
+@Implements<ErrorAction>()
+class _$LoginWithGoogleError implements LoginWithGoogleError {
+  const _$LoginWithGoogleError(this.error);
+
+  @override
+  final Object error;
+
+  @override
+  String toString() {
+    return 'LoginWithGoogle.error(error: $error)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is LoginWithGoogleError &&
+            const DeepCollectionEquality().equals(other.error, error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error));
+
+  @JsonKey(ignore: true)
+  @override
+  $LoginWithGoogleErrorCopyWith<LoginWithGoogleError> get copyWith =>
+      _$LoginWithGoogleErrorCopyWithImpl<LoginWithGoogleError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(ActionResponse response) $default, {
+    required TResult Function(AppUser? user) successful,
+    required TResult Function(Object error) error,
+  }) {
+    return error(this.error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult Function(ActionResponse response)? $default, {
+    TResult Function(AppUser? user)? successful,
+    TResult Function(Object error)? error,
+  }) {
+    return error?.call(this.error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(ActionResponse response)? $default, {
+    TResult Function(AppUser? user)? successful,
+    TResult Function(Object error)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(LoginWithGoogle$ value) $default, {
+    required TResult Function(LoginWithGoogleSuccessful value) successful,
+    required TResult Function(LoginWithGoogleError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult Function(LoginWithGoogle$ value)? $default, {
+    TResult Function(LoginWithGoogleSuccessful value)? successful,
+    TResult Function(LoginWithGoogleError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(LoginWithGoogle$ value)? $default, {
+    TResult Function(LoginWithGoogleSuccessful value)? successful,
+    TResult Function(LoginWithGoogleError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LoginWithGoogleError implements LoginWithGoogle, ErrorAction {
+  const factory LoginWithGoogleError(Object error) = _$LoginWithGoogleError;
+
+  Object get error;
+  @JsonKey(ignore: true)
+  $LoginWithGoogleErrorCopyWith<LoginWithGoogleError> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+class _$ResetPasswordTearOff {
+  const _$ResetPasswordTearOff();
+
+  ResetPassword$ call({required String email, required ActionResponse response}) {
+    return ResetPassword$(
+      email: email,
+      response: response,
+    );
+  }
+
+  ResetPasswordSuccessful successful() {
+    return const ResetPasswordSuccessful();
+  }
+
+  ResetPasswordError error(Object error) {
+    return ResetPasswordError(
+      error,
+    );
+  }
+}
+
+/// @nodoc
+const $ResetPassword = _$ResetPasswordTearOff();
+
+/// @nodoc
+mixin _$ResetPassword {
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String email, ActionResponse response) $default, {
+    required TResult Function() successful,
+    required TResult Function(Object error) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult Function(String email, ActionResponse response)? $default, {
+    TResult Function()? successful,
+    TResult Function(Object error)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String email, ActionResponse response)? $default, {
+    TResult Function()? successful,
+    TResult Function(Object error)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(ResetPassword$ value) $default, {
+    required TResult Function(ResetPasswordSuccessful value) successful,
+    required TResult Function(ResetPasswordError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult Function(ResetPassword$ value)? $default, {
+    TResult Function(ResetPasswordSuccessful value)? successful,
+    TResult Function(ResetPasswordError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(ResetPassword$ value)? $default, {
+    TResult Function(ResetPasswordSuccessful value)? successful,
+    TResult Function(ResetPasswordError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ResetPasswordCopyWith<$Res> {
+  factory $ResetPasswordCopyWith(ResetPassword value, $Res Function(ResetPassword) then) =
+      _$ResetPasswordCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$ResetPasswordCopyWithImpl<$Res> implements $ResetPasswordCopyWith<$Res> {
+  _$ResetPasswordCopyWithImpl(this._value, this._then);
+
+  final ResetPassword _value;
+  // ignore: unused_field
+  final $Res Function(ResetPassword) _then;
+}
+
+/// @nodoc
+abstract class $ResetPassword$CopyWith<$Res> {
+  factory $ResetPassword$CopyWith(ResetPassword$ value, $Res Function(ResetPassword$) then) =
+      _$ResetPassword$CopyWithImpl<$Res>;
+  $Res call({String email, ActionResponse response});
+}
+
+/// @nodoc
+class _$ResetPassword$CopyWithImpl<$Res> extends _$ResetPasswordCopyWithImpl<$Res>
+    implements $ResetPassword$CopyWith<$Res> {
+  _$ResetPassword$CopyWithImpl(ResetPassword$ _value, $Res Function(ResetPassword$) _then)
+      : super(_value, (v) => _then(v as ResetPassword$));
+
+  @override
+  ResetPassword$ get _value => super._value as ResetPassword$;
+
+  @override
+  $Res call({
+    Object? email = freezed,
+    Object? response = freezed,
+  }) {
+    return _then(ResetPassword$(
+      email: email == freezed
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      response: response == freezed
+          ? _value.response
+          : response // ignore: cast_nullable_to_non_nullable
+              as ActionResponse,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ResetPassword$ implements ResetPassword$ {
+  const _$ResetPassword$({required this.email, required this.response});
+
+  @override
+  final String email;
+  @override
+  final ActionResponse response;
+
+  @override
+  String toString() {
+    return 'ResetPassword(email: $email, response: $response)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is ResetPassword$ &&
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.response, response) || other.response == response));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, email, response);
+
+  @JsonKey(ignore: true)
+  @override
+  $ResetPassword$CopyWith<ResetPassword$> get copyWith =>
+      _$ResetPassword$CopyWithImpl<ResetPassword$>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String email, ActionResponse response) $default, {
+    required TResult Function() successful,
+    required TResult Function(Object error) error,
+  }) {
+    return $default(email, response);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult Function(String email, ActionResponse response)? $default, {
+    TResult Function()? successful,
+    TResult Function(Object error)? error,
+  }) {
+    return $default?.call(email, response);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String email, ActionResponse response)? $default, {
+    TResult Function()? successful,
+    TResult Function(Object error)? error,
+    required TResult orElse(),
+  }) {
+    if ($default != null) {
+      return $default(email, response);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(ResetPassword$ value) $default, {
+    required TResult Function(ResetPasswordSuccessful value) successful,
+    required TResult Function(ResetPasswordError value) error,
+  }) {
+    return $default(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult Function(ResetPassword$ value)? $default, {
+    TResult Function(ResetPasswordSuccessful value)? successful,
+    TResult Function(ResetPasswordError value)? error,
+  }) {
+    return $default?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(ResetPassword$ value)? $default, {
+    TResult Function(ResetPasswordSuccessful value)? successful,
+    TResult Function(ResetPasswordError value)? error,
+    required TResult orElse(),
+  }) {
+    if ($default != null) {
+      return $default(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ResetPassword$ implements ResetPassword {
+  const factory ResetPassword$({required String email, required ActionResponse response}) = _$ResetPassword$;
+
+  String get email;
+  ActionResponse get response;
+  @JsonKey(ignore: true)
+  $ResetPassword$CopyWith<ResetPassword$> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ResetPasswordSuccessfulCopyWith<$Res> {
+  factory $ResetPasswordSuccessfulCopyWith(ResetPasswordSuccessful value, $Res Function(ResetPasswordSuccessful) then) =
+      _$ResetPasswordSuccessfulCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$ResetPasswordSuccessfulCopyWithImpl<$Res> extends _$ResetPasswordCopyWithImpl<$Res>
+    implements $ResetPasswordSuccessfulCopyWith<$Res> {
+  _$ResetPasswordSuccessfulCopyWithImpl(ResetPasswordSuccessful _value, $Res Function(ResetPasswordSuccessful) _then)
+      : super(_value, (v) => _then(v as ResetPasswordSuccessful));
+
+  @override
+  ResetPasswordSuccessful get _value => super._value as ResetPasswordSuccessful;
+}
+
+/// @nodoc
+
+class _$ResetPasswordSuccessful implements ResetPasswordSuccessful {
+  const _$ResetPasswordSuccessful();
+
+  @override
+  String toString() {
+    return 'ResetPassword.successful()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other.runtimeType == runtimeType && other is ResetPasswordSuccessful);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String email, ActionResponse response) $default, {
+    required TResult Function() successful,
+    required TResult Function(Object error) error,
+  }) {
+    return successful();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult Function(String email, ActionResponse response)? $default, {
+    TResult Function()? successful,
+    TResult Function(Object error)? error,
+  }) {
+    return successful?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String email, ActionResponse response)? $default, {
+    TResult Function()? successful,
+    TResult Function(Object error)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(ResetPassword$ value) $default, {
+    required TResult Function(ResetPasswordSuccessful value) successful,
+    required TResult Function(ResetPasswordError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult Function(ResetPassword$ value)? $default, {
+    TResult Function(ResetPasswordSuccessful value)? successful,
+    TResult Function(ResetPasswordError value)? error,
+  }) {
+    return successful?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(ResetPassword$ value)? $default, {
+    TResult Function(ResetPasswordSuccessful value)? successful,
+    TResult Function(ResetPasswordError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ResetPasswordSuccessful implements ResetPassword {
+  const factory ResetPasswordSuccessful() = _$ResetPasswordSuccessful;
+}
+
+/// @nodoc
+abstract class $ResetPasswordErrorCopyWith<$Res> {
+  factory $ResetPasswordErrorCopyWith(ResetPasswordError value, $Res Function(ResetPasswordError) then) =
+      _$ResetPasswordErrorCopyWithImpl<$Res>;
+  $Res call({Object error});
+}
+
+/// @nodoc
+class _$ResetPasswordErrorCopyWithImpl<$Res> extends _$ResetPasswordCopyWithImpl<$Res>
+    implements $ResetPasswordErrorCopyWith<$Res> {
+  _$ResetPasswordErrorCopyWithImpl(ResetPasswordError _value, $Res Function(ResetPasswordError) _then)
+      : super(_value, (v) => _then(v as ResetPasswordError));
+
+  @override
+  ResetPasswordError get _value => super._value as ResetPasswordError;
+
+  @override
+  $Res call({
+    Object? error = freezed,
+  }) {
+    return _then(ResetPasswordError(
+      error == freezed
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as Object,
+    ));
+  }
+}
+
+/// @nodoc
+
+@Implements<ErrorAction>()
+class _$ResetPasswordError implements ResetPasswordError {
+  const _$ResetPasswordError(this.error);
+
+  @override
+  final Object error;
+
+  @override
+  String toString() {
+    return 'ResetPassword.error(error: $error)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is ResetPasswordError &&
+            const DeepCollectionEquality().equals(other.error, error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error));
+
+  @JsonKey(ignore: true)
+  @override
+  $ResetPasswordErrorCopyWith<ResetPasswordError> get copyWith =>
+      _$ResetPasswordErrorCopyWithImpl<ResetPasswordError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String email, ActionResponse response) $default, {
+    required TResult Function() successful,
+    required TResult Function(Object error) error,
+  }) {
+    return error(this.error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult Function(String email, ActionResponse response)? $default, {
+    TResult Function()? successful,
+    TResult Function(Object error)? error,
+  }) {
+    return error?.call(this.error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String email, ActionResponse response)? $default, {
+    TResult Function()? successful,
+    TResult Function(Object error)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(ResetPassword$ value) $default, {
+    required TResult Function(ResetPasswordSuccessful value) successful,
+    required TResult Function(ResetPasswordError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult Function(ResetPassword$ value)? $default, {
+    TResult Function(ResetPasswordSuccessful value)? successful,
+    TResult Function(ResetPasswordError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(ResetPassword$ value)? $default, {
+    TResult Function(ResetPasswordSuccessful value)? successful,
+    TResult Function(ResetPasswordError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ResetPasswordError implements ResetPassword, ErrorAction {
+  const factory ResetPasswordError(Object error) = _$ResetPasswordError;
+
+  Object get error;
+  @JsonKey(ignore: true)
+  $ResetPasswordErrorCopyWith<ResetPasswordError> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+class _$UpdateRegistrationInfoTearOff {
+  const _$UpdateRegistrationInfoTearOff();
+
+  UpdateRegistrationInfo$ call({String? email, String? password, String? username}) {
+    return UpdateRegistrationInfo$(
+      email: email,
+      password: password,
+      username: username,
+    );
+  }
+}
+
+/// @nodoc
+const $UpdateRegistrationInfo = _$UpdateRegistrationInfoTearOff();
+
+/// @nodoc
+mixin _$UpdateRegistrationInfo {
+  String? get email => throw _privateConstructorUsedError;
+  String? get password => throw _privateConstructorUsedError;
+  String? get username => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $UpdateRegistrationInfoCopyWith<UpdateRegistrationInfo> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $UpdateRegistrationInfoCopyWith<$Res> {
+  factory $UpdateRegistrationInfoCopyWith(UpdateRegistrationInfo value, $Res Function(UpdateRegistrationInfo) then) =
+      _$UpdateRegistrationInfoCopyWithImpl<$Res>;
+  $Res call({String? email, String? password, String? username});
+}
+
+/// @nodoc
+class _$UpdateRegistrationInfoCopyWithImpl<$Res> implements $UpdateRegistrationInfoCopyWith<$Res> {
+  _$UpdateRegistrationInfoCopyWithImpl(this._value, this._then);
+
+  final UpdateRegistrationInfo _value;
+  // ignore: unused_field
+  final $Res Function(UpdateRegistrationInfo) _then;
+
+  @override
+  $Res call({
+    Object? email = freezed,
+    Object? password = freezed,
+    Object? username = freezed,
+  }) {
+    return _then(_value.copyWith(
+      email: email == freezed
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String?,
+      password: password == freezed
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String?,
+      username: username == freezed
+          ? _value.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class $UpdateRegistrationInfo$CopyWith<$Res> implements $UpdateRegistrationInfoCopyWith<$Res> {
+  factory $UpdateRegistrationInfo$CopyWith(UpdateRegistrationInfo$ value, $Res Function(UpdateRegistrationInfo$) then) =
+      _$UpdateRegistrationInfo$CopyWithImpl<$Res>;
+  @override
+  $Res call({String? email, String? password, String? username});
+}
+
+/// @nodoc
+class _$UpdateRegistrationInfo$CopyWithImpl<$Res> extends _$UpdateRegistrationInfoCopyWithImpl<$Res>
+    implements $UpdateRegistrationInfo$CopyWith<$Res> {
+  _$UpdateRegistrationInfo$CopyWithImpl(UpdateRegistrationInfo$ _value, $Res Function(UpdateRegistrationInfo$) _then)
+      : super(_value, (v) => _then(v as UpdateRegistrationInfo$));
+
+  @override
+  UpdateRegistrationInfo$ get _value => super._value as UpdateRegistrationInfo$;
+
+  @override
+  $Res call({
+    Object? email = freezed,
+    Object? password = freezed,
+    Object? username = freezed,
+  }) {
+    return _then(UpdateRegistrationInfo$(
+      email: email == freezed
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String?,
+      password: password == freezed
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String?,
+      username: username == freezed
+          ? _value.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateRegistrationInfo$ implements UpdateRegistrationInfo$ {
+  const _$UpdateRegistrationInfo$({this.email, this.password, this.username});
+
+  @override
+  final String? email;
+  @override
+  final String? password;
+  @override
+  final String? username;
+
+  @override
+  String toString() {
+    return 'UpdateRegistrationInfo(email: $email, password: $password, username: $username)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is UpdateRegistrationInfo$ &&
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.password, password) || other.password == password) &&
+            (identical(other.username, username) || other.username == username));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, email, password, username);
+
+  @JsonKey(ignore: true)
+  @override
+  $UpdateRegistrationInfo$CopyWith<UpdateRegistrationInfo$> get copyWith =>
+      _$UpdateRegistrationInfo$CopyWithImpl<UpdateRegistrationInfo$>(this, _$identity);
+}
+
+abstract class UpdateRegistrationInfo$ implements UpdateRegistrationInfo {
+  const factory UpdateRegistrationInfo$({String? email, String? password, String? username}) =
+      _$UpdateRegistrationInfo$;
+
+  @override
+  String? get email;
+  @override
+  String? get password;
+  @override
+  String? get username;
+  @override
+  @JsonKey(ignore: true)
+  $UpdateRegistrationInfo$CopyWith<UpdateRegistrationInfo$> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+class _$SignOutTearOff {
+  const _$SignOutTearOff();
+
+  SignOut$ call(ActionResponse response) {
+    return SignOut$(
+      response,
+    );
+  }
+
+  SignOutSuccessful successful() {
+    return const SignOutSuccessful();
+  }
+
+  SignOutError error(Object error) {
+    return SignOutError(
+      error,
+    );
+  }
+}
+
+/// @nodoc
+const $SignOut = _$SignOutTearOff();
+
+/// @nodoc
+mixin _$SignOut {
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(ActionResponse response) $default, {
+    required TResult Function() successful,
+    required TResult Function(Object error) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult Function(ActionResponse response)? $default, {
+    TResult Function()? successful,
+    TResult Function(Object error)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(ActionResponse response)? $default, {
+    TResult Function()? successful,
+    TResult Function(Object error)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(SignOut$ value) $default, {
+    required TResult Function(SignOutSuccessful value) successful,
+    required TResult Function(SignOutError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult Function(SignOut$ value)? $default, {
+    TResult Function(SignOutSuccessful value)? successful,
+    TResult Function(SignOutError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(SignOut$ value)? $default, {
+    TResult Function(SignOutSuccessful value)? successful,
+    TResult Function(SignOutError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SignOutCopyWith<$Res> {
+  factory $SignOutCopyWith(SignOut value, $Res Function(SignOut) then) = _$SignOutCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$SignOutCopyWithImpl<$Res> implements $SignOutCopyWith<$Res> {
+  _$SignOutCopyWithImpl(this._value, this._then);
+
+  final SignOut _value;
+  // ignore: unused_field
+  final $Res Function(SignOut) _then;
+}
+
+/// @nodoc
+abstract class $SignOut$CopyWith<$Res> {
+  factory $SignOut$CopyWith(SignOut$ value, $Res Function(SignOut$) then) = _$SignOut$CopyWithImpl<$Res>;
+  $Res call({ActionResponse response});
+}
+
+/// @nodoc
+class _$SignOut$CopyWithImpl<$Res> extends _$SignOutCopyWithImpl<$Res> implements $SignOut$CopyWith<$Res> {
+  _$SignOut$CopyWithImpl(SignOut$ _value, $Res Function(SignOut$) _then) : super(_value, (v) => _then(v as SignOut$));
+
+  @override
+  SignOut$ get _value => super._value as SignOut$;
+
+  @override
+  $Res call({
+    Object? response = freezed,
+  }) {
+    return _then(SignOut$(
+      response == freezed
+          ? _value.response
+          : response // ignore: cast_nullable_to_non_nullable
+              as ActionResponse,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SignOut$ implements SignOut$ {
+  const _$SignOut$(this.response);
+
+  @override
+  final ActionResponse response;
+
+  @override
+  String toString() {
+    return 'SignOut(response: $response)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is SignOut$ &&
+            (identical(other.response, response) || other.response == response));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, response);
+
+  @JsonKey(ignore: true)
+  @override
+  $SignOut$CopyWith<SignOut$> get copyWith => _$SignOut$CopyWithImpl<SignOut$>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(ActionResponse response) $default, {
+    required TResult Function() successful,
+    required TResult Function(Object error) error,
+  }) {
+    return $default(response);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult Function(ActionResponse response)? $default, {
+    TResult Function()? successful,
+    TResult Function(Object error)? error,
+  }) {
+    return $default?.call(response);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(ActionResponse response)? $default, {
+    TResult Function()? successful,
+    TResult Function(Object error)? error,
+    required TResult orElse(),
+  }) {
+    if ($default != null) {
+      return $default(response);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(SignOut$ value) $default, {
+    required TResult Function(SignOutSuccessful value) successful,
+    required TResult Function(SignOutError value) error,
+  }) {
+    return $default(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult Function(SignOut$ value)? $default, {
+    TResult Function(SignOutSuccessful value)? successful,
+    TResult Function(SignOutError value)? error,
+  }) {
+    return $default?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(SignOut$ value)? $default, {
+    TResult Function(SignOutSuccessful value)? successful,
+    TResult Function(SignOutError value)? error,
+    required TResult orElse(),
+  }) {
+    if ($default != null) {
+      return $default(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SignOut$ implements SignOut {
+  const factory SignOut$(ActionResponse response) = _$SignOut$;
+
+  ActionResponse get response;
+  @JsonKey(ignore: true)
+  $SignOut$CopyWith<SignOut$> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SignOutSuccessfulCopyWith<$Res> {
+  factory $SignOutSuccessfulCopyWith(SignOutSuccessful value, $Res Function(SignOutSuccessful) then) =
+      _$SignOutSuccessfulCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$SignOutSuccessfulCopyWithImpl<$Res> extends _$SignOutCopyWithImpl<$Res>
+    implements $SignOutSuccessfulCopyWith<$Res> {
+  _$SignOutSuccessfulCopyWithImpl(SignOutSuccessful _value, $Res Function(SignOutSuccessful) _then)
+      : super(_value, (v) => _then(v as SignOutSuccessful));
+
+  @override
+  SignOutSuccessful get _value => super._value as SignOutSuccessful;
+}
+
+/// @nodoc
+
+class _$SignOutSuccessful implements SignOutSuccessful {
+  const _$SignOutSuccessful();
+
+  @override
+  String toString() {
+    return 'SignOut.successful()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other.runtimeType == runtimeType && other is SignOutSuccessful);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(ActionResponse response) $default, {
+    required TResult Function() successful,
+    required TResult Function(Object error) error,
+  }) {
+    return successful();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult Function(ActionResponse response)? $default, {
+    TResult Function()? successful,
+    TResult Function(Object error)? error,
+  }) {
+    return successful?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(ActionResponse response)? $default, {
+    TResult Function()? successful,
+    TResult Function(Object error)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(SignOut$ value) $default, {
+    required TResult Function(SignOutSuccessful value) successful,
+    required TResult Function(SignOutError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult Function(SignOut$ value)? $default, {
+    TResult Function(SignOutSuccessful value)? successful,
+    TResult Function(SignOutError value)? error,
+  }) {
+    return successful?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(SignOut$ value)? $default, {
+    TResult Function(SignOutSuccessful value)? successful,
+    TResult Function(SignOutError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SignOutSuccessful implements SignOut {
+  const factory SignOutSuccessful() = _$SignOutSuccessful;
+}
+
+/// @nodoc
+abstract class $SignOutErrorCopyWith<$Res> {
+  factory $SignOutErrorCopyWith(SignOutError value, $Res Function(SignOutError) then) =
+      _$SignOutErrorCopyWithImpl<$Res>;
+  $Res call({Object error});
+}
+
+/// @nodoc
+class _$SignOutErrorCopyWithImpl<$Res> extends _$SignOutCopyWithImpl<$Res> implements $SignOutErrorCopyWith<$Res> {
+  _$SignOutErrorCopyWithImpl(SignOutError _value, $Res Function(SignOutError) _then)
+      : super(_value, (v) => _then(v as SignOutError));
+
+  @override
+  SignOutError get _value => super._value as SignOutError;
+
+  @override
+  $Res call({
+    Object? error = freezed,
+  }) {
+    return _then(SignOutError(
+      error == freezed
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as Object,
+    ));
+  }
+}
+
+/// @nodoc
+
+@Implements<ErrorAction>()
+class _$SignOutError implements SignOutError {
+  const _$SignOutError(this.error);
+
+  @override
+  final Object error;
+
+  @override
+  String toString() {
+    return 'SignOut.error(error: $error)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is SignOutError &&
+            const DeepCollectionEquality().equals(other.error, error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error));
+
+  @JsonKey(ignore: true)
+  @override
+  $SignOutErrorCopyWith<SignOutError> get copyWith => _$SignOutErrorCopyWithImpl<SignOutError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(ActionResponse response) $default, {
+    required TResult Function() successful,
+    required TResult Function(Object error) error,
+  }) {
+    return error(this.error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult Function(ActionResponse response)? $default, {
+    TResult Function()? successful,
+    TResult Function(Object error)? error,
+  }) {
+    return error?.call(this.error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(ActionResponse response)? $default, {
+    TResult Function()? successful,
+    TResult Function(Object error)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(SignOut$ value) $default, {
+    required TResult Function(SignOutSuccessful value) successful,
+    required TResult Function(SignOutError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult Function(SignOut$ value)? $default, {
+    TResult Function(SignOutSuccessful value)? successful,
+    TResult Function(SignOutError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(SignOut$ value)? $default, {
+    TResult Function(SignOutSuccessful value)? successful,
+    TResult Function(SignOutError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SignOutError implements SignOut, ErrorAction {
+  const factory SignOutError(Object error) = _$SignOutError;
+
+  Object get error;
+  @JsonKey(ignore: true)
+  $SignOutErrorCopyWith<SignOutError> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+class _$SignupTearOff {
+  const _$SignupTearOff();
+
+  Signup$ call(ActionResponse response) {
+    return Signup$(
+      response,
+    );
+  }
+
+  SignupSuccessful successful(AppUser user) {
+    return SignupSuccessful(
+      user,
+    );
+  }
+
+  SignupError error(Object error) {
+    return SignupError(
+      error,
+    );
+  }
+}
+
+/// @nodoc
+const $Signup = _$SignupTearOff();
+
+/// @nodoc
+mixin _$Signup {
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(ActionResponse response) $default, {
+    required TResult Function(AppUser user) successful,
+    required TResult Function(Object error) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult Function(ActionResponse response)? $default, {
+    TResult Function(AppUser user)? successful,
+    TResult Function(Object error)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(ActionResponse response)? $default, {
+    TResult Function(AppUser user)? successful,
+    TResult Function(Object error)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(Signup$ value) $default, {
+    required TResult Function(SignupSuccessful value) successful,
+    required TResult Function(SignupError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult Function(Signup$ value)? $default, {
+    TResult Function(SignupSuccessful value)? successful,
+    TResult Function(SignupError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(Signup$ value)? $default, {
+    TResult Function(SignupSuccessful value)? successful,
+    TResult Function(SignupError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SignupCopyWith<$Res> {
+  factory $SignupCopyWith(Signup value, $Res Function(Signup) then) = _$SignupCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$SignupCopyWithImpl<$Res> implements $SignupCopyWith<$Res> {
+  _$SignupCopyWithImpl(this._value, this._then);
+
+  final Signup _value;
+  // ignore: unused_field
+  final $Res Function(Signup) _then;
+}
+
+/// @nodoc
+abstract class $Signup$CopyWith<$Res> {
+  factory $Signup$CopyWith(Signup$ value, $Res Function(Signup$) then) = _$Signup$CopyWithImpl<$Res>;
+  $Res call({ActionResponse response});
+}
+
+/// @nodoc
+class _$Signup$CopyWithImpl<$Res> extends _$SignupCopyWithImpl<$Res> implements $Signup$CopyWith<$Res> {
+  _$Signup$CopyWithImpl(Signup$ _value, $Res Function(Signup$) _then) : super(_value, (v) => _then(v as Signup$));
+
+  @override
+  Signup$ get _value => super._value as Signup$;
+
+  @override
+  $Res call({
+    Object? response = freezed,
+  }) {
+    return _then(Signup$(
+      response == freezed
+          ? _value.response
+          : response // ignore: cast_nullable_to_non_nullable
+              as ActionResponse,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$Signup$ implements Signup$ {
+  const _$Signup$(this.response);
+
+  @override
+  final ActionResponse response;
+
+  @override
+  String toString() {
+    return 'Signup(response: $response)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is Signup$ &&
+            (identical(other.response, response) || other.response == response));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, response);
+
+  @JsonKey(ignore: true)
+  @override
+  $Signup$CopyWith<Signup$> get copyWith => _$Signup$CopyWithImpl<Signup$>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(ActionResponse response) $default, {
+    required TResult Function(AppUser user) successful,
+    required TResult Function(Object error) error,
+  }) {
+    return $default(response);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult Function(ActionResponse response)? $default, {
+    TResult Function(AppUser user)? successful,
+    TResult Function(Object error)? error,
+  }) {
+    return $default?.call(response);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(ActionResponse response)? $default, {
+    TResult Function(AppUser user)? successful,
+    TResult Function(Object error)? error,
+    required TResult orElse(),
+  }) {
+    if ($default != null) {
+      return $default(response);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(Signup$ value) $default, {
+    required TResult Function(SignupSuccessful value) successful,
+    required TResult Function(SignupError value) error,
+  }) {
+    return $default(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult Function(Signup$ value)? $default, {
+    TResult Function(SignupSuccessful value)? successful,
+    TResult Function(SignupError value)? error,
+  }) {
+    return $default?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(Signup$ value)? $default, {
+    TResult Function(SignupSuccessful value)? successful,
+    TResult Function(SignupError value)? error,
+    required TResult orElse(),
+  }) {
+    if ($default != null) {
+      return $default(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class Signup$ implements Signup {
+  const factory Signup$(ActionResponse response) = _$Signup$;
+
+  ActionResponse get response;
+  @JsonKey(ignore: true)
+  $Signup$CopyWith<Signup$> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SignupSuccessfulCopyWith<$Res> {
+  factory $SignupSuccessfulCopyWith(SignupSuccessful value, $Res Function(SignupSuccessful) then) =
+      _$SignupSuccessfulCopyWithImpl<$Res>;
+  $Res call({AppUser user});
+}
+
+/// @nodoc
+class _$SignupSuccessfulCopyWithImpl<$Res> extends _$SignupCopyWithImpl<$Res>
+    implements $SignupSuccessfulCopyWith<$Res> {
+  _$SignupSuccessfulCopyWithImpl(SignupSuccessful _value, $Res Function(SignupSuccessful) _then)
+      : super(_value, (v) => _then(v as SignupSuccessful));
+
+  @override
+  SignupSuccessful get _value => super._value as SignupSuccessful;
+
+  @override
+  $Res call({
+    Object? user = freezed,
+  }) {
+    return _then(SignupSuccessful(
+      user == freezed
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as AppUser,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SignupSuccessful implements SignupSuccessful {
+  const _$SignupSuccessful(this.user);
+
+  @override
+  final AppUser user;
+
+  @override
+  String toString() {
+    return 'Signup.successful(user: $user)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is SignupSuccessful &&
+            (identical(other.user, user) || other.user == user));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, user);
+
+  @JsonKey(ignore: true)
+  @override
+  $SignupSuccessfulCopyWith<SignupSuccessful> get copyWith =>
+      _$SignupSuccessfulCopyWithImpl<SignupSuccessful>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(ActionResponse response) $default, {
+    required TResult Function(AppUser user) successful,
+    required TResult Function(Object error) error,
+  }) {
+    return successful(user);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult Function(ActionResponse response)? $default, {
+    TResult Function(AppUser user)? successful,
+    TResult Function(Object error)? error,
+  }) {
+    return successful?.call(user);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(ActionResponse response)? $default, {
+    TResult Function(AppUser user)? successful,
+    TResult Function(Object error)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(user);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(Signup$ value) $default, {
+    required TResult Function(SignupSuccessful value) successful,
+    required TResult Function(SignupError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult Function(Signup$ value)? $default, {
+    TResult Function(SignupSuccessful value)? successful,
+    TResult Function(SignupError value)? error,
+  }) {
+    return successful?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(Signup$ value)? $default, {
+    TResult Function(SignupSuccessful value)? successful,
+    TResult Function(SignupError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SignupSuccessful implements Signup {
+  const factory SignupSuccessful(AppUser user) = _$SignupSuccessful;
+
+  AppUser get user;
+  @JsonKey(ignore: true)
+  $SignupSuccessfulCopyWith<SignupSuccessful> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SignupErrorCopyWith<$Res> {
+  factory $SignupErrorCopyWith(SignupError value, $Res Function(SignupError) then) = _$SignupErrorCopyWithImpl<$Res>;
+  $Res call({Object error});
+}
+
+/// @nodoc
+class _$SignupErrorCopyWithImpl<$Res> extends _$SignupCopyWithImpl<$Res> implements $SignupErrorCopyWith<$Res> {
+  _$SignupErrorCopyWithImpl(SignupError _value, $Res Function(SignupError) _then)
+      : super(_value, (v) => _then(v as SignupError));
+
+  @override
+  SignupError get _value => super._value as SignupError;
+
+  @override
+  $Res call({
+    Object? error = freezed,
+  }) {
+    return _then(SignupError(
+      error == freezed
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as Object,
+    ));
+  }
+}
+
+/// @nodoc
+
+@Implements<ErrorAction>()
+class _$SignupError implements SignupError {
+  const _$SignupError(this.error);
+
+  @override
+  final Object error;
+
+  @override
+  String toString() {
+    return 'Signup.error(error: $error)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is SignupError &&
+            const DeepCollectionEquality().equals(other.error, error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error));
+
+  @JsonKey(ignore: true)
+  @override
+  $SignupErrorCopyWith<SignupError> get copyWith => _$SignupErrorCopyWithImpl<SignupError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(ActionResponse response) $default, {
+    required TResult Function(AppUser user) successful,
+    required TResult Function(Object error) error,
+  }) {
+    return error(this.error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult Function(ActionResponse response)? $default, {
+    TResult Function(AppUser user)? successful,
+    TResult Function(Object error)? error,
+  }) {
+    return error?.call(this.error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(ActionResponse response)? $default, {
+    TResult Function(AppUser user)? successful,
+    TResult Function(Object error)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(Signup$ value) $default, {
+    required TResult Function(SignupSuccessful value) successful,
+    required TResult Function(SignupError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult Function(Signup$ value)? $default, {
+    TResult Function(SignupSuccessful value)? successful,
+    TResult Function(SignupError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(Signup$ value)? $default, {
+    TResult Function(SignupSuccessful value)? successful,
+    TResult Function(SignupError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SignupError implements Signup, ErrorAction {
+  const factory SignupError(Object error) = _$SignupError;
+
+  Object get error;
+  @JsonKey(ignore: true)
+  $SignupErrorCopyWith<SignupError> get copyWith => throw _privateConstructorUsedError;
+}
