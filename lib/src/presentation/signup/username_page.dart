@@ -51,7 +51,7 @@ class _UsernamePageState extends State<UsernamePage> {
                     child: const Text('continue'),
                     onPressed: () {
                       if (Form.of(context)?.validate() == true) {
-                        //
+                        Navigator.of(context).pushNamed(AppRoutes.passwordPage);
                       }
                     },
                   ),
