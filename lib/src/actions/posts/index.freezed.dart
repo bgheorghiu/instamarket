@@ -17,12 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$UpdatePostInfoTearOff {
   const _$UpdatePostInfoTearOff();
 
-  UpdatePostInfo$ call(
-      {String? addImage,
-      String? removeImage,
-      String? description,
-      double? lng,
-      double? lat}) {
+  UpdatePostInfo$ call({String? addImage, String? removeImage, String? description, double? lng, double? lat}) {
     return UpdatePostInfo$(
       addImage: addImage,
       removeImage: removeImage,
@@ -45,26 +40,18 @@ mixin _$UpdatePostInfo {
   double? get lat => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $UpdatePostInfoCopyWith<UpdatePostInfo> get copyWith =>
-      throw _privateConstructorUsedError;
+  $UpdatePostInfoCopyWith<UpdatePostInfo> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $UpdatePostInfoCopyWith<$Res> {
-  factory $UpdatePostInfoCopyWith(
-          UpdatePostInfo value, $Res Function(UpdatePostInfo) then) =
+  factory $UpdatePostInfoCopyWith(UpdatePostInfo value, $Res Function(UpdatePostInfo) then) =
       _$UpdatePostInfoCopyWithImpl<$Res>;
-  $Res call(
-      {String? addImage,
-      String? removeImage,
-      String? description,
-      double? lng,
-      double? lat});
+  $Res call({String? addImage, String? removeImage, String? description, double? lng, double? lat});
 }
 
 /// @nodoc
-class _$UpdatePostInfoCopyWithImpl<$Res>
-    implements $UpdatePostInfoCopyWith<$Res> {
+class _$UpdatePostInfoCopyWithImpl<$Res> implements $UpdatePostInfoCopyWith<$Res> {
   _$UpdatePostInfoCopyWithImpl(this._value, this._then);
 
   final UpdatePostInfo _value;
@@ -105,26 +92,17 @@ class _$UpdatePostInfoCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class $UpdatePostInfo$CopyWith<$Res>
-    implements $UpdatePostInfoCopyWith<$Res> {
-  factory $UpdatePostInfo$CopyWith(
-          UpdatePostInfo$ value, $Res Function(UpdatePostInfo$) then) =
+abstract class $UpdatePostInfo$CopyWith<$Res> implements $UpdatePostInfoCopyWith<$Res> {
+  factory $UpdatePostInfo$CopyWith(UpdatePostInfo$ value, $Res Function(UpdatePostInfo$) then) =
       _$UpdatePostInfo$CopyWithImpl<$Res>;
   @override
-  $Res call(
-      {String? addImage,
-      String? removeImage,
-      String? description,
-      double? lng,
-      double? lat});
+  $Res call({String? addImage, String? removeImage, String? description, double? lng, double? lat});
 }
 
 /// @nodoc
-class _$UpdatePostInfo$CopyWithImpl<$Res>
-    extends _$UpdatePostInfoCopyWithImpl<$Res>
+class _$UpdatePostInfo$CopyWithImpl<$Res> extends _$UpdatePostInfoCopyWithImpl<$Res>
     implements $UpdatePostInfo$CopyWith<$Res> {
-  _$UpdatePostInfo$CopyWithImpl(
-      UpdatePostInfo$ _value, $Res Function(UpdatePostInfo$) _then)
+  _$UpdatePostInfo$CopyWithImpl(UpdatePostInfo$ _value, $Res Function(UpdatePostInfo$) _then)
       : super(_value, (v) => _then(v as UpdatePostInfo$));
 
   @override
@@ -166,8 +144,7 @@ class _$UpdatePostInfo$CopyWithImpl<$Res>
 /// @nodoc
 
 class _$UpdatePostInfo$ implements UpdatePostInfo$ {
-  const _$UpdatePostInfo$(
-      {this.addImage, this.removeImage, this.description, this.lng, this.lat});
+  const _$UpdatePostInfo$({this.addImage, this.removeImage, this.description, this.lng, this.lat});
 
   @override
   final String? addImage;
@@ -190,19 +167,15 @@ class _$UpdatePostInfo$ implements UpdatePostInfo$ {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is UpdatePostInfo$ &&
-            (identical(other.addImage, addImage) ||
-                other.addImage == addImage) &&
-            (identical(other.removeImage, removeImage) ||
-                other.removeImage == removeImage) &&
-            (identical(other.description, description) ||
-                other.description == description) &&
+            (identical(other.addImage, addImage) || other.addImage == addImage) &&
+            (identical(other.removeImage, removeImage) || other.removeImage == removeImage) &&
+            (identical(other.description, description) || other.description == description) &&
             (identical(other.lng, lng) || other.lng == lng) &&
             (identical(other.lat, lat) || other.lat == lat));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, addImage, removeImage, description, lng, lat);
+  int get hashCode => Object.hash(runtimeType, addImage, removeImage, description, lng, lat);
 
   @JsonKey(ignore: true)
   @override
@@ -212,11 +185,7 @@ class _$UpdatePostInfo$ implements UpdatePostInfo$ {
 
 abstract class UpdatePostInfo$ implements UpdatePostInfo {
   const factory UpdatePostInfo$(
-      {String? addImage,
-      String? removeImage,
-      String? description,
-      double? lng,
-      double? lat}) = _$UpdatePostInfo$;
+      {String? addImage, String? removeImage, String? description, double? lng, double? lat}) = _$UpdatePostInfo$;
 
   @override
   String? get addImage;
@@ -230,6 +199,5 @@ abstract class UpdatePostInfo$ implements UpdatePostInfo {
   double? get lat;
   @override
   @JsonKey(ignore: true)
-  $UpdatePostInfo$CopyWith<UpdatePostInfo$> get copyWith =>
-      throw _privateConstructorUsedError;
+  $UpdatePostInfo$CopyWith<UpdatePostInfo$> get copyWith => throw _privateConstructorUsedError;
 }

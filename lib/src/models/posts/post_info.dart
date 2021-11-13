@@ -3,12 +3,11 @@ part of posts_models;
 abstract class PostInfo implements Built<PostInfo, PostInfoBuilder> {
   factory PostInfo([void Function(PostInfoBuilder b) updates]) = _$PostInfo;
 
-
   factory PostInfo.fromJson(dynamic json) => serializers.deserializeWith<dynamic>(serializer, json);
 
   PostInfo._();
 
-  BuiltList<String> get paths;
+  BuiltList<String>? get paths;
 
   String? get description;
 

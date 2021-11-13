@@ -17,10 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$LoginWithEmailTearOff {
   const _$LoginWithEmailTearOff();
 
-  LoginWithEmail$ call(
-      {required String email,
-      required String password,
-      required ActionResponse response}) {
+  LoginWithEmail$ call({required String email, required String password, required ActionResponse response}) {
     return LoginWithEmail$(
       email: email,
       password: password,
@@ -48,24 +45,21 @@ const $LoginWithEmail = _$LoginWithEmailTearOff();
 mixin _$LoginWithEmail {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String email, String password, ActionResponse response)
-        $default, {
+    TResult Function(String email, String password, ActionResponse response) $default, {
     required TResult Function(AppUser user) successful,
     required TResult Function(Object error) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult Function(String email, String password, ActionResponse response)?
-        $default, {
+    TResult Function(String email, String password, ActionResponse response)? $default, {
     TResult Function(AppUser user)? successful,
     TResult Function(Object error)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String email, String password, ActionResponse response)?
-        $default, {
+    TResult Function(String email, String password, ActionResponse response)? $default, {
     TResult Function(AppUser user)? successful,
     TResult Function(Object error)? error,
     required TResult orElse(),
@@ -97,14 +91,12 @@ mixin _$LoginWithEmail {
 
 /// @nodoc
 abstract class $LoginWithEmailCopyWith<$Res> {
-  factory $LoginWithEmailCopyWith(
-          LoginWithEmail value, $Res Function(LoginWithEmail) then) =
+  factory $LoginWithEmailCopyWith(LoginWithEmail value, $Res Function(LoginWithEmail) then) =
       _$LoginWithEmailCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$LoginWithEmailCopyWithImpl<$Res>
-    implements $LoginWithEmailCopyWith<$Res> {
+class _$LoginWithEmailCopyWithImpl<$Res> implements $LoginWithEmailCopyWith<$Res> {
   _$LoginWithEmailCopyWithImpl(this._value, this._then);
 
   final LoginWithEmail _value;
@@ -114,18 +106,15 @@ class _$LoginWithEmailCopyWithImpl<$Res>
 
 /// @nodoc
 abstract class $LoginWithEmail$CopyWith<$Res> {
-  factory $LoginWithEmail$CopyWith(
-          LoginWithEmail$ value, $Res Function(LoginWithEmail$) then) =
+  factory $LoginWithEmail$CopyWith(LoginWithEmail$ value, $Res Function(LoginWithEmail$) then) =
       _$LoginWithEmail$CopyWithImpl<$Res>;
   $Res call({String email, String password, ActionResponse response});
 }
 
 /// @nodoc
-class _$LoginWithEmail$CopyWithImpl<$Res>
-    extends _$LoginWithEmailCopyWithImpl<$Res>
+class _$LoginWithEmail$CopyWithImpl<$Res> extends _$LoginWithEmailCopyWithImpl<$Res>
     implements $LoginWithEmail$CopyWith<$Res> {
-  _$LoginWithEmail$CopyWithImpl(
-      LoginWithEmail$ _value, $Res Function(LoginWithEmail$) _then)
+  _$LoginWithEmail$CopyWithImpl(LoginWithEmail$ _value, $Res Function(LoginWithEmail$) _then)
       : super(_value, (v) => _then(v as LoginWithEmail$));
 
   @override
@@ -157,8 +146,7 @@ class _$LoginWithEmail$CopyWithImpl<$Res>
 /// @nodoc
 
 class _$LoginWithEmail$ implements LoginWithEmail$ {
-  const _$LoginWithEmail$(
-      {required this.email, required this.password, required this.response});
+  const _$LoginWithEmail$({required this.email, required this.password, required this.response});
 
   @override
   final String email;
@@ -178,10 +166,8 @@ class _$LoginWithEmail$ implements LoginWithEmail$ {
         (other.runtimeType == runtimeType &&
             other is LoginWithEmail$ &&
             (identical(other.email, email) || other.email == email) &&
-            (identical(other.password, password) ||
-                other.password == password) &&
-            (identical(other.response, response) ||
-                other.response == response));
+            (identical(other.password, password) || other.password == password) &&
+            (identical(other.response, response) || other.response == response));
   }
 
   @override
@@ -195,8 +181,7 @@ class _$LoginWithEmail$ implements LoginWithEmail$ {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String email, String password, ActionResponse response)
-        $default, {
+    TResult Function(String email, String password, ActionResponse response) $default, {
     required TResult Function(AppUser user) successful,
     required TResult Function(Object error) error,
   }) {
@@ -206,8 +191,7 @@ class _$LoginWithEmail$ implements LoginWithEmail$ {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult Function(String email, String password, ActionResponse response)?
-        $default, {
+    TResult Function(String email, String password, ActionResponse response)? $default, {
     TResult Function(AppUser user)? successful,
     TResult Function(Object error)? error,
   }) {
@@ -217,8 +201,7 @@ class _$LoginWithEmail$ implements LoginWithEmail$ {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String email, String password, ActionResponse response)?
-        $default, {
+    TResult Function(String email, String password, ActionResponse response)? $default, {
     TResult Function(AppUser user)? successful,
     TResult Function(Object error)? error,
     required TResult orElse(),
@@ -265,38 +248,32 @@ class _$LoginWithEmail$ implements LoginWithEmail$ {
 }
 
 abstract class LoginWithEmail$ implements LoginWithEmail {
-  const factory LoginWithEmail$(
-      {required String email,
-      required String password,
-      required ActionResponse response}) = _$LoginWithEmail$;
+  const factory LoginWithEmail$({required String email, required String password, required ActionResponse response}) =
+      _$LoginWithEmail$;
 
   String get email;
   String get password;
   ActionResponse get response;
   @JsonKey(ignore: true)
-  $LoginWithEmail$CopyWith<LoginWithEmail$> get copyWith =>
-      throw _privateConstructorUsedError;
+  $LoginWithEmail$CopyWith<LoginWithEmail$> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $LoginWithEmailSuccessfulCopyWith<$Res> {
-  factory $LoginWithEmailSuccessfulCopyWith(LoginWithEmailSuccessful value,
-          $Res Function(LoginWithEmailSuccessful) then) =
+  factory $LoginWithEmailSuccessfulCopyWith(
+          LoginWithEmailSuccessful value, $Res Function(LoginWithEmailSuccessful) then) =
       _$LoginWithEmailSuccessfulCopyWithImpl<$Res>;
   $Res call({AppUser user});
 }
 
 /// @nodoc
-class _$LoginWithEmailSuccessfulCopyWithImpl<$Res>
-    extends _$LoginWithEmailCopyWithImpl<$Res>
+class _$LoginWithEmailSuccessfulCopyWithImpl<$Res> extends _$LoginWithEmailCopyWithImpl<$Res>
     implements $LoginWithEmailSuccessfulCopyWith<$Res> {
-  _$LoginWithEmailSuccessfulCopyWithImpl(LoginWithEmailSuccessful _value,
-      $Res Function(LoginWithEmailSuccessful) _then)
+  _$LoginWithEmailSuccessfulCopyWithImpl(LoginWithEmailSuccessful _value, $Res Function(LoginWithEmailSuccessful) _then)
       : super(_value, (v) => _then(v as LoginWithEmailSuccessful));
 
   @override
-  LoginWithEmailSuccessful get _value =>
-      super._value as LoginWithEmailSuccessful;
+  LoginWithEmailSuccessful get _value => super._value as LoginWithEmailSuccessful;
 
   @override
   $Res call({
@@ -338,14 +315,12 @@ class _$LoginWithEmailSuccessful implements LoginWithEmailSuccessful {
   @JsonKey(ignore: true)
   @override
   $LoginWithEmailSuccessfulCopyWith<LoginWithEmailSuccessful> get copyWith =>
-      _$LoginWithEmailSuccessfulCopyWithImpl<LoginWithEmailSuccessful>(
-          this, _$identity);
+      _$LoginWithEmailSuccessfulCopyWithImpl<LoginWithEmailSuccessful>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String email, String password, ActionResponse response)
-        $default, {
+    TResult Function(String email, String password, ActionResponse response) $default, {
     required TResult Function(AppUser user) successful,
     required TResult Function(Object error) error,
   }) {
@@ -355,8 +330,7 @@ class _$LoginWithEmailSuccessful implements LoginWithEmailSuccessful {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult Function(String email, String password, ActionResponse response)?
-        $default, {
+    TResult Function(String email, String password, ActionResponse response)? $default, {
     TResult Function(AppUser user)? successful,
     TResult Function(Object error)? error,
   }) {
@@ -366,8 +340,7 @@ class _$LoginWithEmailSuccessful implements LoginWithEmailSuccessful {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String email, String password, ActionResponse response)?
-        $default, {
+    TResult Function(String email, String password, ActionResponse response)? $default, {
     TResult Function(AppUser user)? successful,
     TResult Function(Object error)? error,
     required TResult orElse(),
@@ -414,29 +387,24 @@ class _$LoginWithEmailSuccessful implements LoginWithEmailSuccessful {
 }
 
 abstract class LoginWithEmailSuccessful implements LoginWithEmail {
-  const factory LoginWithEmailSuccessful(AppUser user) =
-      _$LoginWithEmailSuccessful;
+  const factory LoginWithEmailSuccessful(AppUser user) = _$LoginWithEmailSuccessful;
 
   AppUser get user;
   @JsonKey(ignore: true)
-  $LoginWithEmailSuccessfulCopyWith<LoginWithEmailSuccessful> get copyWith =>
-      throw _privateConstructorUsedError;
+  $LoginWithEmailSuccessfulCopyWith<LoginWithEmailSuccessful> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $LoginWithEmailErrorCopyWith<$Res> {
-  factory $LoginWithEmailErrorCopyWith(
-          LoginWithEmailError value, $Res Function(LoginWithEmailError) then) =
+  factory $LoginWithEmailErrorCopyWith(LoginWithEmailError value, $Res Function(LoginWithEmailError) then) =
       _$LoginWithEmailErrorCopyWithImpl<$Res>;
   $Res call({Object error});
 }
 
 /// @nodoc
-class _$LoginWithEmailErrorCopyWithImpl<$Res>
-    extends _$LoginWithEmailCopyWithImpl<$Res>
+class _$LoginWithEmailErrorCopyWithImpl<$Res> extends _$LoginWithEmailCopyWithImpl<$Res>
     implements $LoginWithEmailErrorCopyWith<$Res> {
-  _$LoginWithEmailErrorCopyWithImpl(
-      LoginWithEmailError _value, $Res Function(LoginWithEmailError) _then)
+  _$LoginWithEmailErrorCopyWithImpl(LoginWithEmailError _value, $Res Function(LoginWithEmailError) _then)
       : super(_value, (v) => _then(v as LoginWithEmailError));
 
   @override
@@ -478,8 +446,7 @@ class _$LoginWithEmailError implements LoginWithEmailError {
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(error));
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error));
 
   @JsonKey(ignore: true)
   @override
@@ -489,8 +456,7 @@ class _$LoginWithEmailError implements LoginWithEmailError {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String email, String password, ActionResponse response)
-        $default, {
+    TResult Function(String email, String password, ActionResponse response) $default, {
     required TResult Function(AppUser user) successful,
     required TResult Function(Object error) error,
   }) {
@@ -500,8 +466,7 @@ class _$LoginWithEmailError implements LoginWithEmailError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult Function(String email, String password, ActionResponse response)?
-        $default, {
+    TResult Function(String email, String password, ActionResponse response)? $default, {
     TResult Function(AppUser user)? successful,
     TResult Function(Object error)? error,
   }) {
@@ -511,8 +476,7 @@ class _$LoginWithEmailError implements LoginWithEmailError {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String email, String password, ActionResponse response)?
-        $default, {
+    TResult Function(String email, String password, ActionResponse response)? $default, {
     TResult Function(AppUser user)? successful,
     TResult Function(Object error)? error,
     required TResult orElse(),
@@ -563,8 +527,7 @@ abstract class LoginWithEmailError implements LoginWithEmail, ErrorAction {
 
   Object get error;
   @JsonKey(ignore: true)
-  $LoginWithEmailErrorCopyWith<LoginWithEmailError> get copyWith =>
-      throw _privateConstructorUsedError;
+  $LoginWithEmailErrorCopyWith<LoginWithEmailError> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -643,14 +606,12 @@ mixin _$LoginWithGoogle {
 
 /// @nodoc
 abstract class $LoginWithGoogleCopyWith<$Res> {
-  factory $LoginWithGoogleCopyWith(
-          LoginWithGoogle value, $Res Function(LoginWithGoogle) then) =
+  factory $LoginWithGoogleCopyWith(LoginWithGoogle value, $Res Function(LoginWithGoogle) then) =
       _$LoginWithGoogleCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$LoginWithGoogleCopyWithImpl<$Res>
-    implements $LoginWithGoogleCopyWith<$Res> {
+class _$LoginWithGoogleCopyWithImpl<$Res> implements $LoginWithGoogleCopyWith<$Res> {
   _$LoginWithGoogleCopyWithImpl(this._value, this._then);
 
   final LoginWithGoogle _value;
@@ -660,18 +621,15 @@ class _$LoginWithGoogleCopyWithImpl<$Res>
 
 /// @nodoc
 abstract class $LoginWithGoogle$CopyWith<$Res> {
-  factory $LoginWithGoogle$CopyWith(
-          LoginWithGoogle$ value, $Res Function(LoginWithGoogle$) then) =
+  factory $LoginWithGoogle$CopyWith(LoginWithGoogle$ value, $Res Function(LoginWithGoogle$) then) =
       _$LoginWithGoogle$CopyWithImpl<$Res>;
   $Res call({ActionResponse response});
 }
 
 /// @nodoc
-class _$LoginWithGoogle$CopyWithImpl<$Res>
-    extends _$LoginWithGoogleCopyWithImpl<$Res>
+class _$LoginWithGoogle$CopyWithImpl<$Res> extends _$LoginWithGoogleCopyWithImpl<$Res>
     implements $LoginWithGoogle$CopyWith<$Res> {
-  _$LoginWithGoogle$CopyWithImpl(
-      LoginWithGoogle$ _value, $Res Function(LoginWithGoogle$) _then)
+  _$LoginWithGoogle$CopyWithImpl(LoginWithGoogle$ _value, $Res Function(LoginWithGoogle$) _then)
       : super(_value, (v) => _then(v as LoginWithGoogle$));
 
   @override
@@ -708,8 +666,7 @@ class _$LoginWithGoogle$ implements LoginWithGoogle$ {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is LoginWithGoogle$ &&
-            (identical(other.response, response) ||
-                other.response == response));
+            (identical(other.response, response) || other.response == response));
   }
 
   @override
@@ -794,29 +751,26 @@ abstract class LoginWithGoogle$ implements LoginWithGoogle {
 
   ActionResponse get response;
   @JsonKey(ignore: true)
-  $LoginWithGoogle$CopyWith<LoginWithGoogle$> get copyWith =>
-      throw _privateConstructorUsedError;
+  $LoginWithGoogle$CopyWith<LoginWithGoogle$> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $LoginWithGoogleSuccessfulCopyWith<$Res> {
-  factory $LoginWithGoogleSuccessfulCopyWith(LoginWithGoogleSuccessful value,
-          $Res Function(LoginWithGoogleSuccessful) then) =
+  factory $LoginWithGoogleSuccessfulCopyWith(
+          LoginWithGoogleSuccessful value, $Res Function(LoginWithGoogleSuccessful) then) =
       _$LoginWithGoogleSuccessfulCopyWithImpl<$Res>;
   $Res call({AppUser? user});
 }
 
 /// @nodoc
-class _$LoginWithGoogleSuccessfulCopyWithImpl<$Res>
-    extends _$LoginWithGoogleCopyWithImpl<$Res>
+class _$LoginWithGoogleSuccessfulCopyWithImpl<$Res> extends _$LoginWithGoogleCopyWithImpl<$Res>
     implements $LoginWithGoogleSuccessfulCopyWith<$Res> {
-  _$LoginWithGoogleSuccessfulCopyWithImpl(LoginWithGoogleSuccessful _value,
-      $Res Function(LoginWithGoogleSuccessful) _then)
+  _$LoginWithGoogleSuccessfulCopyWithImpl(
+      LoginWithGoogleSuccessful _value, $Res Function(LoginWithGoogleSuccessful) _then)
       : super(_value, (v) => _then(v as LoginWithGoogleSuccessful));
 
   @override
-  LoginWithGoogleSuccessful get _value =>
-      super._value as LoginWithGoogleSuccessful;
+  LoginWithGoogleSuccessful get _value => super._value as LoginWithGoogleSuccessful;
 
   @override
   $Res call({
@@ -858,8 +812,7 @@ class _$LoginWithGoogleSuccessful implements LoginWithGoogleSuccessful {
   @JsonKey(ignore: true)
   @override
   $LoginWithGoogleSuccessfulCopyWith<LoginWithGoogleSuccessful> get copyWith =>
-      _$LoginWithGoogleSuccessfulCopyWithImpl<LoginWithGoogleSuccessful>(
-          this, _$identity);
+      _$LoginWithGoogleSuccessfulCopyWithImpl<LoginWithGoogleSuccessful>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -931,29 +884,24 @@ class _$LoginWithGoogleSuccessful implements LoginWithGoogleSuccessful {
 }
 
 abstract class LoginWithGoogleSuccessful implements LoginWithGoogle {
-  const factory LoginWithGoogleSuccessful(AppUser? user) =
-      _$LoginWithGoogleSuccessful;
+  const factory LoginWithGoogleSuccessful(AppUser? user) = _$LoginWithGoogleSuccessful;
 
   AppUser? get user;
   @JsonKey(ignore: true)
-  $LoginWithGoogleSuccessfulCopyWith<LoginWithGoogleSuccessful> get copyWith =>
-      throw _privateConstructorUsedError;
+  $LoginWithGoogleSuccessfulCopyWith<LoginWithGoogleSuccessful> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $LoginWithGoogleErrorCopyWith<$Res> {
-  factory $LoginWithGoogleErrorCopyWith(LoginWithGoogleError value,
-          $Res Function(LoginWithGoogleError) then) =
+  factory $LoginWithGoogleErrorCopyWith(LoginWithGoogleError value, $Res Function(LoginWithGoogleError) then) =
       _$LoginWithGoogleErrorCopyWithImpl<$Res>;
   $Res call({Object error});
 }
 
 /// @nodoc
-class _$LoginWithGoogleErrorCopyWithImpl<$Res>
-    extends _$LoginWithGoogleCopyWithImpl<$Res>
+class _$LoginWithGoogleErrorCopyWithImpl<$Res> extends _$LoginWithGoogleCopyWithImpl<$Res>
     implements $LoginWithGoogleErrorCopyWith<$Res> {
-  _$LoginWithGoogleErrorCopyWithImpl(
-      LoginWithGoogleError _value, $Res Function(LoginWithGoogleError) _then)
+  _$LoginWithGoogleErrorCopyWithImpl(LoginWithGoogleError _value, $Res Function(LoginWithGoogleError) _then)
       : super(_value, (v) => _then(v as LoginWithGoogleError));
 
   @override
@@ -995,14 +943,12 @@ class _$LoginWithGoogleError implements LoginWithGoogleError {
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(error));
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error));
 
   @JsonKey(ignore: true)
   @override
   $LoginWithGoogleErrorCopyWith<LoginWithGoogleError> get copyWith =>
-      _$LoginWithGoogleErrorCopyWithImpl<LoginWithGoogleError>(
-          this, _$identity);
+      _$LoginWithGoogleErrorCopyWithImpl<LoginWithGoogleError>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1078,16 +1024,14 @@ abstract class LoginWithGoogleError implements LoginWithGoogle, ErrorAction {
 
   Object get error;
   @JsonKey(ignore: true)
-  $LoginWithGoogleErrorCopyWith<LoginWithGoogleError> get copyWith =>
-      throw _privateConstructorUsedError;
+  $LoginWithGoogleErrorCopyWith<LoginWithGoogleError> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 class _$ResetPasswordTearOff {
   const _$ResetPasswordTearOff();
 
-  ResetPassword$ call(
-      {required String email, required ActionResponse response}) {
+  ResetPassword$ call({required String email, required ActionResponse response}) {
     return ResetPassword$(
       email: email,
       response: response,
@@ -1158,14 +1102,12 @@ mixin _$ResetPassword {
 
 /// @nodoc
 abstract class $ResetPasswordCopyWith<$Res> {
-  factory $ResetPasswordCopyWith(
-          ResetPassword value, $Res Function(ResetPassword) then) =
+  factory $ResetPasswordCopyWith(ResetPassword value, $Res Function(ResetPassword) then) =
       _$ResetPasswordCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ResetPasswordCopyWithImpl<$Res>
-    implements $ResetPasswordCopyWith<$Res> {
+class _$ResetPasswordCopyWithImpl<$Res> implements $ResetPasswordCopyWith<$Res> {
   _$ResetPasswordCopyWithImpl(this._value, this._then);
 
   final ResetPassword _value;
@@ -1175,18 +1117,15 @@ class _$ResetPasswordCopyWithImpl<$Res>
 
 /// @nodoc
 abstract class $ResetPassword$CopyWith<$Res> {
-  factory $ResetPassword$CopyWith(
-          ResetPassword$ value, $Res Function(ResetPassword$) then) =
+  factory $ResetPassword$CopyWith(ResetPassword$ value, $Res Function(ResetPassword$) then) =
       _$ResetPassword$CopyWithImpl<$Res>;
   $Res call({String email, ActionResponse response});
 }
 
 /// @nodoc
-class _$ResetPassword$CopyWithImpl<$Res>
-    extends _$ResetPasswordCopyWithImpl<$Res>
+class _$ResetPassword$CopyWithImpl<$Res> extends _$ResetPasswordCopyWithImpl<$Res>
     implements $ResetPassword$CopyWith<$Res> {
-  _$ResetPassword$CopyWithImpl(
-      ResetPassword$ _value, $Res Function(ResetPassword$) _then)
+  _$ResetPassword$CopyWithImpl(ResetPassword$ _value, $Res Function(ResetPassword$) _then)
       : super(_value, (v) => _then(v as ResetPassword$));
 
   @override
@@ -1231,8 +1170,7 @@ class _$ResetPassword$ implements ResetPassword$ {
         (other.runtimeType == runtimeType &&
             other is ResetPassword$ &&
             (identical(other.email, email) || other.email == email) &&
-            (identical(other.response, response) ||
-                other.response == response));
+            (identical(other.response, response) || other.response == response));
   }
 
   @override
@@ -1313,30 +1251,24 @@ class _$ResetPassword$ implements ResetPassword$ {
 }
 
 abstract class ResetPassword$ implements ResetPassword {
-  const factory ResetPassword$(
-      {required String email,
-      required ActionResponse response}) = _$ResetPassword$;
+  const factory ResetPassword$({required String email, required ActionResponse response}) = _$ResetPassword$;
 
   String get email;
   ActionResponse get response;
   @JsonKey(ignore: true)
-  $ResetPassword$CopyWith<ResetPassword$> get copyWith =>
-      throw _privateConstructorUsedError;
+  $ResetPassword$CopyWith<ResetPassword$> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ResetPasswordSuccessfulCopyWith<$Res> {
-  factory $ResetPasswordSuccessfulCopyWith(ResetPasswordSuccessful value,
-          $Res Function(ResetPasswordSuccessful) then) =
+  factory $ResetPasswordSuccessfulCopyWith(ResetPasswordSuccessful value, $Res Function(ResetPasswordSuccessful) then) =
       _$ResetPasswordSuccessfulCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ResetPasswordSuccessfulCopyWithImpl<$Res>
-    extends _$ResetPasswordCopyWithImpl<$Res>
+class _$ResetPasswordSuccessfulCopyWithImpl<$Res> extends _$ResetPasswordCopyWithImpl<$Res>
     implements $ResetPasswordSuccessfulCopyWith<$Res> {
-  _$ResetPasswordSuccessfulCopyWithImpl(ResetPasswordSuccessful _value,
-      $Res Function(ResetPasswordSuccessful) _then)
+  _$ResetPasswordSuccessfulCopyWithImpl(ResetPasswordSuccessful _value, $Res Function(ResetPasswordSuccessful) _then)
       : super(_value, (v) => _then(v as ResetPasswordSuccessful));
 
   @override
@@ -1355,8 +1287,7 @@ class _$ResetPasswordSuccessful implements ResetPasswordSuccessful {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is ResetPasswordSuccessful);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is ResetPasswordSuccessful);
   }
 
   @override
@@ -1437,18 +1368,15 @@ abstract class ResetPasswordSuccessful implements ResetPassword {
 
 /// @nodoc
 abstract class $ResetPasswordErrorCopyWith<$Res> {
-  factory $ResetPasswordErrorCopyWith(
-          ResetPasswordError value, $Res Function(ResetPasswordError) then) =
+  factory $ResetPasswordErrorCopyWith(ResetPasswordError value, $Res Function(ResetPasswordError) then) =
       _$ResetPasswordErrorCopyWithImpl<$Res>;
   $Res call({Object error});
 }
 
 /// @nodoc
-class _$ResetPasswordErrorCopyWithImpl<$Res>
-    extends _$ResetPasswordCopyWithImpl<$Res>
+class _$ResetPasswordErrorCopyWithImpl<$Res> extends _$ResetPasswordCopyWithImpl<$Res>
     implements $ResetPasswordErrorCopyWith<$Res> {
-  _$ResetPasswordErrorCopyWithImpl(
-      ResetPasswordError _value, $Res Function(ResetPasswordError) _then)
+  _$ResetPasswordErrorCopyWithImpl(ResetPasswordError _value, $Res Function(ResetPasswordError) _then)
       : super(_value, (v) => _then(v as ResetPasswordError));
 
   @override
@@ -1490,8 +1418,7 @@ class _$ResetPasswordError implements ResetPasswordError {
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(error));
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error));
 
   @JsonKey(ignore: true)
   @override
@@ -1572,16 +1499,14 @@ abstract class ResetPasswordError implements ResetPassword, ErrorAction {
 
   Object get error;
   @JsonKey(ignore: true)
-  $ResetPasswordErrorCopyWith<ResetPasswordError> get copyWith =>
-      throw _privateConstructorUsedError;
+  $ResetPasswordErrorCopyWith<ResetPasswordError> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 class _$UpdateRegistrationInfoTearOff {
   const _$UpdateRegistrationInfoTearOff();
 
-  UpdateRegistrationInfo$ call(
-      {String? email, String? password, String? username}) {
+  UpdateRegistrationInfo$ call({String? email, String? password, String? username}) {
     return UpdateRegistrationInfo$(
       email: email,
       password: password,
@@ -1600,21 +1525,18 @@ mixin _$UpdateRegistrationInfo {
   String? get username => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $UpdateRegistrationInfoCopyWith<UpdateRegistrationInfo> get copyWith =>
-      throw _privateConstructorUsedError;
+  $UpdateRegistrationInfoCopyWith<UpdateRegistrationInfo> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $UpdateRegistrationInfoCopyWith<$Res> {
-  factory $UpdateRegistrationInfoCopyWith(UpdateRegistrationInfo value,
-          $Res Function(UpdateRegistrationInfo) then) =
+  factory $UpdateRegistrationInfoCopyWith(UpdateRegistrationInfo value, $Res Function(UpdateRegistrationInfo) then) =
       _$UpdateRegistrationInfoCopyWithImpl<$Res>;
   $Res call({String? email, String? password, String? username});
 }
 
 /// @nodoc
-class _$UpdateRegistrationInfoCopyWithImpl<$Res>
-    implements $UpdateRegistrationInfoCopyWith<$Res> {
+class _$UpdateRegistrationInfoCopyWithImpl<$Res> implements $UpdateRegistrationInfoCopyWith<$Res> {
   _$UpdateRegistrationInfoCopyWithImpl(this._value, this._then);
 
   final UpdateRegistrationInfo _value;
@@ -1645,21 +1567,17 @@ class _$UpdateRegistrationInfoCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class $UpdateRegistrationInfo$CopyWith<$Res>
-    implements $UpdateRegistrationInfoCopyWith<$Res> {
-  factory $UpdateRegistrationInfo$CopyWith(UpdateRegistrationInfo$ value,
-          $Res Function(UpdateRegistrationInfo$) then) =
+abstract class $UpdateRegistrationInfo$CopyWith<$Res> implements $UpdateRegistrationInfoCopyWith<$Res> {
+  factory $UpdateRegistrationInfo$CopyWith(UpdateRegistrationInfo$ value, $Res Function(UpdateRegistrationInfo$) then) =
       _$UpdateRegistrationInfo$CopyWithImpl<$Res>;
   @override
   $Res call({String? email, String? password, String? username});
 }
 
 /// @nodoc
-class _$UpdateRegistrationInfo$CopyWithImpl<$Res>
-    extends _$UpdateRegistrationInfoCopyWithImpl<$Res>
+class _$UpdateRegistrationInfo$CopyWithImpl<$Res> extends _$UpdateRegistrationInfoCopyWithImpl<$Res>
     implements $UpdateRegistrationInfo$CopyWith<$Res> {
-  _$UpdateRegistrationInfo$CopyWithImpl(UpdateRegistrationInfo$ _value,
-      $Res Function(UpdateRegistrationInfo$) _then)
+  _$UpdateRegistrationInfo$CopyWithImpl(UpdateRegistrationInfo$ _value, $Res Function(UpdateRegistrationInfo$) _then)
       : super(_value, (v) => _then(v as UpdateRegistrationInfo$));
 
   @override
@@ -1711,10 +1629,8 @@ class _$UpdateRegistrationInfo$ implements UpdateRegistrationInfo$ {
         (other.runtimeType == runtimeType &&
             other is UpdateRegistrationInfo$ &&
             (identical(other.email, email) || other.email == email) &&
-            (identical(other.password, password) ||
-                other.password == password) &&
-            (identical(other.username, username) ||
-                other.username == username));
+            (identical(other.password, password) || other.password == password) &&
+            (identical(other.username, username) || other.username == username));
   }
 
   @override
@@ -1723,15 +1639,12 @@ class _$UpdateRegistrationInfo$ implements UpdateRegistrationInfo$ {
   @JsonKey(ignore: true)
   @override
   $UpdateRegistrationInfo$CopyWith<UpdateRegistrationInfo$> get copyWith =>
-      _$UpdateRegistrationInfo$CopyWithImpl<UpdateRegistrationInfo$>(
-          this, _$identity);
+      _$UpdateRegistrationInfo$CopyWithImpl<UpdateRegistrationInfo$>(this, _$identity);
 }
 
 abstract class UpdateRegistrationInfo$ implements UpdateRegistrationInfo {
-  const factory UpdateRegistrationInfo$(
-      {String? email,
-      String? password,
-      String? username}) = _$UpdateRegistrationInfo$;
+  const factory UpdateRegistrationInfo$({String? email, String? password, String? username}) =
+      _$UpdateRegistrationInfo$;
 
   @override
   String? get email;
@@ -1741,8 +1654,7 @@ abstract class UpdateRegistrationInfo$ implements UpdateRegistrationInfo {
   String? get username;
   @override
   @JsonKey(ignore: true)
-  $UpdateRegistrationInfo$CopyWith<UpdateRegistrationInfo$> get copyWith =>
-      throw _privateConstructorUsedError;
+  $UpdateRegistrationInfo$CopyWith<UpdateRegistrationInfo$> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1819,8 +1731,7 @@ mixin _$SignOut {
 
 /// @nodoc
 abstract class $SignOutCopyWith<$Res> {
-  factory $SignOutCopyWith(SignOut value, $Res Function(SignOut) then) =
-      _$SignOutCopyWithImpl<$Res>;
+  factory $SignOutCopyWith(SignOut value, $Res Function(SignOut) then) = _$SignOutCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -1834,16 +1745,13 @@ class _$SignOutCopyWithImpl<$Res> implements $SignOutCopyWith<$Res> {
 
 /// @nodoc
 abstract class $SignOut$CopyWith<$Res> {
-  factory $SignOut$CopyWith(SignOut$ value, $Res Function(SignOut$) then) =
-      _$SignOut$CopyWithImpl<$Res>;
+  factory $SignOut$CopyWith(SignOut$ value, $Res Function(SignOut$) then) = _$SignOut$CopyWithImpl<$Res>;
   $Res call({ActionResponse response});
 }
 
 /// @nodoc
-class _$SignOut$CopyWithImpl<$Res> extends _$SignOutCopyWithImpl<$Res>
-    implements $SignOut$CopyWith<$Res> {
-  _$SignOut$CopyWithImpl(SignOut$ _value, $Res Function(SignOut$) _then)
-      : super(_value, (v) => _then(v as SignOut$));
+class _$SignOut$CopyWithImpl<$Res> extends _$SignOutCopyWithImpl<$Res> implements $SignOut$CopyWith<$Res> {
+  _$SignOut$CopyWithImpl(SignOut$ _value, $Res Function(SignOut$) _then) : super(_value, (v) => _then(v as SignOut$));
 
   @override
   SignOut$ get _value => super._value as SignOut$;
@@ -1879,8 +1787,7 @@ class _$SignOut$ implements SignOut$ {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is SignOut$ &&
-            (identical(other.response, response) ||
-                other.response == response));
+            (identical(other.response, response) || other.response == response));
   }
 
   @override
@@ -1888,8 +1795,7 @@ class _$SignOut$ implements SignOut$ {
 
   @JsonKey(ignore: true)
   @override
-  $SignOut$CopyWith<SignOut$> get copyWith =>
-      _$SignOut$CopyWithImpl<SignOut$>(this, _$identity);
+  $SignOut$CopyWith<SignOut$> get copyWith => _$SignOut$CopyWithImpl<SignOut$>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1965,22 +1871,19 @@ abstract class SignOut$ implements SignOut {
 
   ActionResponse get response;
   @JsonKey(ignore: true)
-  $SignOut$CopyWith<SignOut$> get copyWith =>
-      throw _privateConstructorUsedError;
+  $SignOut$CopyWith<SignOut$> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $SignOutSuccessfulCopyWith<$Res> {
-  factory $SignOutSuccessfulCopyWith(
-          SignOutSuccessful value, $Res Function(SignOutSuccessful) then) =
+  factory $SignOutSuccessfulCopyWith(SignOutSuccessful value, $Res Function(SignOutSuccessful) then) =
       _$SignOutSuccessfulCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class _$SignOutSuccessfulCopyWithImpl<$Res> extends _$SignOutCopyWithImpl<$Res>
     implements $SignOutSuccessfulCopyWith<$Res> {
-  _$SignOutSuccessfulCopyWithImpl(
-      SignOutSuccessful _value, $Res Function(SignOutSuccessful) _then)
+  _$SignOutSuccessfulCopyWithImpl(SignOutSuccessful _value, $Res Function(SignOutSuccessful) _then)
       : super(_value, (v) => _then(v as SignOutSuccessful));
 
   @override
@@ -1999,8 +1902,7 @@ class _$SignOutSuccessful implements SignOutSuccessful {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is SignOutSuccessful);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is SignOutSuccessful);
   }
 
   @override
@@ -2081,17 +1983,14 @@ abstract class SignOutSuccessful implements SignOut {
 
 /// @nodoc
 abstract class $SignOutErrorCopyWith<$Res> {
-  factory $SignOutErrorCopyWith(
-          SignOutError value, $Res Function(SignOutError) then) =
+  factory $SignOutErrorCopyWith(SignOutError value, $Res Function(SignOutError) then) =
       _$SignOutErrorCopyWithImpl<$Res>;
   $Res call({Object error});
 }
 
 /// @nodoc
-class _$SignOutErrorCopyWithImpl<$Res> extends _$SignOutCopyWithImpl<$Res>
-    implements $SignOutErrorCopyWith<$Res> {
-  _$SignOutErrorCopyWithImpl(
-      SignOutError _value, $Res Function(SignOutError) _then)
+class _$SignOutErrorCopyWithImpl<$Res> extends _$SignOutCopyWithImpl<$Res> implements $SignOutErrorCopyWith<$Res> {
+  _$SignOutErrorCopyWithImpl(SignOutError _value, $Res Function(SignOutError) _then)
       : super(_value, (v) => _then(v as SignOutError));
 
   @override
@@ -2133,13 +2032,11 @@ class _$SignOutError implements SignOutError {
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(error));
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error));
 
   @JsonKey(ignore: true)
   @override
-  $SignOutErrorCopyWith<SignOutError> get copyWith =>
-      _$SignOutErrorCopyWithImpl<SignOutError>(this, _$identity);
+  $SignOutErrorCopyWith<SignOutError> get copyWith => _$SignOutErrorCopyWithImpl<SignOutError>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2215,8 +2112,7 @@ abstract class SignOutError implements SignOut, ErrorAction {
 
   Object get error;
   @JsonKey(ignore: true)
-  $SignOutErrorCopyWith<SignOutError> get copyWith =>
-      throw _privateConstructorUsedError;
+  $SignOutErrorCopyWith<SignOutError> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -2295,8 +2191,7 @@ mixin _$Signup {
 
 /// @nodoc
 abstract class $SignupCopyWith<$Res> {
-  factory $SignupCopyWith(Signup value, $Res Function(Signup) then) =
-      _$SignupCopyWithImpl<$Res>;
+  factory $SignupCopyWith(Signup value, $Res Function(Signup) then) = _$SignupCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -2310,16 +2205,13 @@ class _$SignupCopyWithImpl<$Res> implements $SignupCopyWith<$Res> {
 
 /// @nodoc
 abstract class $Signup$CopyWith<$Res> {
-  factory $Signup$CopyWith(Signup$ value, $Res Function(Signup$) then) =
-      _$Signup$CopyWithImpl<$Res>;
+  factory $Signup$CopyWith(Signup$ value, $Res Function(Signup$) then) = _$Signup$CopyWithImpl<$Res>;
   $Res call({ActionResponse response});
 }
 
 /// @nodoc
-class _$Signup$CopyWithImpl<$Res> extends _$SignupCopyWithImpl<$Res>
-    implements $Signup$CopyWith<$Res> {
-  _$Signup$CopyWithImpl(Signup$ _value, $Res Function(Signup$) _then)
-      : super(_value, (v) => _then(v as Signup$));
+class _$Signup$CopyWithImpl<$Res> extends _$SignupCopyWithImpl<$Res> implements $Signup$CopyWith<$Res> {
+  _$Signup$CopyWithImpl(Signup$ _value, $Res Function(Signup$) _then) : super(_value, (v) => _then(v as Signup$));
 
   @override
   Signup$ get _value => super._value as Signup$;
@@ -2355,8 +2247,7 @@ class _$Signup$ implements Signup$ {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is Signup$ &&
-            (identical(other.response, response) ||
-                other.response == response));
+            (identical(other.response, response) || other.response == response));
   }
 
   @override
@@ -2364,8 +2255,7 @@ class _$Signup$ implements Signup$ {
 
   @JsonKey(ignore: true)
   @override
-  $Signup$CopyWith<Signup$> get copyWith =>
-      _$Signup$CopyWithImpl<Signup$>(this, _$identity);
+  $Signup$CopyWith<Signup$> get copyWith => _$Signup$CopyWithImpl<Signup$>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2446,8 +2336,7 @@ abstract class Signup$ implements Signup {
 
 /// @nodoc
 abstract class $SignupSuccessfulCopyWith<$Res> {
-  factory $SignupSuccessfulCopyWith(
-          SignupSuccessful value, $Res Function(SignupSuccessful) then) =
+  factory $SignupSuccessfulCopyWith(SignupSuccessful value, $Res Function(SignupSuccessful) then) =
       _$SignupSuccessfulCopyWithImpl<$Res>;
   $Res call({AppUser user});
 }
@@ -2455,8 +2344,7 @@ abstract class $SignupSuccessfulCopyWith<$Res> {
 /// @nodoc
 class _$SignupSuccessfulCopyWithImpl<$Res> extends _$SignupCopyWithImpl<$Res>
     implements $SignupSuccessfulCopyWith<$Res> {
-  _$SignupSuccessfulCopyWithImpl(
-      SignupSuccessful _value, $Res Function(SignupSuccessful) _then)
+  _$SignupSuccessfulCopyWithImpl(SignupSuccessful _value, $Res Function(SignupSuccessful) _then)
       : super(_value, (v) => _then(v as SignupSuccessful));
 
   @override
@@ -2578,23 +2466,18 @@ abstract class SignupSuccessful implements Signup {
 
   AppUser get user;
   @JsonKey(ignore: true)
-  $SignupSuccessfulCopyWith<SignupSuccessful> get copyWith =>
-      throw _privateConstructorUsedError;
+  $SignupSuccessfulCopyWith<SignupSuccessful> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $SignupErrorCopyWith<$Res> {
-  factory $SignupErrorCopyWith(
-          SignupError value, $Res Function(SignupError) then) =
-      _$SignupErrorCopyWithImpl<$Res>;
+  factory $SignupErrorCopyWith(SignupError value, $Res Function(SignupError) then) = _$SignupErrorCopyWithImpl<$Res>;
   $Res call({Object error});
 }
 
 /// @nodoc
-class _$SignupErrorCopyWithImpl<$Res> extends _$SignupCopyWithImpl<$Res>
-    implements $SignupErrorCopyWith<$Res> {
-  _$SignupErrorCopyWithImpl(
-      SignupError _value, $Res Function(SignupError) _then)
+class _$SignupErrorCopyWithImpl<$Res> extends _$SignupCopyWithImpl<$Res> implements $SignupErrorCopyWith<$Res> {
+  _$SignupErrorCopyWithImpl(SignupError _value, $Res Function(SignupError) _then)
       : super(_value, (v) => _then(v as SignupError));
 
   @override
@@ -2636,13 +2519,11 @@ class _$SignupError implements SignupError {
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(error));
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error));
 
   @JsonKey(ignore: true)
   @override
-  $SignupErrorCopyWith<SignupError> get copyWith =>
-      _$SignupErrorCopyWithImpl<SignupError>(this, _$identity);
+  $SignupErrorCopyWith<SignupError> get copyWith => _$SignupErrorCopyWithImpl<SignupError>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2718,6 +2599,5 @@ abstract class SignupError implements Signup, ErrorAction {
 
   Object get error;
   @JsonKey(ignore: true)
-  $SignupErrorCopyWith<SignupError> get copyWith =>
-      throw _privateConstructorUsedError;
+  $SignupErrorCopyWith<SignupError> get copyWith => throw _privateConstructorUsedError;
 }

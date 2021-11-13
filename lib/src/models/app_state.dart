@@ -3,8 +3,9 @@ part of models;
 abstract class AppState implements Built<AppState, AppStateBuilder> {
   factory AppState.initialState() {
     return _$AppState((AppStateBuilder b) {
-      b..auth = AuthState.initialState().toBuilder()
-          ..posts = PostsState.initialState().toBuilder();
+      b
+        ..auth = AuthState.initialState().toBuilder()
+        ..posts = PostsState.initialState().toBuilder();
     });
   }
 

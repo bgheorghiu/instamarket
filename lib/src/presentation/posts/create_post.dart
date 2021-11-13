@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
-import 'package:http/http.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:instamarket/src/actions/posts/index.dart';
 import 'package:instamarket/src/containers/posts/index.dart';
@@ -27,8 +26,8 @@ class _CreatePostPageState extends State<CreatePostPage> {
           actions: <Widget>[
             TextButton(
               child: const Text('Next'),
-              onPressed: (){
-                if (postInfo.paths.isNotEmpty){
+              onPressed: () {
+                if (postInfo.paths != null && postInfo.paths!.isNotEmpty) {
                   Navigator.pushNamed(context, AppRoutes.postsDetails);
                 } else {
                   // show error
@@ -43,7 +42,7 @@ class _CreatePostPageState extends State<CreatePostPage> {
             mainAxisSpacing: 4.0,
             crossAxisSpacing: 4.0,
           ),
-          itemCount: postInfo.paths.length + 1,
+          itemCount: postInfo.paths != null ? (postInfo.paths!.length + 1) : 1,
           itemBuilder: (BuildContext context, int index) {
             if (index == 0) {
               return Center(
@@ -53,7 +52,7 @@ class _CreatePostPageState extends State<CreatePostPage> {
                     final XFile? file = await ImagePicker().pickImage(source: ImageSource.gallery);
 
                     if (file != null) {
-                      StoreProvider.of<AppState>(context).dispatch(UpdatePostInfo(addImage: file!.path));
+                      StoreProvider.of<AppState>(context).dispatch(UpdatePostInfo(addImage: file.path));
                     }
                   },
                 ),
@@ -61,13 +60,13 @@ class _CreatePostPageState extends State<CreatePostPage> {
             }
 
             return GridTile(
-              child: Image.file(File(postInfo.paths[index - 1])),
+              child: Image.file(File(postInfo.paths![index - 1])),
               header: GridTileBar(
                 trailing: IconButton(
                   icon: const Icon(Icons.delete),
                   onPressed: () {
                     StoreProvider.of<AppState>(context)
-                        .dispatch(UpdatePostInfo(removeImage: postInfo.paths[index - 1]));
+                        .dispatch(UpdatePostInfo(removeImage: postInfo.paths![index - 1]));
                   },
                 ),
               ),

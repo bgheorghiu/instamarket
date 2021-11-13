@@ -7,5 +7,3 @@ import 'package:instamarket/src/models/posts/index.dart';
 part 'index.freezed.dart';
 
 part 'set.dart';
-
-

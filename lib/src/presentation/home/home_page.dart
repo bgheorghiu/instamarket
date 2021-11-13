@@ -44,8 +44,8 @@ class _HomePageState extends State<HomePage> {
           if (i == 2) {
             final XFile? file = await ImagePicker().pickImage(source: ImageSource.gallery);
 
-            if(file != null) {
-              StoreProvider.of<AppState>(context).dispatch(UpdatePostInfo(addImage: file!.path));
+            if (file != null) {
+              StoreProvider.of<AppState>(context).dispatch(UpdatePostInfo(addImage: file.path));
             }
           } else {
             setState(() {
@@ -53,20 +53,26 @@ class _HomePageState extends State<HomePage> {
             });
           }
         },
+
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
+            label: '1',
             icon: Icon(Icons.home),
           ),
           BottomNavigationBarItem(
+            label: '2',
             icon: Icon(Icons.home),
           ),
           BottomNavigationBarItem(
+            label: '3',
             icon: Icon(Icons.home),
           ),
           BottomNavigationBarItem(
+            label: '4',
             icon: Icon(Icons.home),
           ),
           BottomNavigationBarItem(
+            label: '5',
             icon: Icon(Icons.home),
           ),
         ],

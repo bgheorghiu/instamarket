@@ -31,7 +31,7 @@ class _PostsDetailsPageState extends State<PostsDetailsPage> {
                   Stack(
                     children: <Widget>[
                       Image.file(
-                        File(postInfo.paths.first),
+                        File(postInfo.paths!.first),
                         width: 72.0,
                         height: 72.0,
                       ),
