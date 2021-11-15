@@ -33,94 +33,96 @@ class _LoginPageState extends State<LoginPage> with DialogMixin {
       appBar: AppBar(
         title: const Text('Login'),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Form(
-          child: Builder(
-            builder: (BuildContext context) {
-              return Column(
-                children: <Widget>[
-                  TextFormField(
-                    controller: _email,
-                    decoration: const InputDecoration(hintText: 'email'),
-                    keyboardType: TextInputType.emailAddress,
-                    onChanged: (String value) {},
-                    validator: (String? value) {
-                      if (value == null || !value.contains('@') || !value.contains('.')) {
-                        return 'Please enter a valid email address';
-                      }
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Form(
+            child: Builder(
+              builder: (BuildContext context) {
+                return Column(
+                  children: <Widget>[
+                    TextFormField(
+                      controller: _email,
+                      decoration: const InputDecoration(hintText: 'email'),
+                      keyboardType: TextInputType.emailAddress,
+                      onChanged: (String value) {},
+                      validator: (String? value) {
+                        if (value == null || !value.contains('@') || !value.contains('.')) {
+                          return 'Please enter a valid email address';
+                        }
 
-                      return null;
-                    },
-                  ),
-                  const Divider(),
-                  TextFormField(
-                    controller: _password,
-                    decoration: const InputDecoration(hintText: 'password'),
-                    keyboardType: TextInputType.emailAddress,
-                    obscureText: true,
-                    onChanged: (String value) {},
-                    validator: (String? value) {
-                      if (value == null || value.length < 6) {
-                        return 'Please try a better password';
-                      }
+                        return null;
+                      },
+                    ),
+                    const Divider(),
+                    TextFormField(
+                      controller: _password,
+                      decoration: const InputDecoration(hintText: 'password'),
+                      keyboardType: TextInputType.emailAddress,
+                      obscureText: true,
+                      onChanged: (String value) {},
+                      validator: (String? value) {
+                        if (value == null || value.length < 6) {
+                          return 'Please try a better password';
+                        }
 
-                      return null;
-                    },
-                  ),
-                  const Divider(),
-                  ButtonBar(
-                    children: <Widget>[
-                      TextButton(
-                        child: const Text('Sign in with Google'),
-                        onPressed: () {
-                          StoreProvider.of<AppState>(context).dispatch(LoginWithGoogle(_response));
-                        },
-                      ),
-                      TextButton(
-                        child: const Text('Reset password'),
-                        onPressed: () {
-                          Navigator.of(context).pushNamed(AppRoutes.resetPassword);
-                        },
-                      ),
-                    ],
-                  ),
-                  const Spacer(),
-                  TextButton(
-                    child: const Text('Login'),
-                    onPressed: () {
-                      if (Form.of(context)?.validate() == true) {
-                        StoreProvider.of<AppState>(context).dispatch(
-                          LoginWithEmail(
-                            email: _email.text,
-                            password: _password.text,
-                            response: _response,
-                          ),
-                        );
-                      }
-                    },
-                  ),
-                  const Divider(),
-                  Text.rich(
-                    TextSpan(
-                      text: 'You don\'t have an account',
-                      children: <TextSpan>[
-                        TextSpan(
-                          text: 'Sign up',
-                          style: const TextStyle(
-                            fontWeight: FontWeight.bold,
-                          ),
-                          recognizer: TapGestureRecognizer()
-                            ..onTap = () {
-                              Navigator.pushNamed(context, AppRoutes.signup);
-                            },
+                        return null;
+                      },
+                    ),
+                    const Divider(),
+                    ButtonBar(
+                      children: <Widget>[
+                        TextButton(
+                          child: const Text('Sign in with Google'),
+                          onPressed: () {
+                            StoreProvider.of<AppState>(context).dispatch(LoginWithGoogle(_response));
+                          },
+                        ),
+                        TextButton(
+                          child: const Text('Reset password'),
+                          onPressed: () {
+                            Navigator.of(context).pushNamed(AppRoutes.resetPassword);
+                          },
                         ),
                       ],
                     ),
-                  ),
-                ],
-              );
-            },
+                    const Spacer(),
+                    TextButton(
+                      child: const Text('Login'),
+                      onPressed: () {
+                        if (Form.of(context)?.validate() == true) {
+                          StoreProvider.of<AppState>(context).dispatch(
+                            LoginWithEmail(
+                              email: _email.text,
+                              password: _password.text,
+                              response: _response,
+                            ),
+                          );
+                        }
+                      },
+                    ),
+                    const Divider(),
+                    Text.rich(
+                      TextSpan(
+                        text: 'You don\'t have an account',
+                        children: <TextSpan>[
+                          TextSpan(
+                            text: ' Sign up',
+                            style: const TextStyle(
+                              fontWeight: FontWeight.bold,
+                            ),
+                            recognizer: TapGestureRecognizer()
+                              ..onTap = () {
+                                Navigator.pushNamed(context, AppRoutes.signup);
+                              },
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                );
+              },
+            ),
           ),
         ),
       ),

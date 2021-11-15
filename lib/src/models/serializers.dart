@@ -16,5 +16,6 @@ part 'serializers.g.dart';
   AppUser,
   PostsState,
   PostInfo,
+  Post,
 ])
 Serializers serializers = (_$serializers.toBuilder()..addPlugin(StandardJsonPlugin())).build();

@@ -13,6 +13,8 @@ abstract class AuthState implements Built<AuthState, AuthStateBuilder> {
 
   AppUser? get user;
 
+  BuiltList<AppUser> get searchResult;
+
   Map<String, dynamic> get json => serializers.serializeWith(serializer, this) as Map<String, dynamic>;
 
   static Serializer<AuthState> get serializer => _$authStateSerializer;

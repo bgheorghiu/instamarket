@@ -12,6 +12,8 @@ part 'login_with_google.dart';
 
 part 'reset_password.dart';
 
+part 'search_users.dart';
+
 part 'set.dart';
 
 part 'sign_out.dart';

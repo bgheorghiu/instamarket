@@ -19,9 +19,11 @@ class _$AppStateSerializer implements StructuredSerializer<AppState> {
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
       'auth',
-      serializers.serialize(object.auth, specifiedType: const FullType(AuthState)),
+      serializers.serialize(object.auth,
+          specifiedType: const FullType(AuthState)),
       'posts',
-      serializers.serialize(object.posts, specifiedType: const FullType(PostsState)),
+      serializers.serialize(object.posts,
+          specifiedType: const FullType(PostsState)),
     ];
 
     return result;
@@ -39,11 +41,12 @@ class _$AppStateSerializer implements StructuredSerializer<AppState> {
       final Object? value = iterator.current;
       switch (key) {
         case 'auth':
-          result.auth.replace(serializers.deserialize(value, specifiedType: const FullType(AuthState))! as AuthState);
+          result.auth.replace(serializers.deserialize(value,
+              specifiedType: const FullType(AuthState))! as AuthState);
           break;
         case 'posts':
-          result.posts
-              .replace(serializers.deserialize(value, specifiedType: const FullType(PostsState))! as PostsState);
+          result.posts.replace(serializers.deserialize(value,
+              specifiedType: const FullType(PostsState))! as PostsState);
           break;
       }
     }
@@ -58,7 +61,8 @@ class _$AppState extends AppState {
   @override
   final PostsState posts;
 
-  factory _$AppState([void Function(AppStateBuilder)? updates]) => (new AppStateBuilder()..update(updates)).build();
+  factory _$AppState([void Function(AppStateBuilder)? updates]) =>
+      (new AppStateBuilder()..update(updates)).build();
 
   _$AppState._({required this.auth, required this.posts}) : super._() {
     BuiltValueNullFieldError.checkNotNull(auth, 'AppState', 'auth');
@@ -66,7 +70,8 @@ class _$AppState extends AppState {
   }
 
   @override
-  AppState rebuild(void Function(AppStateBuilder) updates) => (toBuilder()..update(updates)).build();
+  AppState rebuild(void Function(AppStateBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
 
   @override
   AppStateBuilder toBuilder() => new AppStateBuilder()..replace(this);
@@ -129,7 +134,8 @@ class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
   _$AppState build() {
     _$AppState _$result;
     try {
-      _$result = _$v ?? new _$AppState._(auth: auth.build(), posts: posts.build());
+      _$result =
+          _$v ?? new _$AppState._(auth: auth.build(), posts: posts.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -138,7 +144,8 @@ class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
         _$failedField = 'posts';
         posts.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError('AppState', _$failedField, e.toString());
+        throw new BuiltValueNestedFieldError(
+            'AppState', _$failedField, e.toString());
       }
       rethrow;
     }

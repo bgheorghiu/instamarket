@@ -1,8 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:instamarket/src/data/auth_api.dart';
+import 'package:instamarket/src/data/post_api.dart';
 import 'package:instamarket/src/epics/app_epics.dart';
 import 'package:instamarket/src/models/index.dart';
 import 'package:instamarket/src/reducer/reducer.dart';
@@ -14,10 +16,12 @@ Future<Store<AppState>> init() async {
 
   final FirebaseAuth auth = FirebaseAuth.instance;
   final FirebaseFirestore firestore = FirebaseFirestore.instance;
+  final FirebaseStorage storage = FirebaseStorage.instance;
   final GoogleSignIn google = GoogleSignIn();
 
   final AuthApi authApi = AuthApi(auth: auth, firestore: firestore, google: google);
-  final AppEpics epic = AppEpics(authApi: authApi);
+  final PostApi postApi = PostApi(firestore: firestore, storage: storage);
+  final AppEpics epic = AppEpics(authApi: authApi, postApi: postApi);
 
   return Store<AppState>(
     reducer,

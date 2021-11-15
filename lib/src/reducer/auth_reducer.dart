@@ -1,3 +1,4 @@
+import 'package:built_collection/built_collection.dart';
 import 'package:instamarket/src/actions/auth/index.dart';
 import 'package:instamarket/src/models/auth/index.dart';
 import 'package:redux/redux.dart';
@@ -7,6 +8,7 @@ Reducer<AuthState> authReducer = combineReducers(<Reducer<AuthState>>[
   TypedReducer<AuthState, SignupSuccessful>(_signupSuccessful),
   TypedReducer<AuthState, UpdateRegistrationInfo>(_updateRegistrationInfo),
   TypedReducer<AuthState, LoginWithGoogleSuccessful>(_loginWithGoogleSuccessful),
+  TypedReducer<AuthState, SearchUsersSuccessful>(_searchUsersSuccessful),
 ]);
 
 AuthState _loginWithEmailSuccessful(AuthState state, LoginWithEmailSuccessful action) {
@@ -33,4 +35,12 @@ AuthState _updateRegistrationInfo(AuthState state, UpdateRegistrationInfo action
 
 AuthState _loginWithGoogleSuccessful(AuthState state, LoginWithGoogleSuccessful action) {
   return state.rebuild((AuthStateBuilder b) => b.user = action.user?.toBuilder());
+}
+
+AuthState _searchUsersSuccessful(AuthState state, SearchUsersSuccessful action) {
+  if (action.users != null) {
+    return state.rebuild((AuthStateBuilder b) => b.searchResult = ListBuilder<AppUser>(action.users!));
+  } else {
+    return state.rebuild((AuthStateBuilder b) => null);
+  }
 }

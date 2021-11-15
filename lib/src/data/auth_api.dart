@@ -1,6 +1,8 @@
+import 'package:built_collection/built_collection.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:instamarket/src/data/index.dart';
 import 'package:instamarket/src/models/auth/index.dart';
 
 class AuthApi {
@@ -20,6 +22,12 @@ class AuthApi {
     final UserCredential response = await _auth.signInWithEmailAndPassword(email: email, password: password);
     final User user = response.user!;
 
+    /*
+    if (user == null){
+      return null;
+    }
+
+     */
     // TODO(bgheorghiu): check if user is null
     // TODO(bgheorghiu): add constants
 
@@ -38,7 +46,8 @@ class AuthApi {
       b
         ..uid = user.uid
         ..email = user.email
-        ..username = username;
+        ..username = username
+        ..searchIndex = ListBuilder<String>(<String>[username].searchIndex);
     });
 
     await _firestore.doc('users/${appUser.uid}').set(appUser.json);
@@ -79,7 +88,8 @@ class AuthApi {
           ..uid = user.uid
           ..email = user.email
           ..username = user.email!.split('@').first
-          ..photoUrl = user.photoURL;
+          ..photoUrl = user.photoURL
+          ..searchIndex = ListBuilder<String>(<String>[user.email!.split('@').first].searchIndex);
       });
 
       await _firestore.doc('users/${user.uid}').set(appUser.json);
@@ -90,5 +100,16 @@ class AuthApi {
 
   Future<void> resetPassword(String email) async {
     return _auth.sendPasswordResetEmail(email: email);
+  }
+
+  Future<List<AppUser>> searchUsers(String query) async {
+    final QuerySnapshot<Map<String, dynamic>> snapshot = await _firestore
+        .collection('users') //
+        .where('searchIndex', arrayContains: query)
+        .get();
+
+    return snapshot.docs
+        .map((QueryDocumentSnapshot<Map<String, dynamic>> snapshot) => AppUser.fromJson(snapshot.data()))
+        .toList();
   }
 }

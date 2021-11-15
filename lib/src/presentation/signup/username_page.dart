@@ -18,67 +18,77 @@ class UsernamePage extends StatefulWidget {
 class _UsernamePageState extends State<UsernamePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Login'),
-      ),
-      body: RegistrationInfoContainer(builder: (BuildContext context, RegistrationInfo info) {
-        return Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Form(
-            child: Builder(builder: (BuildContext context) {
-              return Column(
-                children: <Widget>[
-                  TextFormField(
-                    decoration: const InputDecoration(hintText: 'username'),
-                    keyboardType: TextInputType.name,
-                    initialValue: info.email!.split('@').first,
-                    onChanged: (String value) {
-                      StoreProvider.of<AppState>(context).dispatch(
-                        UpdateRegistrationInfo(username: value),
-                      );
-                    },
-                    validator: (String? value) {
-                      if (value == null || value.length < 3) {
-                        return 'Please enter a valid username';
-                      }
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text('Sign up'),
+        ),
+        body: RegistrationInfoContainer(
+          builder: (BuildContext context, RegistrationInfo info) {
+            return Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Form(
+                child: Builder(
+                  builder: (BuildContext context) {
+                    print(info);
+                    return Column(
+                      children: <Widget>[
+                        TextFormField(
+                          decoration: const InputDecoration(hintText: 'username'),
+                          keyboardType: TextInputType.name,
+                          initialValue: info.email!.split('@').first,
+                          onChanged: (String value) {
+                            StoreProvider.of<AppState>(context).dispatch(
+                              UpdateRegistrationInfo(username: value),
+                            );
+                          },
+                          validator: (String? value) {
+                            if (value == null || value.length < 3) {
+                              return 'Please enter a valid username';
+                            }
 
-                      return null;
-                    },
-                  ),
-                  const Spacer(),
-                  TextButton(
-                    child: const Text('continue'),
-                    onPressed: () {
-                      if (Form.of(context)?.validate() == true) {
-                        Navigator.of(context).pushNamed(AppRoutes.passwordPage);
-                      }
-                    },
-                  ),
-                  const Divider(),
-                  Text.rich(
-                    TextSpan(
-                      text: 'You already have an account',
-                      children: <TextSpan>[
-                        TextSpan(
-                          text: 'Login',
-                          style: const TextStyle(
-                            fontWeight: FontWeight.bold,
+                            return null;
+                          },
+                        ),
+                        const Spacer(),
+                        TextButton(
+                          child: const Text('continue'),
+                          onPressed: () {
+                            if (Form.of(context)?.validate() == true) {
+                              StoreProvider.of<AppState>(context).dispatch(
+                                UpdateRegistrationInfo(username: info.username ?? info.email!.split('@').first),
+                              );
+                              Navigator.of(context).pushNamed(AppRoutes.passwordPage);
+                            }
+                          },
+                        ),
+                        const Divider(),
+                        Text.rich(
+                          TextSpan(
+                            text: 'You already have an account',
+                            children: <TextSpan>[
+                              TextSpan(
+                                text: ' Login',
+                                style: const TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                ),
+                                recognizer: TapGestureRecognizer()
+                                  ..onTap = () {
+                                    Navigator.of(context).popUntil(ModalRoute.withName(AppRoutes.home));
+                                  },
+                              ),
+                            ],
                           ),
-                          recognizer: TapGestureRecognizer()
-                            ..onTap = () {
-                              Navigator.of(context).popUntil(ModalRoute.withName(AppRoutes.home));
-                            },
                         ),
                       ],
-                    ),
-                  ),
-                ],
-              );
-            }),
-          ),
-        );
-      }),
+                    );
+                  },
+                ),
+              ),
+            );
+          },
+        ),
+      ),
     );
   }
 }

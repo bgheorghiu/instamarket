@@ -27,7 +27,7 @@ class _CreatePostPageState extends State<CreatePostPage> {
             TextButton(
               child: const Text('Next'),
               onPressed: () {
-                if (postInfo.paths != null && postInfo.paths!.isNotEmpty) {
+                if (postInfo.paths.isNotEmpty) {
                   Navigator.pushNamed(context, AppRoutes.postsDetails);
                 } else {
                   // show error
@@ -42,7 +42,7 @@ class _CreatePostPageState extends State<CreatePostPage> {
             mainAxisSpacing: 4.0,
             crossAxisSpacing: 4.0,
           ),
-          itemCount: postInfo.paths != null ? (postInfo.paths!.length + 1) : 1,
+          itemCount: postInfo.paths.isNotEmpty ? (postInfo.paths.length + 1) : 1,
           itemBuilder: (BuildContext context, int index) {
             if (index == 0) {
               return Center(
@@ -60,13 +60,17 @@ class _CreatePostPageState extends State<CreatePostPage> {
             }
 
             return GridTile(
-              child: Image.file(File(postInfo.paths![index - 1])),
+              child: Image.file(
+                File(postInfo.paths[index - 1]),
+                fit: BoxFit.cover,
+              ),
               header: GridTileBar(
+                title: const Text(''),
                 trailing: IconButton(
                   icon: const Icon(Icons.delete),
                   onPressed: () {
                     StoreProvider.of<AppState>(context)
-                        .dispatch(UpdatePostInfo(removeImage: postInfo.paths![index - 1]));
+                        .dispatch(UpdatePostInfo(removeImage: postInfo.paths[index - 1]));
                   },
                 ),
               ),

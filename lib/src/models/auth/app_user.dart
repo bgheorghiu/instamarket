@@ -13,6 +13,8 @@ abstract class AppUser implements Built<AppUser, AppUserBuilder> {
 
   String get username;
 
+  BuiltList<String> get searchIndex;
+
   String? get photoUrl;
 
   Map<String, dynamic> get json => serializers.serializeWith(serializer, this) as Map<String, dynamic>;

@@ -7,7 +7,11 @@ abstract class PostInfo implements Built<PostInfo, PostInfoBuilder> {
 
   PostInfo._();
 
-  BuiltList<String>? get paths;
+  BuiltList<String> get paths;
+
+  BuiltList<AppUser> get users;
+
+  BuiltList<String> get tags;
 
   String? get description;
 

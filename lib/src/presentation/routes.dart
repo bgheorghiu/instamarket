@@ -5,6 +5,7 @@ import 'package:instamarket/src/presentation/posts/posts_details.dart';
 import 'package:instamarket/src/presentation/signup/password_page.dart';
 import 'package:instamarket/src/presentation/signup/signup_page.dart';
 import 'package:instamarket/src/presentation/signup/username_page.dart';
+import 'package:instamarket/src/presentation/widgets/search_users_page.dart';
 
 import 'home.dart';
 
@@ -17,6 +18,7 @@ class AppRoutes {
   static const String passwordPage = '/passwordPage';
   static const String createPost = '/createPost';
   static const String postsDetails = '/postsDetails';
+  static const String searchUsers = '/searchUsers';
 
   static Map<String, WidgetBuilder> routes = <String, WidgetBuilder>{
     home: (BuildContext context) {
@@ -39,6 +41,9 @@ class AppRoutes {
     },
     postsDetails: (BuildContext context) {
       return const PostsDetailsPage();
+    },
+    searchUsers: (BuildContext context) {
+      return const SearchUsersPage();
     }
   };
 }

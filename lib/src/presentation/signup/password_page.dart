@@ -26,63 +26,65 @@ class _PasswordPageState extends State<PasswordPage> with DialogMixin {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Login'),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Form(
-          child: Builder(
-            builder: (BuildContext context) {
-              return Column(
-                children: <Widget>[
-                  TextFormField(
-                    decoration: const InputDecoration(hintText: 'password'),
-                    obscureText: true,
-                    onChanged: (String value) {
-                      StoreProvider.of<AppState>(context).dispatch(
-                        UpdateRegistrationInfo(password: value),
-                      );
-                    },
-                    validator: (String? value) {
-                      if (value == null || value.length < 6) {
-                        return 'Please enter a valid password';
-                      }
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text('Sign up'),
+        ),
+        body: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Form(
+            child: Builder(
+              builder: (BuildContext context) {
+                return Column(
+                  children: <Widget>[
+                    TextFormField(
+                      decoration: const InputDecoration(hintText: 'password'),
+                      obscureText: true,
+                      onChanged: (String value) {
+                        StoreProvider.of<AppState>(context).dispatch(
+                          UpdateRegistrationInfo(password: value),
+                        );
+                      },
+                      validator: (String? value) {
+                        if (value == null || value.length <= 5) {
+                          return 'Please enter a valid password';
+                        }
 
-                      return null;
-                    },
-                  ),
-                  const Spacer(),
-                  TextButton(
-                    child: const Text('Continue'),
-                    onPressed: () {
-                      if (Form.of(context)?.validate() == true) {
-                        StoreProvider.of<AppState>(context).dispatch(Signup(_response));
-                      }
-                    },
-                  ),
-                  const Divider(),
-                  Text.rich(
-                    TextSpan(
-                      text: 'You already have an account',
-                      children: <TextSpan>[
-                        TextSpan(
-                          text: 'Login',
-                          style: const TextStyle(
-                            fontWeight: FontWeight.bold,
-                          ),
-                          recognizer: TapGestureRecognizer()
-                            ..onTap = () {
-                              Navigator.of(context).popUntil(ModalRoute.withName(AppRoutes.home));
-                            },
-                        ),
-                      ],
+                        return null;
+                      },
                     ),
-                  ),
-                ],
-              );
-            },
+                    const Spacer(),
+                    TextButton(
+                      child: const Text('Continue'),
+                      onPressed: () {
+                        if (Form.of(context)?.validate() == true) {
+                          StoreProvider.of<AppState>(context).dispatch(Signup(_response));
+                        }
+                      },
+                    ),
+                    const Divider(),
+                    Text.rich(
+                      TextSpan(
+                        text: 'You already have an account',
+                        children: <TextSpan>[
+                          TextSpan(
+                            text: ' Login',
+                            style: const TextStyle(
+                              fontWeight: FontWeight.bold,
+                            ),
+                            recognizer: TapGestureRecognizer()
+                              ..onTap = () {
+                                Navigator.of(context).popUntil(ModalRoute.withName(AppRoutes.home));
+                              },
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                );
+              },
+            ),
           ),
         ),
       ),

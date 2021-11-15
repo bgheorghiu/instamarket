@@ -1,4 +1,4 @@
-part of auth_actions;
+part of posts_actions;
 
 @freezed
 class UpdatePostInfo with _$UpdatePostInfo implements AppAction {
@@ -8,5 +8,7 @@ class UpdatePostInfo with _$UpdatePostInfo implements AppAction {
     String? description,
     double? lng,
     double? lat,
+    AppUser? addUser,
+    AppUser? removeUser,
   }) = UpdatePostInfo$;
 }
