@@ -1,7 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
-import 'package:instamarket/src/actions/auth/index.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:instamarket/src/actions/index.dart';
 import 'package:instamarket/src/mixins/dialog_mixin.dart';
 import 'package:instamarket/src/models/index.dart';
@@ -73,7 +73,18 @@ class _LoginPageState extends State<LoginPage> with DialogMixin {
                     ButtonBar(
                       children: <Widget>[
                         TextButton(
-                          child: const Text('Sign in with Google'),
+                          child: Row(
+                            children: <Widget>[
+                              SvgPicture.network(
+                                'https://coollogo.net/wp-content/uploads/2021/02/Google-icon-logo.svg',
+                                width: 14.0,
+                              ),
+                              const SizedBox(
+                                width: 4.0,
+                              ),
+                              const Text('Sign in with Google'),
+                            ],
+                          ),
                           onPressed: () {
                             StoreProvider.of<AppState>(context).dispatch(LoginWithGoogle(_response));
                           },
