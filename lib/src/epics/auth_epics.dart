@@ -19,7 +19,18 @@ class AuthEpics {
       TypedEpic<AppState, LoginWithGoogle$>(_loginWithGoogle),
       TypedEpic<AppState, ResetPassword$>(_resetPassword),
       TypedEpic<AppState, SearchUsers$>(_searchUsers),
+      TypedEpic<AppState, UpdateFollowing$>(_updateFollowing),
+      TypedEpic<AppState, GetUser$>(_getUser),
+      TypedEpic<AppState, InitializeApp$>(_initializeApp),
     ]);
+  }
+
+  Stream<AppAction> _initializeApp(Stream<InitializeApp$> actions, EpicStore<AppState> store) {
+    return actions //
+        .flatMap((InitializeApp$ action) => Stream<InitializeApp$>.value(action)
+            .asyncMap((InitializeApp$ action) => _authApi.getCurrentUser())
+            .map((AppUser? user) => InitializeApp.successful(user))
+            .onErrorReturnWith((Object error, StackTrace stackTrace) => InitializeApp.error(error)));
   }
 
   Stream<AppAction> _loginWithEmail(Stream<LoginWithEmail$> actions, EpicStore<AppState> store) {
@@ -82,5 +93,25 @@ class AuthEpics {
             .map((List<AppUser> users) => SearchUsers.successful(users))
             .onErrorReturnWith((Object error, StackTrace stackTrace) => SearchUsers.error(error))
             .doOnData(action.response));
+  }
+
+  Stream<AppAction> _updateFollowing(Stream<UpdateFollowing$> actions, EpicStore<AppState> store) {
+    return actions //
+        .flatMap((UpdateFollowing$ action) => Stream<UpdateFollowing$>.value(action)
+            .asyncMap((UpdateFollowing$ action) => _authApi.updateFollowing(
+                  uid: store.state.auth.user!.uid,
+                  add: action.add,
+                  remove: action.remove,
+                ))
+            .mapTo(UpdateFollowing.successful(add: action.add, remove: action.remove))
+            .onErrorReturnWith((Object error, StackTrace stackTrace) => UpdateFollowing.error(error)));
+  }
+
+  Stream<AppAction> _getUser(Stream<GetUser$> actions, EpicStore<AppState> store) {
+    return actions //
+        .flatMap((GetUser$ action) => Stream<GetUser$>.value(action)
+            .asyncMap((GetUser$ action) => _authApi.getUser(action.uid))
+            .map((AppUser user) => GetUser.successful(user))
+            .onErrorReturnWith((Object error, StackTrace stackTrace) => GetUser.error(error)));
   }
 }

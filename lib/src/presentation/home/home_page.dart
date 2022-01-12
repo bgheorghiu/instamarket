@@ -7,6 +7,8 @@ import 'package:instamarket/src/actions/posts/index.dart';
 import 'package:instamarket/src/containers/posts/index.dart';
 import 'package:instamarket/src/models/index.dart';
 import 'package:instamarket/src/models/posts/index.dart';
+import 'package:instamarket/src/presentation/feed/feed_page.dart';
+import 'package:instamarket/src/presentation/widgets/search_users_page.dart';
 
 import '../routes.dart';
 
@@ -27,23 +29,22 @@ class _HomePageState extends State<HomePage> {
     return PostInfoContainer(
       builder: (BuildContext context, PostInfo postInfo) {
         return Scaffold(
-          appBar: AppBar(
-            title: const Text('Home'),
-            actions: <Widget>[
-              IconButton(
-                icon: const Icon(Icons.power_settings_new),
-                onPressed: () {
-                  StoreProvider.of<AppState>(context).dispatch(SignOut(_response));
-                },
-              ),
-            ],
-          ),
           body: <Widget>[
-            Container(color: Colors.red),
-            Container(color: Colors.blueGrey),
+            const FeedPage(),
+            const SearchUsersPage(showFollow: true),
             Container(color: Colors.green),
             Container(color: Colors.orange),
-            Container(color: Colors.yellow),
+            Container(
+              color: Colors.black12,
+              child: Center(
+                child: IconButton(
+                  icon: const Icon(Icons.power_settings_new),
+                  onPressed: () {
+                    StoreProvider.of<AppState>(context).dispatch(SignOut(_response));
+                  },
+                ),
+              ),
+            ),
           ][_page],
           bottomNavigationBar: BottomNavigationBar(
             currentIndex: _page,
@@ -68,11 +69,11 @@ class _HomePageState extends State<HomePage> {
               ),
               BottomNavigationBarItem(
                 label: '2',
-                icon: Icon(Icons.home),
+                icon: Icon(Icons.search),
               ),
               BottomNavigationBarItem(
                 label: '3',
-                icon: Icon(Icons.home),
+                icon: Icon(Icons.add),
               ),
               BottomNavigationBarItem(
                 label: '4',

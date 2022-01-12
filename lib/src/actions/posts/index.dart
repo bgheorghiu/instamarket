@@ -10,3 +10,5 @@ part 'create_post.dart';
 part 'index.freezed.dart';
 
 part 'set.dart';
+
+part 'listen_for_posts.dart';

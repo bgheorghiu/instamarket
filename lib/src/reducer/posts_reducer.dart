@@ -3,14 +3,15 @@ import 'package:instamarket/src/actions/posts/index.dart';
 import 'package:instamarket/src/models/posts/index.dart';
 import 'package:redux/redux.dart';
 
-Reducer<PostsState> postsReducer =
-    combineReducers(<Reducer<PostsState>>[TypedReducer<PostsState, UpdatePostInfo>(_updatePostInfo),
-    TypedReducer<PostsState, CreatePostSuccessful>(_createPostSuccessful)]);
+Reducer<PostsState> postsReducer = combineReducers(<Reducer<PostsState>>[
+  TypedReducer<PostsState, UpdatePostInfo>(_updatePostInfo),
+  TypedReducer<PostsState, CreatePostSuccessful>(_createPostSuccessful),
+  TypedReducer<PostsState, ListenForPostsSuccessful>(_listenForPostsSuccessful),
+]);
 
 PostsState _updatePostInfo(PostsState state, UpdatePostInfo action) {
   return state.rebuild((PostsStateBuilder b) {
     if (action.addImage != null) {
-      print('imagePath');
       b.info.paths.add(action.addImage!);
     } else if (action.removeImage != null) {
       b.info.paths.remove(action.removeImage!);
@@ -36,10 +37,14 @@ PostsState _updatePostInfo(PostsState state, UpdatePostInfo action) {
   });
 }
 
-
 PostsState _createPostSuccessful(PostsState state, CreatePostSuccessful action) {
   return state.rebuild((PostsStateBuilder b) {
-   print('here');
+    b.info = PostInfo().toBuilder();
   });
 }
 
+PostsState _listenForPostsSuccessful(PostsState state, ListenForPostsSuccessful action) {
+  return state.rebuild((PostsStateBuilder b) {
+    b.posts = ListBuilder<Post>(action.posts);
+  });
+}

@@ -8,3 +8,5 @@ import 'package:instamarket/src/models/posts/index.dart';
 import 'package:redux/redux.dart';
 
 part 'post_info_container.dart';
+
+part 'posts_container.dart';

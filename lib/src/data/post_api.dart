@@ -5,6 +5,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:instamarket/src/models/auth/index.dart';
 import 'package:instamarket/src/models/posts/index.dart';
+import 'package:quiver/iterables.dart';
 
 class PostApi {
   const PostApi({
@@ -40,7 +41,6 @@ class PostApi {
 
     await ref.set(post.json);
 
-
     print('here3');
     return post;
   }
@@ -58,5 +58,24 @@ class PostApi {
       images.add(url);
     }
     return images;
+  }
+
+  Future<List<Post>> listenForPosts(List<String> following) async {
+    final List<Post> newResult = <Post>[];
+    final List<List<String>> parts = partition(following, 10).toList();
+
+    for (final List<String> part in parts) {
+      final QuerySnapshot<Map<String, dynamic>> snapshot = await _firestore //
+          .collection('posts')
+          .where('uid', whereIn: part)
+          .get();
+
+      final List<Post> result =
+          snapshot.docs.map((QueryDocumentSnapshot<Map<String, dynamic>> doc) => Post.fromJson(doc.data())).toList();
+
+      newResult.addAll(result);
+    }
+
+    return newResult;
   }
 }

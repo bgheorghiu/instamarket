@@ -9,6 +9,9 @@ Reducer<AuthState> authReducer = combineReducers(<Reducer<AuthState>>[
   TypedReducer<AuthState, UpdateRegistrationInfo>(_updateRegistrationInfo),
   TypedReducer<AuthState, LoginWithGoogleSuccessful>(_loginWithGoogleSuccessful),
   TypedReducer<AuthState, SearchUsersSuccessful>(_searchUsersSuccessful),
+  TypedReducer<AuthState, UpdateFollowingSuccessful>(_updateFollowingSuccessful),
+  TypedReducer<AuthState, GetUserSuccessful>(_getUserSuccessful),
+  TypedReducer<AuthState, InitializeAppSuccessful>(_initializeAppSuccessful),
 ]);
 
 AuthState _loginWithEmailSuccessful(AuthState state, LoginWithEmailSuccessful action) {
@@ -43,4 +46,26 @@ AuthState _searchUsersSuccessful(AuthState state, SearchUsersSuccessful action) 
   } else {
     return state.rebuild((AuthStateBuilder b) => null);
   }
+}
+
+AuthState _updateFollowingSuccessful(AuthState state, UpdateFollowingSuccessful action) {
+  return state.rebuild((AuthStateBuilder b) {
+    if (action.add != null) {
+      b.user.following.add(action.add!);
+    } else {
+      b.user.following.remove(action.remove!);
+    }
+  });
+}
+
+AuthState _getUserSuccessful(AuthState state, GetUserSuccessful action) {
+  return state.rebuild((AuthStateBuilder b) {
+    b.users[action.user.uid] = action.user;
+  });
+}
+
+AuthState _initializeAppSuccessful(AuthState state, InitializeAppSuccessful action) {
+  return state.rebuild((AuthStateBuilder b) {
+    b.user = action.user?.toBuilder();
+  });
 }
