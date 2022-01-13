@@ -17,6 +17,8 @@ abstract class Post implements Built<Post, PostBuilder> {
 
   BuiltList<String> get users;
 
+  BuiltList<Like> get likes;
+
   String? get description;
 
   double? get lng;

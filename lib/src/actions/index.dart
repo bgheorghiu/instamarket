@@ -11,3 +11,11 @@ abstract class ErrorAction extends AppAction {
 }
 
 typedef ActionResponse = void Function(AppAction);
+
+abstract class PendingAction extends AppAction {
+  String get pendingId;
+}
+
+abstract class ActionStart extends PendingAction {}
+
+abstract class ActionDone extends PendingAction {}

@@ -5,7 +5,8 @@ abstract class AppState implements Built<AppState, AppStateBuilder> {
     return _$AppState((AppStateBuilder b) {
       b
         ..auth = AuthState.initialState().toBuilder()
-        ..posts = PostsState.initialState().toBuilder();
+        ..posts = PostsState.initialState().toBuilder()
+        ..likes = LikesState.initialState().toBuilder();
     });
   }
 
@@ -16,6 +17,10 @@ abstract class AppState implements Built<AppState, AppStateBuilder> {
   AuthState get auth;
 
   PostsState get posts;
+
+  LikesState get likes;
+
+  BuiltSet<String> get pendingActions;
 
   Map<String, dynamic> get json => serializers.serializeWith(serializer, this) as Map<String, dynamic>;
 

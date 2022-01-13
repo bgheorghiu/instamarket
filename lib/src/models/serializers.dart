@@ -7,6 +7,7 @@ import 'package:instamarket/src/models/posts/index.dart';
 
 import 'auth/index.dart';
 import 'index.dart';
+import 'likes/index.dart';
 
 part 'serializers.g.dart';
 
@@ -14,6 +15,8 @@ part 'serializers.g.dart';
   AppState,
   AuthState,
   AppUser,
+  Like,
+  LikesState,
   PostsState,
   PostInfo,
   Post,

@@ -8,7 +8,8 @@ part of auth_models;
 
 Serializer<AppUser> _$appUserSerializer = new _$AppUserSerializer();
 Serializer<AuthState> _$authStateSerializer = new _$AuthStateSerializer();
-Serializer<RegistrationInfo> _$registrationInfoSerializer = new _$RegistrationInfoSerializer();
+Serializer<RegistrationInfo> _$registrationInfoSerializer =
+    new _$RegistrationInfoSerializer();
 
 class _$AppUserSerializer implements StructuredSerializer<AppUser> {
   @override
@@ -23,21 +24,27 @@ class _$AppUserSerializer implements StructuredSerializer<AppUser> {
       'uid',
       serializers.serialize(object.uid, specifiedType: const FullType(String)),
       'email',
-      serializers.serialize(object.email, specifiedType: const FullType(String)),
+      serializers.serialize(object.email,
+          specifiedType: const FullType(String)),
       'username',
-      serializers.serialize(object.username, specifiedType: const FullType(String)),
+      serializers.serialize(object.username,
+          specifiedType: const FullType(String)),
       'searchIndex',
       serializers.serialize(object.searchIndex,
-          specifiedType: const FullType(BuiltList, const [const FullType(String)])),
+          specifiedType:
+              const FullType(BuiltList, const [const FullType(String)])),
       'following',
-      serializers.serialize(object.following, specifiedType: const FullType(BuiltList, const [const FullType(String)])),
+      serializers.serialize(object.following,
+          specifiedType:
+              const FullType(BuiltList, const [const FullType(String)])),
     ];
     Object? value;
     value = object.photoUrl;
     if (value != null) {
       result
         ..add('photoUrl')
-        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
     }
     return result;
   }
@@ -54,24 +61,32 @@ class _$AppUserSerializer implements StructuredSerializer<AppUser> {
       final Object? value = iterator.current;
       switch (key) {
         case 'uid':
-          result.uid = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
+          result.uid = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
           break;
         case 'email':
-          result.email = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
+          result.email = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
           break;
         case 'username':
-          result.username = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
+          result.username = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
           break;
         case 'searchIndex':
           result.searchIndex.replace(serializers.deserialize(value,
-              specifiedType: const FullType(BuiltList, const [const FullType(String)]))! as BuiltList<Object?>);
+                  specifiedType: const FullType(
+                      BuiltList, const [const FullType(String)]))!
+              as BuiltList<Object?>);
           break;
         case 'following':
           result.following.replace(serializers.deserialize(value,
-              specifiedType: const FullType(BuiltList, const [const FullType(String)]))! as BuiltList<Object?>);
+                  specifiedType: const FullType(
+                      BuiltList, const [const FullType(String)]))!
+              as BuiltList<Object?>);
           break;
         case 'photoUrl':
-          result.photoUrl = serializers.deserialize(value, specifiedType: const FullType(String)) as String?;
+          result.photoUrl = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
           break;
       }
     }
@@ -92,23 +107,27 @@ class _$AuthStateSerializer implements StructuredSerializer<AuthState> {
     final result = <Object?>[
       'searchResult',
       serializers.serialize(object.searchResult,
-          specifiedType: const FullType(BuiltList, const [const FullType(AppUser)])),
+          specifiedType:
+              const FullType(BuiltList, const [const FullType(AppUser)])),
       'users',
       serializers.serialize(object.users,
-          specifiedType: const FullType(BuiltMap, const [const FullType(String), const FullType(AppUser)])),
+          specifiedType: const FullType(BuiltMap,
+              const [const FullType(String), const FullType(AppUser)])),
     ];
     Object? value;
     value = object.info;
     if (value != null) {
       result
         ..add('info')
-        ..add(serializers.serialize(value, specifiedType: const FullType(RegistrationInfo)));
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(RegistrationInfo)));
     }
     value = object.user;
     if (value != null) {
       result
         ..add('user')
-        ..add(serializers.serialize(value, specifiedType: const FullType(AppUser)));
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(AppUser)));
     }
     return result;
   }
@@ -125,19 +144,24 @@ class _$AuthStateSerializer implements StructuredSerializer<AuthState> {
       final Object? value = iterator.current;
       switch (key) {
         case 'info':
-          result.info.replace(
-              serializers.deserialize(value, specifiedType: const FullType(RegistrationInfo))! as RegistrationInfo);
+          result.info.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(RegistrationInfo))!
+              as RegistrationInfo);
           break;
         case 'user':
-          result.user.replace(serializers.deserialize(value, specifiedType: const FullType(AppUser))! as AppUser);
+          result.user.replace(serializers.deserialize(value,
+              specifiedType: const FullType(AppUser))! as AppUser);
           break;
         case 'searchResult':
           result.searchResult.replace(serializers.deserialize(value,
-              specifiedType: const FullType(BuiltList, const [const FullType(AppUser)]))! as BuiltList<Object?>);
+                  specifiedType: const FullType(
+                      BuiltList, const [const FullType(AppUser)]))!
+              as BuiltList<Object?>);
           break;
         case 'users':
           result.users.replace(serializers.deserialize(value,
-              specifiedType: const FullType(BuiltMap, const [const FullType(String), const FullType(AppUser)]))!);
+              specifiedType: const FullType(BuiltMap,
+                  const [const FullType(String), const FullType(AppUser)]))!);
           break;
       }
     }
@@ -146,7 +170,8 @@ class _$AuthStateSerializer implements StructuredSerializer<AuthState> {
   }
 }
 
-class _$RegistrationInfoSerializer implements StructuredSerializer<RegistrationInfo> {
+class _$RegistrationInfoSerializer
+    implements StructuredSerializer<RegistrationInfo> {
   @override
   final Iterable<Type> types = const [RegistrationInfo, _$RegistrationInfo];
   @override
@@ -161,25 +186,29 @@ class _$RegistrationInfoSerializer implements StructuredSerializer<RegistrationI
     if (value != null) {
       result
         ..add('email')
-        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
     }
     value = object.username;
     if (value != null) {
       result
         ..add('username')
-        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
     }
     value = object.password;
     if (value != null) {
       result
         ..add('password')
-        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
     }
     return result;
   }
 
   @override
-  RegistrationInfo deserialize(Serializers serializers, Iterable<Object?> serialized,
+  RegistrationInfo deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new RegistrationInfoBuilder();
 
@@ -190,13 +219,16 @@ class _$RegistrationInfoSerializer implements StructuredSerializer<RegistrationI
       final Object? value = iterator.current;
       switch (key) {
         case 'email':
-          result.email = serializers.deserialize(value, specifiedType: const FullType(String)) as String?;
+          result.email = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'username':
-          result.username = serializers.deserialize(value, specifiedType: const FullType(String)) as String?;
+          result.username = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'password':
-          result.password = serializers.deserialize(value, specifiedType: const FullType(String)) as String?;
+          result.password = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
           break;
       }
     }
@@ -219,7 +251,8 @@ class _$AppUser extends AppUser {
   @override
   final String? photoUrl;
 
-  factory _$AppUser([void Function(AppUserBuilder)? updates]) => (new AppUserBuilder()..update(updates)).build();
+  factory _$AppUser([void Function(AppUserBuilder)? updates]) =>
+      (new AppUserBuilder()..update(updates)).build();
 
   _$AppUser._(
       {required this.uid,
@@ -232,12 +265,14 @@ class _$AppUser extends AppUser {
     BuiltValueNullFieldError.checkNotNull(uid, 'AppUser', 'uid');
     BuiltValueNullFieldError.checkNotNull(email, 'AppUser', 'email');
     BuiltValueNullFieldError.checkNotNull(username, 'AppUser', 'username');
-    BuiltValueNullFieldError.checkNotNull(searchIndex, 'AppUser', 'searchIndex');
+    BuiltValueNullFieldError.checkNotNull(
+        searchIndex, 'AppUser', 'searchIndex');
     BuiltValueNullFieldError.checkNotNull(following, 'AppUser', 'following');
   }
 
   @override
-  AppUser rebuild(void Function(AppUserBuilder) updates) => (toBuilder()..update(updates)).build();
+  AppUser rebuild(void Function(AppUserBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
 
   @override
   AppUserBuilder toBuilder() => new AppUserBuilder()..replace(this);
@@ -257,7 +292,11 @@ class _$AppUser extends AppUser {
   @override
   int get hashCode {
     return $jf($jc(
-        $jc($jc($jc($jc($jc(0, uid.hashCode), email.hashCode), username.hashCode), searchIndex.hashCode),
+        $jc(
+            $jc(
+                $jc($jc($jc(0, uid.hashCode), email.hashCode),
+                    username.hashCode),
+                searchIndex.hashCode),
             following.hashCode),
         photoUrl.hashCode));
   }
@@ -291,12 +330,16 @@ class AppUserBuilder implements Builder<AppUser, AppUserBuilder> {
   set username(String? username) => _$this._username = username;
 
   ListBuilder<String>? _searchIndex;
-  ListBuilder<String> get searchIndex => _$this._searchIndex ??= new ListBuilder<String>();
-  set searchIndex(ListBuilder<String>? searchIndex) => _$this._searchIndex = searchIndex;
+  ListBuilder<String> get searchIndex =>
+      _$this._searchIndex ??= new ListBuilder<String>();
+  set searchIndex(ListBuilder<String>? searchIndex) =>
+      _$this._searchIndex = searchIndex;
 
   ListBuilder<String>? _following;
-  ListBuilder<String> get following => _$this._following ??= new ListBuilder<String>();
-  set following(ListBuilder<String>? following) => _$this._following = following;
+  ListBuilder<String> get following =>
+      _$this._following ??= new ListBuilder<String>();
+  set following(ListBuilder<String>? following) =>
+      _$this._following = following;
 
   String? _photoUrl;
   String? get photoUrl => _$this._photoUrl;
@@ -336,8 +379,10 @@ class AppUserBuilder implements Builder<AppUser, AppUserBuilder> {
       _$result = _$v ??
           new _$AppUser._(
               uid: BuiltValueNullFieldError.checkNotNull(uid, 'AppUser', 'uid'),
-              email: BuiltValueNullFieldError.checkNotNull(email, 'AppUser', 'email'),
-              username: BuiltValueNullFieldError.checkNotNull(username, 'AppUser', 'username'),
+              email: BuiltValueNullFieldError.checkNotNull(
+                  email, 'AppUser', 'email'),
+              username: BuiltValueNullFieldError.checkNotNull(
+                  username, 'AppUser', 'username'),
               searchIndex: searchIndex.build(),
               following: following.build(),
               photoUrl: photoUrl);
@@ -349,7 +394,8 @@ class AppUserBuilder implements Builder<AppUser, AppUserBuilder> {
         _$failedField = 'following';
         following.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError('AppUser', _$failedField, e.toString());
+        throw new BuiltValueNestedFieldError(
+            'AppUser', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -368,15 +414,20 @@ class _$AuthState extends AuthState {
   @override
   final BuiltMap<String, AppUser> users;
 
-  factory _$AuthState([void Function(AuthStateBuilder)? updates]) => (new AuthStateBuilder()..update(updates)).build();
+  factory _$AuthState([void Function(AuthStateBuilder)? updates]) =>
+      (new AuthStateBuilder()..update(updates)).build();
 
-  _$AuthState._({this.info, this.user, required this.searchResult, required this.users}) : super._() {
-    BuiltValueNullFieldError.checkNotNull(searchResult, 'AuthState', 'searchResult');
+  _$AuthState._(
+      {this.info, this.user, required this.searchResult, required this.users})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        searchResult, 'AuthState', 'searchResult');
     BuiltValueNullFieldError.checkNotNull(users, 'AuthState', 'users');
   }
 
   @override
-  AuthState rebuild(void Function(AuthStateBuilder) updates) => (toBuilder()..update(updates)).build();
+  AuthState rebuild(void Function(AuthStateBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
 
   @override
   AuthStateBuilder toBuilder() => new AuthStateBuilder()..replace(this);
@@ -393,7 +444,9 @@ class _$AuthState extends AuthState {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc(0, info.hashCode), user.hashCode), searchResult.hashCode), users.hashCode));
+    return $jf($jc(
+        $jc($jc($jc(0, info.hashCode), user.hashCode), searchResult.hashCode),
+        users.hashCode));
   }
 
   @override
@@ -411,7 +464,8 @@ class AuthStateBuilder implements Builder<AuthState, AuthStateBuilder> {
   _$AuthState? _$v;
 
   RegistrationInfoBuilder? _info;
-  RegistrationInfoBuilder get info => _$this._info ??= new RegistrationInfoBuilder();
+  RegistrationInfoBuilder get info =>
+      _$this._info ??= new RegistrationInfoBuilder();
   set info(RegistrationInfoBuilder? info) => _$this._info = info;
 
   AppUserBuilder? _user;
@@ -419,11 +473,14 @@ class AuthStateBuilder implements Builder<AuthState, AuthStateBuilder> {
   set user(AppUserBuilder? user) => _$this._user = user;
 
   ListBuilder<AppUser>? _searchResult;
-  ListBuilder<AppUser> get searchResult => _$this._searchResult ??= new ListBuilder<AppUser>();
-  set searchResult(ListBuilder<AppUser>? searchResult) => _$this._searchResult = searchResult;
+  ListBuilder<AppUser> get searchResult =>
+      _$this._searchResult ??= new ListBuilder<AppUser>();
+  set searchResult(ListBuilder<AppUser>? searchResult) =>
+      _$this._searchResult = searchResult;
 
   MapBuilder<String, AppUser>? _users;
-  MapBuilder<String, AppUser> get users => _$this._users ??= new MapBuilder<String, AppUser>();
+  MapBuilder<String, AppUser> get users =>
+      _$this._users ??= new MapBuilder<String, AppUser>();
   set users(MapBuilder<String, AppUser>? users) => _$this._users = users;
 
   AuthStateBuilder();
@@ -457,7 +514,10 @@ class AuthStateBuilder implements Builder<AuthState, AuthStateBuilder> {
     try {
       _$result = _$v ??
           new _$AuthState._(
-              info: _info?.build(), user: _user?.build(), searchResult: searchResult.build(), users: users.build());
+              info: _info?.build(),
+              user: _user?.build(),
+              searchResult: searchResult.build(),
+              users: users.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -470,7 +530,8 @@ class AuthStateBuilder implements Builder<AuthState, AuthStateBuilder> {
         _$failedField = 'users';
         users.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError('AuthState', _$failedField, e.toString());
+        throw new BuiltValueNestedFieldError(
+            'AuthState', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -487,16 +548,19 @@ class _$RegistrationInfo extends RegistrationInfo {
   @override
   final String? password;
 
-  factory _$RegistrationInfo([void Function(RegistrationInfoBuilder)? updates]) =>
+  factory _$RegistrationInfo(
+          [void Function(RegistrationInfoBuilder)? updates]) =>
       (new RegistrationInfoBuilder()..update(updates)).build();
 
   _$RegistrationInfo._({this.email, this.username, this.password}) : super._();
 
   @override
-  RegistrationInfo rebuild(void Function(RegistrationInfoBuilder) updates) => (toBuilder()..update(updates)).build();
+  RegistrationInfo rebuild(void Function(RegistrationInfoBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
 
   @override
-  RegistrationInfoBuilder toBuilder() => new RegistrationInfoBuilder()..replace(this);
+  RegistrationInfoBuilder toBuilder() =>
+      new RegistrationInfoBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -509,7 +573,8 @@ class _$RegistrationInfo extends RegistrationInfo {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc(0, email.hashCode), username.hashCode), password.hashCode));
+    return $jf(
+        $jc($jc($jc(0, email.hashCode), username.hashCode), password.hashCode));
   }
 
   @override
@@ -522,7 +587,8 @@ class _$RegistrationInfo extends RegistrationInfo {
   }
 }
 
-class RegistrationInfoBuilder implements Builder<RegistrationInfo, RegistrationInfoBuilder> {
+class RegistrationInfoBuilder
+    implements Builder<RegistrationInfo, RegistrationInfoBuilder> {
   _$RegistrationInfo? _$v;
 
   String? _email;
@@ -563,7 +629,9 @@ class RegistrationInfoBuilder implements Builder<RegistrationInfo, RegistrationI
 
   @override
   _$RegistrationInfo build() {
-    final _$result = _$v ?? new _$RegistrationInfo._(email: email, username: username, password: password);
+    final _$result = _$v ??
+        new _$RegistrationInfo._(
+            email: email, username: username, password: password);
     replace(_$result);
     return _$result;
   }

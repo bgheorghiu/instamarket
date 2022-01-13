@@ -1,4 +1,5 @@
 import 'package:instamarket/src/actions/index.dart';
+import 'package:instamarket/src/actions/likes/index.dart';
 import 'package:instamarket/src/actions/posts/index.dart';
 import 'package:instamarket/src/data/post_api.dart';
 import 'package:instamarket/src/models/index.dart';
@@ -35,6 +36,9 @@ class PostsEpics {
                 ]))
             .expand((List<Post> posts) => <AppAction>[
                   ListenForPosts.successful(posts),
+                  ...posts
+                      .map((Post post) => post.id)
+                      .map((String postId) => GetLikes(postId)),
                   ...posts
                       .map((Post post) => post.uid)
                       .toSet()

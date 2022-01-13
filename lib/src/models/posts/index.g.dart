@@ -17,37 +17,51 @@ class _$PostSerializer implements StructuredSerializer<Post> {
   final String wireName = 'Post';
 
   @override
-  Iterable<Object?> serialize(Serializers serializers, Post object, {FullType specifiedType = FullType.unspecified}) {
+  Iterable<Object?> serialize(Serializers serializers, Post object,
+      {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
       'id',
       serializers.serialize(object.id, specifiedType: const FullType(String)),
       'uid',
       serializers.serialize(object.uid, specifiedType: const FullType(String)),
       'images',
-      serializers.serialize(object.images, specifiedType: const FullType(BuiltList, const [const FullType(String)])),
+      serializers.serialize(object.images,
+          specifiedType:
+              const FullType(BuiltList, const [const FullType(String)])),
       'tags',
-      serializers.serialize(object.tags, specifiedType: const FullType(BuiltList, const [const FullType(String)])),
+      serializers.serialize(object.tags,
+          specifiedType:
+              const FullType(BuiltList, const [const FullType(String)])),
       'users',
-      serializers.serialize(object.users, specifiedType: const FullType(BuiltList, const [const FullType(String)])),
+      serializers.serialize(object.users,
+          specifiedType:
+              const FullType(BuiltList, const [const FullType(String)])),
+      'likes',
+      serializers.serialize(object.likes,
+          specifiedType:
+              const FullType(BuiltList, const [const FullType(Like)])),
     ];
     Object? value;
     value = object.description;
     if (value != null) {
       result
         ..add('description')
-        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
     }
     value = object.lng;
     if (value != null) {
       result
         ..add('lng')
-        ..add(serializers.serialize(value, specifiedType: const FullType(double)));
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(double)));
     }
     value = object.lat;
     if (value != null) {
       result
         ..add('lat')
-        ..add(serializers.serialize(value, specifiedType: const FullType(double)));
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(double)));
     }
     return result;
   }
@@ -64,31 +78,48 @@ class _$PostSerializer implements StructuredSerializer<Post> {
       final Object? value = iterator.current;
       switch (key) {
         case 'id':
-          result.id = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
           break;
         case 'uid':
-          result.uid = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
+          result.uid = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
           break;
         case 'images':
           result.images.replace(serializers.deserialize(value,
-              specifiedType: const FullType(BuiltList, const [const FullType(String)]))! as BuiltList<Object?>);
+                  specifiedType: const FullType(
+                      BuiltList, const [const FullType(String)]))!
+              as BuiltList<Object?>);
           break;
         case 'tags':
           result.tags.replace(serializers.deserialize(value,
-              specifiedType: const FullType(BuiltList, const [const FullType(String)]))! as BuiltList<Object?>);
+                  specifiedType: const FullType(
+                      BuiltList, const [const FullType(String)]))!
+              as BuiltList<Object?>);
           break;
         case 'users':
           result.users.replace(serializers.deserialize(value,
-              specifiedType: const FullType(BuiltList, const [const FullType(String)]))! as BuiltList<Object?>);
+                  specifiedType: const FullType(
+                      BuiltList, const [const FullType(String)]))!
+              as BuiltList<Object?>);
+          break;
+        case 'likes':
+          result.likes.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(BuiltList, const [const FullType(Like)]))!
+              as BuiltList<Object?>);
           break;
         case 'description':
-          result.description = serializers.deserialize(value, specifiedType: const FullType(String)) as String?;
+          result.description = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'lng':
-          result.lng = serializers.deserialize(value, specifiedType: const FullType(double)) as double?;
+          result.lng = serializers.deserialize(value,
+              specifiedType: const FullType(double)) as double?;
           break;
         case 'lat':
-          result.lat = serializers.deserialize(value, specifiedType: const FullType(double)) as double?;
+          result.lat = serializers.deserialize(value,
+              specifiedType: const FullType(double)) as double?;
           break;
       }
     }
@@ -108,30 +139,39 @@ class _$PostInfoSerializer implements StructuredSerializer<PostInfo> {
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
       'paths',
-      serializers.serialize(object.paths, specifiedType: const FullType(BuiltList, const [const FullType(String)])),
+      serializers.serialize(object.paths,
+          specifiedType:
+              const FullType(BuiltList, const [const FullType(String)])),
       'users',
-      serializers.serialize(object.users, specifiedType: const FullType(BuiltList, const [const FullType(AppUser)])),
+      serializers.serialize(object.users,
+          specifiedType:
+              const FullType(BuiltList, const [const FullType(AppUser)])),
       'tags',
-      serializers.serialize(object.tags, specifiedType: const FullType(BuiltList, const [const FullType(String)])),
+      serializers.serialize(object.tags,
+          specifiedType:
+              const FullType(BuiltList, const [const FullType(String)])),
     ];
     Object? value;
     value = object.description;
     if (value != null) {
       result
         ..add('description')
-        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
     }
     value = object.lng;
     if (value != null) {
       result
         ..add('lng')
-        ..add(serializers.serialize(value, specifiedType: const FullType(double)));
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(double)));
     }
     value = object.lat;
     if (value != null) {
       result
         ..add('lat')
-        ..add(serializers.serialize(value, specifiedType: const FullType(double)));
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(double)));
     }
     return result;
   }
@@ -149,24 +189,33 @@ class _$PostInfoSerializer implements StructuredSerializer<PostInfo> {
       switch (key) {
         case 'paths':
           result.paths.replace(serializers.deserialize(value,
-              specifiedType: const FullType(BuiltList, const [const FullType(String)]))! as BuiltList<Object?>);
+                  specifiedType: const FullType(
+                      BuiltList, const [const FullType(String)]))!
+              as BuiltList<Object?>);
           break;
         case 'users':
           result.users.replace(serializers.deserialize(value,
-              specifiedType: const FullType(BuiltList, const [const FullType(AppUser)]))! as BuiltList<Object?>);
+                  specifiedType: const FullType(
+                      BuiltList, const [const FullType(AppUser)]))!
+              as BuiltList<Object?>);
           break;
         case 'tags':
           result.tags.replace(serializers.deserialize(value,
-              specifiedType: const FullType(BuiltList, const [const FullType(String)]))! as BuiltList<Object?>);
+                  specifiedType: const FullType(
+                      BuiltList, const [const FullType(String)]))!
+              as BuiltList<Object?>);
           break;
         case 'description':
-          result.description = serializers.deserialize(value, specifiedType: const FullType(String)) as String?;
+          result.description = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'lng':
-          result.lng = serializers.deserialize(value, specifiedType: const FullType(double)) as double?;
+          result.lng = serializers.deserialize(value,
+              specifiedType: const FullType(double)) as double?;
           break;
         case 'lat':
-          result.lat = serializers.deserialize(value, specifiedType: const FullType(double)) as double?;
+          result.lat = serializers.deserialize(value,
+              specifiedType: const FullType(double)) as double?;
           break;
       }
     }
@@ -186,9 +235,12 @@ class _$PostsStateSerializer implements StructuredSerializer<PostsState> {
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
       'info',
-      serializers.serialize(object.info, specifiedType: const FullType(PostInfo)),
+      serializers.serialize(object.info,
+          specifiedType: const FullType(PostInfo)),
       'posts',
-      serializers.serialize(object.posts, specifiedType: const FullType(BuiltList, const [const FullType(Post)])),
+      serializers.serialize(object.posts,
+          specifiedType:
+              const FullType(BuiltList, const [const FullType(Post)])),
     ];
 
     return result;
@@ -206,11 +258,14 @@ class _$PostsStateSerializer implements StructuredSerializer<PostsState> {
       final Object? value = iterator.current;
       switch (key) {
         case 'info':
-          result.info.replace(serializers.deserialize(value, specifiedType: const FullType(PostInfo))! as PostInfo);
+          result.info.replace(serializers.deserialize(value,
+              specifiedType: const FullType(PostInfo))! as PostInfo);
           break;
         case 'posts':
           result.posts.replace(serializers.deserialize(value,
-              specifiedType: const FullType(BuiltList, const [const FullType(Post)]))! as BuiltList<Object?>);
+                  specifiedType:
+                      const FullType(BuiltList, const [const FullType(Post)]))!
+              as BuiltList<Object?>);
           break;
       }
     }
@@ -231,13 +286,16 @@ class _$Post extends Post {
   @override
   final BuiltList<String> users;
   @override
+  final BuiltList<Like> likes;
+  @override
   final String? description;
   @override
   final double? lng;
   @override
   final double? lat;
 
-  factory _$Post([void Function(PostBuilder)? updates]) => (new PostBuilder()..update(updates)).build();
+  factory _$Post([void Function(PostBuilder)? updates]) =>
+      (new PostBuilder()..update(updates)).build();
 
   _$Post._(
       {required this.id,
@@ -245,6 +303,7 @@ class _$Post extends Post {
       required this.images,
       required this.tags,
       required this.users,
+      required this.likes,
       this.description,
       this.lng,
       this.lat})
@@ -254,10 +313,12 @@ class _$Post extends Post {
     BuiltValueNullFieldError.checkNotNull(images, 'Post', 'images');
     BuiltValueNullFieldError.checkNotNull(tags, 'Post', 'tags');
     BuiltValueNullFieldError.checkNotNull(users, 'Post', 'users');
+    BuiltValueNullFieldError.checkNotNull(likes, 'Post', 'likes');
   }
 
   @override
-  Post rebuild(void Function(PostBuilder) updates) => (toBuilder()..update(updates)).build();
+  Post rebuild(void Function(PostBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
 
   @override
   PostBuilder toBuilder() => new PostBuilder()..replace(this);
@@ -271,6 +332,7 @@ class _$Post extends Post {
         images == other.images &&
         tags == other.tags &&
         users == other.users &&
+        likes == other.likes &&
         description == other.description &&
         lng == other.lng &&
         lat == other.lat;
@@ -280,7 +342,15 @@ class _$Post extends Post {
   int get hashCode {
     return $jf($jc(
         $jc(
-            $jc($jc($jc($jc($jc($jc(0, id.hashCode), uid.hashCode), images.hashCode), tags.hashCode), users.hashCode),
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc($jc($jc(0, id.hashCode), uid.hashCode),
+                                images.hashCode),
+                            tags.hashCode),
+                        users.hashCode),
+                    likes.hashCode),
                 description.hashCode),
             lng.hashCode),
         lat.hashCode));
@@ -294,6 +364,7 @@ class _$Post extends Post {
           ..add('images', images)
           ..add('tags', tags)
           ..add('users', users)
+          ..add('likes', likes)
           ..add('description', description)
           ..add('lng', lng)
           ..add('lat', lat))
@@ -313,7 +384,8 @@ class PostBuilder implements Builder<Post, PostBuilder> {
   set uid(String? uid) => _$this._uid = uid;
 
   ListBuilder<String>? _images;
-  ListBuilder<String> get images => _$this._images ??= new ListBuilder<String>();
+  ListBuilder<String> get images =>
+      _$this._images ??= new ListBuilder<String>();
   set images(ListBuilder<String>? images) => _$this._images = images;
 
   ListBuilder<String>? _tags;
@@ -323,6 +395,10 @@ class PostBuilder implements Builder<Post, PostBuilder> {
   ListBuilder<String>? _users;
   ListBuilder<String> get users => _$this._users ??= new ListBuilder<String>();
   set users(ListBuilder<String>? users) => _$this._users = users;
+
+  ListBuilder<Like>? _likes;
+  ListBuilder<Like> get likes => _$this._likes ??= new ListBuilder<Like>();
+  set likes(ListBuilder<Like>? likes) => _$this._likes = likes;
 
   String? _description;
   String? get description => _$this._description;
@@ -346,6 +422,7 @@ class PostBuilder implements Builder<Post, PostBuilder> {
       _images = $v.images.toBuilder();
       _tags = $v.tags.toBuilder();
       _users = $v.users.toBuilder();
+      _likes = $v.likes.toBuilder();
       _description = $v.description;
       _lng = $v.lng;
       _lat = $v.lat;
@@ -376,6 +453,7 @@ class PostBuilder implements Builder<Post, PostBuilder> {
               images: images.build(),
               tags: tags.build(),
               users: users.build(),
+              likes: likes.build(),
               description: description,
               lng: lng,
               lat: lat);
@@ -388,8 +466,11 @@ class PostBuilder implements Builder<Post, PostBuilder> {
         tags.build();
         _$failedField = 'users';
         users.build();
+        _$failedField = 'likes';
+        likes.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError('Post', _$failedField, e.toString());
+        throw new BuiltValueNestedFieldError(
+            'Post', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -412,9 +493,16 @@ class _$PostInfo extends PostInfo {
   @override
   final double? lat;
 
-  factory _$PostInfo([void Function(PostInfoBuilder)? updates]) => (new PostInfoBuilder()..update(updates)).build();
+  factory _$PostInfo([void Function(PostInfoBuilder)? updates]) =>
+      (new PostInfoBuilder()..update(updates)).build();
 
-  _$PostInfo._({required this.paths, required this.users, required this.tags, this.description, this.lng, this.lat})
+  _$PostInfo._(
+      {required this.paths,
+      required this.users,
+      required this.tags,
+      this.description,
+      this.lng,
+      this.lat})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(paths, 'PostInfo', 'paths');
     BuiltValueNullFieldError.checkNotNull(users, 'PostInfo', 'users');
@@ -422,7 +510,8 @@ class _$PostInfo extends PostInfo {
   }
 
   @override
-  PostInfo rebuild(void Function(PostInfoBuilder) updates) => (toBuilder()..update(updates)).build();
+  PostInfo rebuild(void Function(PostInfoBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
 
   @override
   PostInfoBuilder toBuilder() => new PostInfoBuilder()..replace(this);
@@ -442,7 +531,10 @@ class _$PostInfo extends PostInfo {
   @override
   int get hashCode {
     return $jf($jc(
-        $jc($jc($jc($jc($jc(0, paths.hashCode), users.hashCode), tags.hashCode), description.hashCode), lng.hashCode),
+        $jc(
+            $jc($jc($jc($jc(0, paths.hashCode), users.hashCode), tags.hashCode),
+                description.hashCode),
+            lng.hashCode),
         lat.hashCode));
   }
 
@@ -467,7 +559,8 @@ class PostInfoBuilder implements Builder<PostInfo, PostInfoBuilder> {
   set paths(ListBuilder<String>? paths) => _$this._paths = paths;
 
   ListBuilder<AppUser>? _users;
-  ListBuilder<AppUser> get users => _$this._users ??= new ListBuilder<AppUser>();
+  ListBuilder<AppUser> get users =>
+      _$this._users ??= new ListBuilder<AppUser>();
   set users(ListBuilder<AppUser>? users) => _$this._users = users;
 
   ListBuilder<String>? _tags;
@@ -535,7 +628,8 @@ class PostInfoBuilder implements Builder<PostInfo, PostInfoBuilder> {
         _$failedField = 'tags';
         tags.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError('PostInfo', _$failedField, e.toString());
+        throw new BuiltValueNestedFieldError(
+            'PostInfo', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -559,7 +653,8 @@ class _$PostsState extends PostsState {
   }
 
   @override
-  PostsState rebuild(void Function(PostsStateBuilder) updates) => (toBuilder()..update(updates)).build();
+  PostsState rebuild(void Function(PostsStateBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
 
   @override
   PostsStateBuilder toBuilder() => new PostsStateBuilder()..replace(this);
@@ -622,7 +717,8 @@ class PostsStateBuilder implements Builder<PostsState, PostsStateBuilder> {
   _$PostsState build() {
     _$PostsState _$result;
     try {
-      _$result = _$v ?? new _$PostsState._(info: info.build(), posts: posts.build());
+      _$result =
+          _$v ?? new _$PostsState._(info: info.build(), posts: posts.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -631,7 +727,8 @@ class PostsStateBuilder implements Builder<PostsState, PostsStateBuilder> {
         _$failedField = 'posts';
         posts.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError('PostsState', _$failedField, e.toString());
+        throw new BuiltValueNestedFieldError(
+            'PostsState', _$failedField, e.toString());
       }
       rethrow;
     }
