@@ -6,7 +6,8 @@ abstract class AppState implements Built<AppState, AppStateBuilder> {
       b
         ..auth = AuthState.initialState().toBuilder()
         ..posts = PostsState.initialState().toBuilder()
-        ..likes = LikesState.initialState().toBuilder();
+        ..likes = LikesState.initialState().toBuilder()
+        ..comments = CommentsState.initialState().toBuilder();
     });
   }
 
@@ -19,6 +20,8 @@ abstract class AppState implements Built<AppState, AppStateBuilder> {
   PostsState get posts;
 
   LikesState get likes;
+
+  CommentsState get comments;
 
   BuiltSet<String> get pendingActions;
 

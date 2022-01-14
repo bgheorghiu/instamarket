@@ -17,10 +17,11 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$CreateLikeTearOff {
   const _$CreateLikeTearOff();
 
-  CreateLike$ call(Like like, [String pendingId = _kcreateLikePendingId]) {
+  CreateLike$ call(
+      {required String postId, String pendingId = _kcreateLikePendingId}) {
     return CreateLike$(
-      like,
-      pendingId,
+      postId: postId,
+      pendingId: pendingId,
     );
   }
 
@@ -50,21 +51,21 @@ mixin _$CreateLike {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(Like like, String pendingId) $default, {
+    TResult Function(String postId, String pendingId) $default, {
     required TResult Function(Like like, String pendingId) successful,
     required TResult Function(Object error, String pendingId) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult Function(Like like, String pendingId)? $default, {
+    TResult Function(String postId, String pendingId)? $default, {
     TResult Function(Like like, String pendingId)? successful,
     TResult Function(Object error, String pendingId)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(Like like, String pendingId)? $default, {
+    TResult Function(String postId, String pendingId)? $default, {
     TResult Function(Like like, String pendingId)? successful,
     TResult Function(Object error, String pendingId)? error,
     required TResult orElse(),
@@ -133,7 +134,7 @@ abstract class $CreateLike$CopyWith<$Res> implements $CreateLikeCopyWith<$Res> {
           CreateLike$ value, $Res Function(CreateLike$) then) =
       _$CreateLike$CopyWithImpl<$Res>;
   @override
-  $Res call({Like like, String pendingId});
+  $Res call({String postId, String pendingId});
 }
 
 /// @nodoc
@@ -148,15 +149,15 @@ class _$CreateLike$CopyWithImpl<$Res> extends _$CreateLikeCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? like = freezed,
+    Object? postId = freezed,
     Object? pendingId = freezed,
   }) {
     return _then(CreateLike$(
-      like == freezed
-          ? _value.like
-          : like // ignore: cast_nullable_to_non_nullable
-              as Like,
-      pendingId == freezed
+      postId: postId == freezed
+          ? _value.postId
+          : postId // ignore: cast_nullable_to_non_nullable
+              as String,
+      pendingId: pendingId == freezed
           ? _value.pendingId
           : pendingId // ignore: cast_nullable_to_non_nullable
               as String,
@@ -167,17 +168,18 @@ class _$CreateLike$CopyWithImpl<$Res> extends _$CreateLikeCopyWithImpl<$Res>
 /// @nodoc
 
 class _$CreateLike$ implements CreateLike$ {
-  const _$CreateLike$(this.like, [this.pendingId = _kcreateLikePendingId]);
+  const _$CreateLike$(
+      {required this.postId, this.pendingId = _kcreateLikePendingId});
 
   @override
-  final Like like;
+  final String postId;
   @JsonKey(defaultValue: _kcreateLikePendingId)
   @override
   final String pendingId;
 
   @override
   String toString() {
-    return 'CreateLike(like: $like, pendingId: $pendingId)';
+    return 'CreateLike(postId: $postId, pendingId: $pendingId)';
   }
 
   @override
@@ -185,13 +187,13 @@ class _$CreateLike$ implements CreateLike$ {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is CreateLike$ &&
-            (identical(other.like, like) || other.like == like) &&
+            (identical(other.postId, postId) || other.postId == postId) &&
             (identical(other.pendingId, pendingId) ||
                 other.pendingId == pendingId));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, like, pendingId);
+  int get hashCode => Object.hash(runtimeType, postId, pendingId);
 
   @JsonKey(ignore: true)
   @override
@@ -201,33 +203,33 @@ class _$CreateLike$ implements CreateLike$ {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(Like like, String pendingId) $default, {
+    TResult Function(String postId, String pendingId) $default, {
     required TResult Function(Like like, String pendingId) successful,
     required TResult Function(Object error, String pendingId) error,
   }) {
-    return $default(like, pendingId);
+    return $default(postId, pendingId);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult Function(Like like, String pendingId)? $default, {
+    TResult Function(String postId, String pendingId)? $default, {
     TResult Function(Like like, String pendingId)? successful,
     TResult Function(Object error, String pendingId)? error,
   }) {
-    return $default?.call(like, pendingId);
+    return $default?.call(postId, pendingId);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(Like like, String pendingId)? $default, {
+    TResult Function(String postId, String pendingId)? $default, {
     TResult Function(Like like, String pendingId)? successful,
     TResult Function(Object error, String pendingId)? error,
     required TResult orElse(),
   }) {
     if ($default != null) {
-      return $default(like, pendingId);
+      return $default(postId, pendingId);
     }
     return orElse();
   }
@@ -268,9 +270,10 @@ class _$CreateLike$ implements CreateLike$ {
 }
 
 abstract class CreateLike$ implements CreateLike {
-  const factory CreateLike$(Like like, [String pendingId]) = _$CreateLike$;
+  const factory CreateLike$({required String postId, String pendingId}) =
+      _$CreateLike$;
 
-  Like get like;
+  String get postId;
   @override
   String get pendingId;
   @override
@@ -357,7 +360,7 @@ class _$CreateLikeSuccessful implements CreateLikeSuccessful {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(Like like, String pendingId) $default, {
+    TResult Function(String postId, String pendingId) $default, {
     required TResult Function(Like like, String pendingId) successful,
     required TResult Function(Object error, String pendingId) error,
   }) {
@@ -367,7 +370,7 @@ class _$CreateLikeSuccessful implements CreateLikeSuccessful {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult Function(Like like, String pendingId)? $default, {
+    TResult Function(String postId, String pendingId)? $default, {
     TResult Function(Like like, String pendingId)? successful,
     TResult Function(Object error, String pendingId)? error,
   }) {
@@ -377,7 +380,7 @@ class _$CreateLikeSuccessful implements CreateLikeSuccessful {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(Like like, String pendingId)? $default, {
+    TResult Function(String postId, String pendingId)? $default, {
     TResult Function(Like like, String pendingId)? successful,
     TResult Function(Object error, String pendingId)? error,
     required TResult orElse(),
@@ -513,7 +516,7 @@ class _$CreateLikeError implements CreateLikeError {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(Like like, String pendingId) $default, {
+    TResult Function(String postId, String pendingId) $default, {
     required TResult Function(Like like, String pendingId) successful,
     required TResult Function(Object error, String pendingId) error,
   }) {
@@ -523,7 +526,7 @@ class _$CreateLikeError implements CreateLikeError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult Function(Like like, String pendingId)? $default, {
+    TResult Function(String postId, String pendingId)? $default, {
     TResult Function(Like like, String pendingId)? successful,
     TResult Function(Object error, String pendingId)? error,
   }) {
@@ -533,7 +536,7 @@ class _$CreateLikeError implements CreateLikeError {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(Like like, String pendingId)? $default, {
+    TResult Function(String postId, String pendingId)? $default, {
     TResult Function(Like like, String pendingId)? successful,
     TResult Function(Object error, String pendingId)? error,
     required TResult orElse(),

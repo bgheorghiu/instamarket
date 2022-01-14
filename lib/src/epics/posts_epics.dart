@@ -1,3 +1,4 @@
+import 'package:instamarket/src/actions/comments/index.dart';
 import 'package:instamarket/src/actions/index.dart';
 import 'package:instamarket/src/actions/likes/index.dart';
 import 'package:instamarket/src/actions/posts/index.dart';
@@ -15,7 +16,7 @@ class PostsEpics {
   Epic<AppState> get epics {
     return combineEpics<AppState>(<Epic<AppState>>[
       TypedEpic<AppState, CreatePost$>(_createPost),
-      TypedEpic<AppState, ListenForPosts$>(_listenForPosts),
+      TypedEpic<AppState, GetPosts$>(_getPosts),
     ]);
   }
 
@@ -27,24 +28,23 @@ class PostsEpics {
             .onErrorReturnWith((dynamic error, dynamic stackTrace) => CreatePost.error(error)));
   }
 
-  Stream<AppAction> _listenForPosts(Stream<ListenForPosts$> actions, EpicStore<AppState> store) {
+  Stream<AppAction> _getPosts(Stream<GetPosts$> actions, EpicStore<AppState> store) {
     return actions //
-        .flatMap((ListenForPosts$ action) => Stream<ListenForPosts$>.value(action)
-            .asyncMap((ListenForPosts$ action) => _postApi.listenForPosts(<String>[
+        .flatMap((GetPosts$ action) => Stream<GetPosts$>.value(action)
+            .asyncMap((GetPosts$ action) => _postApi.getPosts(<String>[
                   store.state.auth.user!.uid,
                   ...store.state.auth.user!.following.asList(),
                 ]))
             .expand((List<Post> posts) => <AppAction>[
-                  ListenForPosts.successful(posts),
-                  ...posts
-                      .map((Post post) => post.id)
-                      .map((String postId) => GetLikes(postId)),
+                  GetPosts.successful(posts),
+                  ListenForComments.start(posts.map((Post e) => e.id).toList()),
+                  ...posts.map((Post post) => post.id).map((String postId) => GetLikes(postId)),
                   ...posts
                       .map((Post post) => post.uid)
                       .toSet()
                       .where((String uid) => store.state.auth.users[uid] == null)
                       .map((String uid) => GetUser(uid: uid)),
                 ])
-            .onErrorReturnWith((dynamic error, dynamic stackTrace) => ListenForPosts.error(error)));
+            .onErrorReturnWith((dynamic error, dynamic stackTrace) => GetPosts.error(error)));
   }
 }

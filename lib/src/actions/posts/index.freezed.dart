@@ -853,26 +853,25 @@ abstract class UpdatePostInfo$ implements UpdatePostInfo {
 }
 
 /// @nodoc
-class _$ListenForPostsTearOff {
-  const _$ListenForPostsTearOff();
+class _$GetPostsTearOff {
+  const _$GetPostsTearOff();
 
-  ListenForPosts$ call([String pendingId = _klistenForPostsPendingId]) {
-    return ListenForPosts$(
+  GetPosts$ call([String pendingId = _kgetPostsPendingId]) {
+    return GetPosts$(
       pendingId,
     );
   }
 
-  ListenForPostsSuccessful successful(List<Post> posts,
-      [String pendingId = _klistenForPostsPendingId]) {
-    return ListenForPostsSuccessful(
+  GetPostsSuccessful successful(List<Post> posts,
+      [String pendingId = _kgetPostsPendingId]) {
+    return GetPostsSuccessful(
       posts,
       pendingId,
     );
   }
 
-  ListenForPostsError error(Object error,
-      [String pendingId = _klistenForPostsPendingId]) {
-    return ListenForPostsError(
+  GetPostsError error(Object error, [String pendingId = _kgetPostsPendingId]) {
+    return GetPostsError(
       error,
       pendingId,
     );
@@ -880,10 +879,10 @@ class _$ListenForPostsTearOff {
 }
 
 /// @nodoc
-const $ListenForPosts = _$ListenForPostsTearOff();
+const $GetPosts = _$GetPostsTearOff();
 
 /// @nodoc
-mixin _$ListenForPosts {
+mixin _$GetPosts {
   String get pendingId => throw _privateConstructorUsedError;
 
   @optionalTypeArgs
@@ -910,48 +909,46 @@ mixin _$ListenForPosts {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
-    TResult Function(ListenForPosts$ value) $default, {
-    required TResult Function(ListenForPostsSuccessful value) successful,
-    required TResult Function(ListenForPostsError value) error,
+    TResult Function(GetPosts$ value) $default, {
+    required TResult Function(GetPostsSuccessful value) successful,
+    required TResult Function(GetPostsError value) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
-    TResult Function(ListenForPosts$ value)? $default, {
-    TResult Function(ListenForPostsSuccessful value)? successful,
-    TResult Function(ListenForPostsError value)? error,
+    TResult Function(GetPosts$ value)? $default, {
+    TResult Function(GetPostsSuccessful value)? successful,
+    TResult Function(GetPostsError value)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>(
-    TResult Function(ListenForPosts$ value)? $default, {
-    TResult Function(ListenForPostsSuccessful value)? successful,
-    TResult Function(ListenForPostsError value)? error,
+    TResult Function(GetPosts$ value)? $default, {
+    TResult Function(GetPostsSuccessful value)? successful,
+    TResult Function(GetPostsError value)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $ListenForPostsCopyWith<ListenForPosts> get copyWith =>
+  $GetPostsCopyWith<GetPosts> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ListenForPostsCopyWith<$Res> {
-  factory $ListenForPostsCopyWith(
-          ListenForPosts value, $Res Function(ListenForPosts) then) =
-      _$ListenForPostsCopyWithImpl<$Res>;
+abstract class $GetPostsCopyWith<$Res> {
+  factory $GetPostsCopyWith(GetPosts value, $Res Function(GetPosts) then) =
+      _$GetPostsCopyWithImpl<$Res>;
   $Res call({String pendingId});
 }
 
 /// @nodoc
-class _$ListenForPostsCopyWithImpl<$Res>
-    implements $ListenForPostsCopyWith<$Res> {
-  _$ListenForPostsCopyWithImpl(this._value, this._then);
+class _$GetPostsCopyWithImpl<$Res> implements $GetPostsCopyWith<$Res> {
+  _$GetPostsCopyWithImpl(this._value, this._then);
 
-  final ListenForPosts _value;
+  final GetPosts _value;
   // ignore: unused_field
-  final $Res Function(ListenForPosts) _then;
+  final $Res Function(GetPosts) _then;
 
   @override
   $Res call({
@@ -967,31 +964,27 @@ class _$ListenForPostsCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class $ListenForPosts$CopyWith<$Res>
-    implements $ListenForPostsCopyWith<$Res> {
-  factory $ListenForPosts$CopyWith(
-          ListenForPosts$ value, $Res Function(ListenForPosts$) then) =
-      _$ListenForPosts$CopyWithImpl<$Res>;
+abstract class $GetPosts$CopyWith<$Res> implements $GetPostsCopyWith<$Res> {
+  factory $GetPosts$CopyWith(GetPosts$ value, $Res Function(GetPosts$) then) =
+      _$GetPosts$CopyWithImpl<$Res>;
   @override
   $Res call({String pendingId});
 }
 
 /// @nodoc
-class _$ListenForPosts$CopyWithImpl<$Res>
-    extends _$ListenForPostsCopyWithImpl<$Res>
-    implements $ListenForPosts$CopyWith<$Res> {
-  _$ListenForPosts$CopyWithImpl(
-      ListenForPosts$ _value, $Res Function(ListenForPosts$) _then)
-      : super(_value, (v) => _then(v as ListenForPosts$));
+class _$GetPosts$CopyWithImpl<$Res> extends _$GetPostsCopyWithImpl<$Res>
+    implements $GetPosts$CopyWith<$Res> {
+  _$GetPosts$CopyWithImpl(GetPosts$ _value, $Res Function(GetPosts$) _then)
+      : super(_value, (v) => _then(v as GetPosts$));
 
   @override
-  ListenForPosts$ get _value => super._value as ListenForPosts$;
+  GetPosts$ get _value => super._value as GetPosts$;
 
   @override
   $Res call({
     Object? pendingId = freezed,
   }) {
-    return _then(ListenForPosts$(
+    return _then(GetPosts$(
       pendingId == freezed
           ? _value.pendingId
           : pendingId // ignore: cast_nullable_to_non_nullable
@@ -1002,23 +995,23 @@ class _$ListenForPosts$CopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ListenForPosts$ implements ListenForPosts$ {
-  const _$ListenForPosts$([this.pendingId = _klistenForPostsPendingId]);
+class _$GetPosts$ implements GetPosts$ {
+  const _$GetPosts$([this.pendingId = _kgetPostsPendingId]);
 
-  @JsonKey(defaultValue: _klistenForPostsPendingId)
+  @JsonKey(defaultValue: _kgetPostsPendingId)
   @override
   final String pendingId;
 
   @override
   String toString() {
-    return 'ListenForPosts(pendingId: $pendingId)';
+    return 'GetPosts(pendingId: $pendingId)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is ListenForPosts$ &&
+            other is GetPosts$ &&
             (identical(other.pendingId, pendingId) ||
                 other.pendingId == pendingId));
   }
@@ -1028,8 +1021,8 @@ class _$ListenForPosts$ implements ListenForPosts$ {
 
   @JsonKey(ignore: true)
   @override
-  $ListenForPosts$CopyWith<ListenForPosts$> get copyWith =>
-      _$ListenForPosts$CopyWithImpl<ListenForPosts$>(this, _$identity);
+  $GetPosts$CopyWith<GetPosts$> get copyWith =>
+      _$GetPosts$CopyWithImpl<GetPosts$>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1068,9 +1061,9 @@ class _$ListenForPosts$ implements ListenForPosts$ {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
-    TResult Function(ListenForPosts$ value) $default, {
-    required TResult Function(ListenForPostsSuccessful value) successful,
-    required TResult Function(ListenForPostsError value) error,
+    TResult Function(GetPosts$ value) $default, {
+    required TResult Function(GetPostsSuccessful value) successful,
+    required TResult Function(GetPostsError value) error,
   }) {
     return $default(this);
   }
@@ -1078,9 +1071,9 @@ class _$ListenForPosts$ implements ListenForPosts$ {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
-    TResult Function(ListenForPosts$ value)? $default, {
-    TResult Function(ListenForPostsSuccessful value)? successful,
-    TResult Function(ListenForPostsError value)? error,
+    TResult Function(GetPosts$ value)? $default, {
+    TResult Function(GetPostsSuccessful value)? successful,
+    TResult Function(GetPostsError value)? error,
   }) {
     return $default?.call(this);
   }
@@ -1088,9 +1081,9 @@ class _$ListenForPosts$ implements ListenForPosts$ {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>(
-    TResult Function(ListenForPosts$ value)? $default, {
-    TResult Function(ListenForPostsSuccessful value)? successful,
-    TResult Function(ListenForPostsError value)? error,
+    TResult Function(GetPosts$ value)? $default, {
+    TResult Function(GetPostsSuccessful value)? successful,
+    TResult Function(GetPostsError value)? error,
     required TResult orElse(),
   }) {
     if ($default != null) {
@@ -1100,45 +1093,44 @@ class _$ListenForPosts$ implements ListenForPosts$ {
   }
 }
 
-abstract class ListenForPosts$ implements ListenForPosts {
-  const factory ListenForPosts$([String pendingId]) = _$ListenForPosts$;
+abstract class GetPosts$ implements GetPosts {
+  const factory GetPosts$([String pendingId]) = _$GetPosts$;
 
   @override
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  $ListenForPosts$CopyWith<ListenForPosts$> get copyWith =>
+  $GetPosts$CopyWith<GetPosts$> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ListenForPostsSuccessfulCopyWith<$Res>
-    implements $ListenForPostsCopyWith<$Res> {
-  factory $ListenForPostsSuccessfulCopyWith(ListenForPostsSuccessful value,
-          $Res Function(ListenForPostsSuccessful) then) =
-      _$ListenForPostsSuccessfulCopyWithImpl<$Res>;
+abstract class $GetPostsSuccessfulCopyWith<$Res>
+    implements $GetPostsCopyWith<$Res> {
+  factory $GetPostsSuccessfulCopyWith(
+          GetPostsSuccessful value, $Res Function(GetPostsSuccessful) then) =
+      _$GetPostsSuccessfulCopyWithImpl<$Res>;
   @override
   $Res call({List<Post> posts, String pendingId});
 }
 
 /// @nodoc
-class _$ListenForPostsSuccessfulCopyWithImpl<$Res>
-    extends _$ListenForPostsCopyWithImpl<$Res>
-    implements $ListenForPostsSuccessfulCopyWith<$Res> {
-  _$ListenForPostsSuccessfulCopyWithImpl(ListenForPostsSuccessful _value,
-      $Res Function(ListenForPostsSuccessful) _then)
-      : super(_value, (v) => _then(v as ListenForPostsSuccessful));
+class _$GetPostsSuccessfulCopyWithImpl<$Res>
+    extends _$GetPostsCopyWithImpl<$Res>
+    implements $GetPostsSuccessfulCopyWith<$Res> {
+  _$GetPostsSuccessfulCopyWithImpl(
+      GetPostsSuccessful _value, $Res Function(GetPostsSuccessful) _then)
+      : super(_value, (v) => _then(v as GetPostsSuccessful));
 
   @override
-  ListenForPostsSuccessful get _value =>
-      super._value as ListenForPostsSuccessful;
+  GetPostsSuccessful get _value => super._value as GetPostsSuccessful;
 
   @override
   $Res call({
     Object? posts = freezed,
     Object? pendingId = freezed,
   }) {
-    return _then(ListenForPostsSuccessful(
+    return _then(GetPostsSuccessful(
       posts == freezed
           ? _value.posts
           : posts // ignore: cast_nullable_to_non_nullable
@@ -1153,26 +1145,26 @@ class _$ListenForPostsSuccessfulCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ListenForPostsSuccessful implements ListenForPostsSuccessful {
-  const _$ListenForPostsSuccessful(this.posts,
-      [this.pendingId = _klistenForPostsPendingId]);
+class _$GetPostsSuccessful implements GetPostsSuccessful {
+  const _$GetPostsSuccessful(this.posts,
+      [this.pendingId = _kgetPostsPendingId]);
 
   @override
   final List<Post> posts;
-  @JsonKey(defaultValue: _klistenForPostsPendingId)
+  @JsonKey(defaultValue: _kgetPostsPendingId)
   @override
   final String pendingId;
 
   @override
   String toString() {
-    return 'ListenForPosts.successful(posts: $posts, pendingId: $pendingId)';
+    return 'GetPosts.successful(posts: $posts, pendingId: $pendingId)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is ListenForPostsSuccessful &&
+            other is GetPostsSuccessful &&
             const DeepCollectionEquality().equals(other.posts, posts) &&
             (identical(other.pendingId, pendingId) ||
                 other.pendingId == pendingId));
@@ -1184,9 +1176,8 @@ class _$ListenForPostsSuccessful implements ListenForPostsSuccessful {
 
   @JsonKey(ignore: true)
   @override
-  $ListenForPostsSuccessfulCopyWith<ListenForPostsSuccessful> get copyWith =>
-      _$ListenForPostsSuccessfulCopyWithImpl<ListenForPostsSuccessful>(
-          this, _$identity);
+  $GetPostsSuccessfulCopyWith<GetPostsSuccessful> get copyWith =>
+      _$GetPostsSuccessfulCopyWithImpl<GetPostsSuccessful>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1225,9 +1216,9 @@ class _$ListenForPostsSuccessful implements ListenForPostsSuccessful {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
-    TResult Function(ListenForPosts$ value) $default, {
-    required TResult Function(ListenForPostsSuccessful value) successful,
-    required TResult Function(ListenForPostsError value) error,
+    TResult Function(GetPosts$ value) $default, {
+    required TResult Function(GetPostsSuccessful value) successful,
+    required TResult Function(GetPostsError value) error,
   }) {
     return successful(this);
   }
@@ -1235,9 +1226,9 @@ class _$ListenForPostsSuccessful implements ListenForPostsSuccessful {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
-    TResult Function(ListenForPosts$ value)? $default, {
-    TResult Function(ListenForPostsSuccessful value)? successful,
-    TResult Function(ListenForPostsError value)? error,
+    TResult Function(GetPosts$ value)? $default, {
+    TResult Function(GetPostsSuccessful value)? successful,
+    TResult Function(GetPostsError value)? error,
   }) {
     return successful?.call(this);
   }
@@ -1245,9 +1236,9 @@ class _$ListenForPostsSuccessful implements ListenForPostsSuccessful {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>(
-    TResult Function(ListenForPosts$ value)? $default, {
-    TResult Function(ListenForPostsSuccessful value)? successful,
-    TResult Function(ListenForPostsError value)? error,
+    TResult Function(GetPosts$ value)? $default, {
+    TResult Function(GetPostsSuccessful value)? successful,
+    TResult Function(GetPostsError value)? error,
     required TResult orElse(),
   }) {
     if (successful != null) {
@@ -1257,46 +1248,44 @@ class _$ListenForPostsSuccessful implements ListenForPostsSuccessful {
   }
 }
 
-abstract class ListenForPostsSuccessful implements ListenForPosts {
-  const factory ListenForPostsSuccessful(List<Post> posts, [String pendingId]) =
-      _$ListenForPostsSuccessful;
+abstract class GetPostsSuccessful implements GetPosts {
+  const factory GetPostsSuccessful(List<Post> posts, [String pendingId]) =
+      _$GetPostsSuccessful;
 
   List<Post> get posts;
   @override
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  $ListenForPostsSuccessfulCopyWith<ListenForPostsSuccessful> get copyWith =>
+  $GetPostsSuccessfulCopyWith<GetPostsSuccessful> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ListenForPostsErrorCopyWith<$Res>
-    implements $ListenForPostsCopyWith<$Res> {
-  factory $ListenForPostsErrorCopyWith(
-          ListenForPostsError value, $Res Function(ListenForPostsError) then) =
-      _$ListenForPostsErrorCopyWithImpl<$Res>;
+abstract class $GetPostsErrorCopyWith<$Res> implements $GetPostsCopyWith<$Res> {
+  factory $GetPostsErrorCopyWith(
+          GetPostsError value, $Res Function(GetPostsError) then) =
+      _$GetPostsErrorCopyWithImpl<$Res>;
   @override
   $Res call({Object error, String pendingId});
 }
 
 /// @nodoc
-class _$ListenForPostsErrorCopyWithImpl<$Res>
-    extends _$ListenForPostsCopyWithImpl<$Res>
-    implements $ListenForPostsErrorCopyWith<$Res> {
-  _$ListenForPostsErrorCopyWithImpl(
-      ListenForPostsError _value, $Res Function(ListenForPostsError) _then)
-      : super(_value, (v) => _then(v as ListenForPostsError));
+class _$GetPostsErrorCopyWithImpl<$Res> extends _$GetPostsCopyWithImpl<$Res>
+    implements $GetPostsErrorCopyWith<$Res> {
+  _$GetPostsErrorCopyWithImpl(
+      GetPostsError _value, $Res Function(GetPostsError) _then)
+      : super(_value, (v) => _then(v as GetPostsError));
 
   @override
-  ListenForPostsError get _value => super._value as ListenForPostsError;
+  GetPostsError get _value => super._value as GetPostsError;
 
   @override
   $Res call({
     Object? error = freezed,
     Object? pendingId = freezed,
   }) {
-    return _then(ListenForPostsError(
+    return _then(GetPostsError(
       error == freezed
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
@@ -1312,26 +1301,25 @@ class _$ListenForPostsErrorCopyWithImpl<$Res>
 /// @nodoc
 
 @Implements<ErrorAction>()
-class _$ListenForPostsError implements ListenForPostsError {
-  const _$ListenForPostsError(this.error,
-      [this.pendingId = _klistenForPostsPendingId]);
+class _$GetPostsError implements GetPostsError {
+  const _$GetPostsError(this.error, [this.pendingId = _kgetPostsPendingId]);
 
   @override
   final Object error;
-  @JsonKey(defaultValue: _klistenForPostsPendingId)
+  @JsonKey(defaultValue: _kgetPostsPendingId)
   @override
   final String pendingId;
 
   @override
   String toString() {
-    return 'ListenForPosts.error(error: $error, pendingId: $pendingId)';
+    return 'GetPosts.error(error: $error, pendingId: $pendingId)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is ListenForPostsError &&
+            other is GetPostsError &&
             const DeepCollectionEquality().equals(other.error, error) &&
             (identical(other.pendingId, pendingId) ||
                 other.pendingId == pendingId));
@@ -1343,8 +1331,8 @@ class _$ListenForPostsError implements ListenForPostsError {
 
   @JsonKey(ignore: true)
   @override
-  $ListenForPostsErrorCopyWith<ListenForPostsError> get copyWith =>
-      _$ListenForPostsErrorCopyWithImpl<ListenForPostsError>(this, _$identity);
+  $GetPostsErrorCopyWith<GetPostsError> get copyWith =>
+      _$GetPostsErrorCopyWithImpl<GetPostsError>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1383,9 +1371,9 @@ class _$ListenForPostsError implements ListenForPostsError {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
-    TResult Function(ListenForPosts$ value) $default, {
-    required TResult Function(ListenForPostsSuccessful value) successful,
-    required TResult Function(ListenForPostsError value) error,
+    TResult Function(GetPosts$ value) $default, {
+    required TResult Function(GetPostsSuccessful value) successful,
+    required TResult Function(GetPostsError value) error,
   }) {
     return error(this);
   }
@@ -1393,9 +1381,9 @@ class _$ListenForPostsError implements ListenForPostsError {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
-    TResult Function(ListenForPosts$ value)? $default, {
-    TResult Function(ListenForPostsSuccessful value)? successful,
-    TResult Function(ListenForPostsError value)? error,
+    TResult Function(GetPosts$ value)? $default, {
+    TResult Function(GetPostsSuccessful value)? successful,
+    TResult Function(GetPostsError value)? error,
   }) {
     return error?.call(this);
   }
@@ -1403,9 +1391,9 @@ class _$ListenForPostsError implements ListenForPostsError {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>(
-    TResult Function(ListenForPosts$ value)? $default, {
-    TResult Function(ListenForPostsSuccessful value)? successful,
-    TResult Function(ListenForPostsError value)? error,
+    TResult Function(GetPosts$ value)? $default, {
+    TResult Function(GetPostsSuccessful value)? successful,
+    TResult Function(GetPostsError value)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -1415,15 +1403,15 @@ class _$ListenForPostsError implements ListenForPostsError {
   }
 }
 
-abstract class ListenForPostsError implements ListenForPosts, ErrorAction {
-  const factory ListenForPostsError(Object error, [String pendingId]) =
-      _$ListenForPostsError;
+abstract class GetPostsError implements GetPosts, ErrorAction {
+  const factory GetPostsError(Object error, [String pendingId]) =
+      _$GetPostsError;
 
   Object get error;
   @override
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  $ListenForPostsErrorCopyWith<ListenForPostsError> get copyWith =>
+  $GetPostsErrorCopyWith<GetPostsError> get copyWith =>
       throw _privateConstructorUsedError;
 }

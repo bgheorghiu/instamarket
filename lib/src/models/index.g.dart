@@ -27,6 +27,9 @@ class _$AppStateSerializer implements StructuredSerializer<AppState> {
       'likes',
       serializers.serialize(object.likes,
           specifiedType: const FullType(LikesState)),
+      'comments',
+      serializers.serialize(object.comments,
+          specifiedType: const FullType(CommentsState)),
       'pendingActions',
       serializers.serialize(object.pendingActions,
           specifiedType:
@@ -59,6 +62,10 @@ class _$AppStateSerializer implements StructuredSerializer<AppState> {
           result.likes.replace(serializers.deserialize(value,
               specifiedType: const FullType(LikesState))! as LikesState);
           break;
+        case 'comments':
+          result.comments.replace(serializers.deserialize(value,
+              specifiedType: const FullType(CommentsState))! as CommentsState);
+          break;
         case 'pendingActions':
           result.pendingActions.replace(serializers.deserialize(value,
                   specifiedType:
@@ -80,6 +87,8 @@ class _$AppState extends AppState {
   @override
   final LikesState likes;
   @override
+  final CommentsState comments;
+  @override
   final BuiltSet<String> pendingActions;
 
   factory _$AppState([void Function(AppStateBuilder)? updates]) =>
@@ -89,11 +98,13 @@ class _$AppState extends AppState {
       {required this.auth,
       required this.posts,
       required this.likes,
+      required this.comments,
       required this.pendingActions})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(auth, 'AppState', 'auth');
     BuiltValueNullFieldError.checkNotNull(posts, 'AppState', 'posts');
     BuiltValueNullFieldError.checkNotNull(likes, 'AppState', 'likes');
+    BuiltValueNullFieldError.checkNotNull(comments, 'AppState', 'comments');
     BuiltValueNullFieldError.checkNotNull(
         pendingActions, 'AppState', 'pendingActions');
   }
@@ -112,13 +123,15 @@ class _$AppState extends AppState {
         auth == other.auth &&
         posts == other.posts &&
         likes == other.likes &&
+        comments == other.comments &&
         pendingActions == other.pendingActions;
   }
 
   @override
   int get hashCode {
     return $jf($jc(
-        $jc($jc($jc(0, auth.hashCode), posts.hashCode), likes.hashCode),
+        $jc($jc($jc($jc(0, auth.hashCode), posts.hashCode), likes.hashCode),
+            comments.hashCode),
         pendingActions.hashCode));
   }
 
@@ -128,6 +141,7 @@ class _$AppState extends AppState {
           ..add('auth', auth)
           ..add('posts', posts)
           ..add('likes', likes)
+          ..add('comments', comments)
           ..add('pendingActions', pendingActions))
         .toString();
   }
@@ -148,6 +162,11 @@ class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
   LikesStateBuilder get likes => _$this._likes ??= new LikesStateBuilder();
   set likes(LikesStateBuilder? likes) => _$this._likes = likes;
 
+  CommentsStateBuilder? _comments;
+  CommentsStateBuilder get comments =>
+      _$this._comments ??= new CommentsStateBuilder();
+  set comments(CommentsStateBuilder? comments) => _$this._comments = comments;
+
   SetBuilder<String>? _pendingActions;
   SetBuilder<String> get pendingActions =>
       _$this._pendingActions ??= new SetBuilder<String>();
@@ -162,6 +181,7 @@ class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
       _auth = $v.auth.toBuilder();
       _posts = $v.posts.toBuilder();
       _likes = $v.likes.toBuilder();
+      _comments = $v.comments.toBuilder();
       _pendingActions = $v.pendingActions.toBuilder();
       _$v = null;
     }
@@ -188,6 +208,7 @@ class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
               auth: auth.build(),
               posts: posts.build(),
               likes: likes.build(),
+              comments: comments.build(),
               pendingActions: pendingActions.build());
     } catch (_) {
       late String _$failedField;
@@ -198,6 +219,8 @@ class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
         posts.build();
         _$failedField = 'likes';
         likes.build();
+        _$failedField = 'comments';
+        comments.build();
         _$failedField = 'pendingActions';
         pendingActions.build();
       } catch (e) {

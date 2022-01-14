@@ -18,36 +18,16 @@ class _$LikeSerializer implements StructuredSerializer<Like> {
   @override
   Iterable<Object?> serialize(Serializers serializers, Like object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[];
-    Object? value;
-    value = object.id;
-    if (value != null) {
-      result
-        ..add('id')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
-    value = object.postId;
-    if (value != null) {
-      result
-        ..add('postId')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
-    value = object.parentId;
-    if (value != null) {
-      result
-        ..add('parentId')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
-    value = object.userId;
-    if (value != null) {
-      result
-        ..add('userId')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
+    final result = <Object?>[
+      'id',
+      serializers.serialize(object.id, specifiedType: const FullType(String)),
+      'postId',
+      serializers.serialize(object.postId,
+          specifiedType: const FullType(String)),
+      'uid',
+      serializers.serialize(object.uid, specifiedType: const FullType(String)),
+    ];
+
     return result;
   }
 
@@ -64,19 +44,15 @@ class _$LikeSerializer implements StructuredSerializer<Like> {
       switch (key) {
         case 'id':
           result.id = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+              specifiedType: const FullType(String)) as String;
           break;
         case 'postId':
           result.postId = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+              specifiedType: const FullType(String)) as String;
           break;
-        case 'parentId':
-          result.parentId = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
-          break;
-        case 'userId':
-          result.userId = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+        case 'uid':
+          result.uid = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
           break;
       }
     }
@@ -130,18 +106,21 @@ class _$LikesStateSerializer implements StructuredSerializer<LikesState> {
 
 class _$Like extends Like {
   @override
-  final String? id;
+  final String id;
   @override
-  final String? postId;
+  final String postId;
   @override
-  final String? parentId;
-  @override
-  final String? userId;
+  final String uid;
 
   factory _$Like([void Function(LikeBuilder)? updates]) =>
       (new LikeBuilder()..update(updates)).build();
 
-  _$Like._({this.id, this.postId, this.parentId, this.userId}) : super._();
+  _$Like._({required this.id, required this.postId, required this.uid})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(id, 'Like', 'id');
+    BuiltValueNullFieldError.checkNotNull(postId, 'Like', 'postId');
+    BuiltValueNullFieldError.checkNotNull(uid, 'Like', 'uid');
+  }
 
   @override
   Like rebuild(void Function(LikeBuilder) updates) =>
@@ -156,15 +135,12 @@ class _$Like extends Like {
     return other is Like &&
         id == other.id &&
         postId == other.postId &&
-        parentId == other.parentId &&
-        userId == other.userId;
+        uid == other.uid;
   }
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc($jc($jc(0, id.hashCode), postId.hashCode), parentId.hashCode),
-        userId.hashCode));
+    return $jf($jc($jc($jc(0, id.hashCode), postId.hashCode), uid.hashCode));
   }
 
   @override
@@ -172,8 +148,7 @@ class _$Like extends Like {
     return (newBuiltValueToStringHelper('Like')
           ..add('id', id)
           ..add('postId', postId)
-          ..add('parentId', parentId)
-          ..add('userId', userId))
+          ..add('uid', uid))
         .toString();
   }
 }
@@ -189,13 +164,9 @@ class LikeBuilder implements Builder<Like, LikeBuilder> {
   String? get postId => _$this._postId;
   set postId(String? postId) => _$this._postId = postId;
 
-  String? _parentId;
-  String? get parentId => _$this._parentId;
-  set parentId(String? parentId) => _$this._parentId = parentId;
-
-  String? _userId;
-  String? get userId => _$this._userId;
-  set userId(String? userId) => _$this._userId = userId;
+  String? _uid;
+  String? get uid => _$this._uid;
+  set uid(String? uid) => _$this._uid = uid;
 
   LikeBuilder();
 
@@ -204,8 +175,7 @@ class LikeBuilder implements Builder<Like, LikeBuilder> {
     if ($v != null) {
       _id = $v.id;
       _postId = $v.postId;
-      _parentId = $v.parentId;
-      _userId = $v.userId;
+      _uid = $v.uid;
       _$v = null;
     }
     return this;
@@ -226,7 +196,10 @@ class LikeBuilder implements Builder<Like, LikeBuilder> {
   _$Like build() {
     final _$result = _$v ??
         new _$Like._(
-            id: id, postId: postId, parentId: parentId, userId: userId);
+            id: BuiltValueNullFieldError.checkNotNull(id, 'Like', 'id'),
+            postId:
+                BuiltValueNullFieldError.checkNotNull(postId, 'Like', 'postId'),
+            uid: BuiltValueNullFieldError.checkNotNull(uid, 'Like', 'uid'));
     replace(_$result);
     return _$result;
   }

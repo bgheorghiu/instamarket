@@ -6,6 +6,7 @@ import 'package:built_value/standard_json_plugin.dart';
 import 'package:instamarket/src/models/posts/index.dart';
 
 import 'auth/index.dart';
+import 'comments/index.dart';
 import 'index.dart';
 import 'likes/index.dart';
 
@@ -15,6 +16,8 @@ part 'serializers.g.dart';
   AppState,
   AuthState,
   AppUser,
+  Comment,
+  CommentsState,
   Like,
   LikesState,
   PostsState,

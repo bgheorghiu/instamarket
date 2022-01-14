@@ -22,7 +22,10 @@ class LikesEpics {
   Stream<AppAction> _createLike(Stream<CreateLike$> actions, EpicStore<AppState> store) {
     return actions //
         .flatMap((CreateLike$ action) => Stream<CreateLike$>.value(action)
-            .asyncMap((CreateLike$ action) => _likesApi.createLikes(action.like))
+            .asyncMap((CreateLike$ action) => _likesApi.createLikes(
+                  uid: store.state.auth.user!.uid,
+                  postId: action.postId,
+                ))
             .map((Like like) => CreateLike.successful(like))
             .onErrorReturnWith((dynamic error, dynamic stackTrace) => CreateLike.error(error)));
   }

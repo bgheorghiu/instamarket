@@ -4,7 +4,10 @@ const String _kcreateLikePendingId = 'createLike';
 
 @freezed
 class CreateLike with _$CreateLike implements AppAction {
-  const factory CreateLike(Like like,[@Default(_kcreateLikePendingId) String pendingId]) = CreateLike$;
+  const factory CreateLike({
+    required String postId,
+    @Default(_kcreateLikePendingId) String pendingId,
+  }) = CreateLike$;
 
   const factory CreateLike.successful(
     Like like, [

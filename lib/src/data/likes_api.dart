@@ -8,11 +8,17 @@ class LikesApi {
 
   final FirebaseFirestore _firestore;
 
-  Future<Like> createLikes(Like like) async {
+  Future<Like> createLikes({required String uid, required String postId}) async {
     final DocumentReference<Map<String, dynamic>> ref = _firestore.collection('likes').doc();
 
     print('inLike1');
-    await ref.set(like.rebuild((LikeBuilder b) => b.id = ref.id).json);
+    final Like like = Like(id: ref.id, postId: postId, uid: uid);
+    try {
+      await ref.set(like.json);
+    } catch(e){
+      print(e);
+      print('inHere');
+    }
 
     print('inLike2');
     return like;
@@ -36,6 +42,11 @@ class LikesApi {
 
   Future<void> delete(String likeId) async {
     final DocumentReference<Map<String, dynamic>> documentRef = _firestore.doc('likes/$likeId');
-    await documentRef.delete();
+    try {
+      await documentRef.delete();
+    } catch(e){
+      print(e);
+      print('inHere2');
+    }
   }
 }

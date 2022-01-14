@@ -10,6 +10,8 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(AppState.serializer)
       ..add(AppUser.serializer)
       ..add(AuthState.serializer)
+      ..add(Comment.serializer)
+      ..add(CommentsState.serializer)
       ..add(Like.serializer)
       ..add(LikesState.serializer)
       ..add(Post.serializer)
@@ -23,6 +25,9 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(BuiltMap,
               const [const FullType(String), const FullType(AppUser)]),
           () => new MapBuilder<String, AppUser>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(Comment)]),
+          () => new ListBuilder<Comment>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(Like)]),
           () => new ListBuilder<Like>())

@@ -20,9 +20,8 @@ class PostApi {
   Future<Post> createPost(PostInfo info, String uid) async {
     final DocumentReference<Map<String, dynamic>> ref = _firestore.collection('posts').doc();
 
-    print(ref.path);
     final List<String> images = await _uploadImages(ref.id, info.paths);
-    print('here4');
+
     final Post post = Post((PostBuilder b) {
       b
         ..id = ref.id
@@ -34,14 +33,9 @@ class PostApi {
         ..lng = info.lng
         ..lat = info.lat;
     });
-    print('aici4');
-    print(post.uid);
-    print(post.id);
-    print(post.json);
 
     await ref.set(post.json);
 
-    print('here3');
     return post;
   }
 
@@ -60,7 +54,7 @@ class PostApi {
     return images;
   }
 
-  Future<List<Post>> listenForPosts(List<String> following) async {
+  Future<List<Post>> getPosts(List<String> following) async {
     final List<Post> newResult = <Post>[];
     final List<List<String>> parts = partition(following, 10).toList();
 
