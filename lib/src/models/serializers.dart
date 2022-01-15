@@ -9,6 +9,7 @@ import 'auth/index.dart';
 import 'comments/index.dart';
 import 'index.dart';
 import 'likes/index.dart';
+import 'messages/index.dart';
 
 part 'serializers.g.dart';
 
@@ -20,6 +21,8 @@ part 'serializers.g.dart';
   CommentsState,
   Like,
   LikesState,
+  Message,
+  MessagesState,
   PostsState,
   PostInfo,
   Post,

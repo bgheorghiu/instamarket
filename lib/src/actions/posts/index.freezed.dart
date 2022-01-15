@@ -23,16 +23,14 @@ class _$CreatePostTearOff {
     );
   }
 
-  CreatePostSuccessful successful(Post post,
-      [String pendingId = _kcreatePostPendingId]) {
+  CreatePostSuccessful successful(Post post, [String pendingId = _kcreatePostPendingId]) {
     return CreatePostSuccessful(
       post,
       pendingId,
     );
   }
 
-  CreatePostError error(Object error,
-      [String pendingId = _kcreatePostPendingId]) {
+  CreatePostError error(Object error, [String pendingId = _kcreatePostPendingId]) {
     return CreatePostError(
       error,
       pendingId,
@@ -93,15 +91,12 @@ mixin _$CreatePost {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $CreatePostCopyWith<CreatePost> get copyWith =>
-      throw _privateConstructorUsedError;
+  $CreatePostCopyWith<CreatePost> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $CreatePostCopyWith<$Res> {
-  factory $CreatePostCopyWith(
-          CreatePost value, $Res Function(CreatePost) then) =
-      _$CreatePostCopyWithImpl<$Res>;
+  factory $CreatePostCopyWith(CreatePost value, $Res Function(CreatePost) then) = _$CreatePostCopyWithImpl<$Res>;
   $Res call({String pendingId});
 }
 
@@ -128,18 +123,14 @@ class _$CreatePostCopyWithImpl<$Res> implements $CreatePostCopyWith<$Res> {
 
 /// @nodoc
 abstract class $CreatePost$CopyWith<$Res> implements $CreatePostCopyWith<$Res> {
-  factory $CreatePost$CopyWith(
-          CreatePost$ value, $Res Function(CreatePost$) then) =
-      _$CreatePost$CopyWithImpl<$Res>;
+  factory $CreatePost$CopyWith(CreatePost$ value, $Res Function(CreatePost$) then) = _$CreatePost$CopyWithImpl<$Res>;
   @override
   $Res call({String pendingId});
 }
 
 /// @nodoc
-class _$CreatePost$CopyWithImpl<$Res> extends _$CreatePostCopyWithImpl<$Res>
-    implements $CreatePost$CopyWith<$Res> {
-  _$CreatePost$CopyWithImpl(
-      CreatePost$ _value, $Res Function(CreatePost$) _then)
+class _$CreatePost$CopyWithImpl<$Res> extends _$CreatePostCopyWithImpl<$Res> implements $CreatePost$CopyWith<$Res> {
+  _$CreatePost$CopyWithImpl(CreatePost$ _value, $Res Function(CreatePost$) _then)
       : super(_value, (v) => _then(v as CreatePost$));
 
   @override
@@ -177,8 +168,7 @@ class _$CreatePost$ implements CreatePost$ {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is CreatePost$ &&
-            (identical(other.pendingId, pendingId) ||
-                other.pendingId == pendingId));
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
   }
 
   @override
@@ -186,8 +176,7 @@ class _$CreatePost$ implements CreatePost$ {
 
   @JsonKey(ignore: true)
   @override
-  $CreatePost$CopyWith<CreatePost$> get copyWith =>
-      _$CreatePost$CopyWithImpl<CreatePost$>(this, _$identity);
+  $CreatePost$CopyWith<CreatePost$> get copyWith => _$CreatePost$CopyWithImpl<CreatePost$>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -265,26 +254,21 @@ abstract class CreatePost$ implements CreatePost {
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  $CreatePost$CopyWith<CreatePost$> get copyWith =>
-      throw _privateConstructorUsedError;
+  $CreatePost$CopyWith<CreatePost$> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $CreatePostSuccessfulCopyWith<$Res>
-    implements $CreatePostCopyWith<$Res> {
-  factory $CreatePostSuccessfulCopyWith(CreatePostSuccessful value,
-          $Res Function(CreatePostSuccessful) then) =
+abstract class $CreatePostSuccessfulCopyWith<$Res> implements $CreatePostCopyWith<$Res> {
+  factory $CreatePostSuccessfulCopyWith(CreatePostSuccessful value, $Res Function(CreatePostSuccessful) then) =
       _$CreatePostSuccessfulCopyWithImpl<$Res>;
   @override
   $Res call({Post post, String pendingId});
 }
 
 /// @nodoc
-class _$CreatePostSuccessfulCopyWithImpl<$Res>
-    extends _$CreatePostCopyWithImpl<$Res>
+class _$CreatePostSuccessfulCopyWithImpl<$Res> extends _$CreatePostCopyWithImpl<$Res>
     implements $CreatePostSuccessfulCopyWith<$Res> {
-  _$CreatePostSuccessfulCopyWithImpl(
-      CreatePostSuccessful _value, $Res Function(CreatePostSuccessful) _then)
+  _$CreatePostSuccessfulCopyWithImpl(CreatePostSuccessful _value, $Res Function(CreatePostSuccessful) _then)
       : super(_value, (v) => _then(v as CreatePostSuccessful));
 
   @override
@@ -311,8 +295,7 @@ class _$CreatePostSuccessfulCopyWithImpl<$Res>
 /// @nodoc
 
 class _$CreatePostSuccessful implements CreatePostSuccessful {
-  const _$CreatePostSuccessful(this.post,
-      [this.pendingId = _kcreatePostPendingId]);
+  const _$CreatePostSuccessful(this.post, [this.pendingId = _kcreatePostPendingId]);
 
   @override
   final Post post;
@@ -331,8 +314,7 @@ class _$CreatePostSuccessful implements CreatePostSuccessful {
         (other.runtimeType == runtimeType &&
             other is CreatePostSuccessful &&
             (identical(other.post, post) || other.post == post) &&
-            (identical(other.pendingId, pendingId) ||
-                other.pendingId == pendingId));
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
   }
 
   @override
@@ -341,8 +323,7 @@ class _$CreatePostSuccessful implements CreatePostSuccessful {
   @JsonKey(ignore: true)
   @override
   $CreatePostSuccessfulCopyWith<CreatePostSuccessful> get copyWith =>
-      _$CreatePostSuccessfulCopyWithImpl<CreatePostSuccessful>(
-          this, _$identity);
+      _$CreatePostSuccessfulCopyWithImpl<CreatePostSuccessful>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -414,23 +395,19 @@ class _$CreatePostSuccessful implements CreatePostSuccessful {
 }
 
 abstract class CreatePostSuccessful implements CreatePost {
-  const factory CreatePostSuccessful(Post post, [String pendingId]) =
-      _$CreatePostSuccessful;
+  const factory CreatePostSuccessful(Post post, [String pendingId]) = _$CreatePostSuccessful;
 
   Post get post;
   @override
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  $CreatePostSuccessfulCopyWith<CreatePostSuccessful> get copyWith =>
-      throw _privateConstructorUsedError;
+  $CreatePostSuccessfulCopyWith<CreatePostSuccessful> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $CreatePostErrorCopyWith<$Res>
-    implements $CreatePostCopyWith<$Res> {
-  factory $CreatePostErrorCopyWith(
-          CreatePostError value, $Res Function(CreatePostError) then) =
+abstract class $CreatePostErrorCopyWith<$Res> implements $CreatePostCopyWith<$Res> {
+  factory $CreatePostErrorCopyWith(CreatePostError value, $Res Function(CreatePostError) then) =
       _$CreatePostErrorCopyWithImpl<$Res>;
   @override
   $Res call({Object error, String pendingId});
@@ -439,8 +416,7 @@ abstract class $CreatePostErrorCopyWith<$Res>
 /// @nodoc
 class _$CreatePostErrorCopyWithImpl<$Res> extends _$CreatePostCopyWithImpl<$Res>
     implements $CreatePostErrorCopyWith<$Res> {
-  _$CreatePostErrorCopyWithImpl(
-      CreatePostError _value, $Res Function(CreatePostError) _then)
+  _$CreatePostErrorCopyWithImpl(CreatePostError _value, $Res Function(CreatePostError) _then)
       : super(_value, (v) => _then(v as CreatePostError));
 
   @override
@@ -487,13 +463,11 @@ class _$CreatePostError implements CreatePostError {
         (other.runtimeType == runtimeType &&
             other is CreatePostError &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.pendingId, pendingId) ||
-                other.pendingId == pendingId));
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(error), pendingId);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), pendingId);
 
   @JsonKey(ignore: true)
   @override
@@ -570,16 +544,14 @@ class _$CreatePostError implements CreatePostError {
 }
 
 abstract class CreatePostError implements CreatePost, ErrorAction {
-  const factory CreatePostError(Object error, [String pendingId]) =
-      _$CreatePostError;
+  const factory CreatePostError(Object error, [String pendingId]) = _$CreatePostError;
 
   Object get error;
   @override
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  $CreatePostErrorCopyWith<CreatePostError> get copyWith =>
-      throw _privateConstructorUsedError;
+  $CreatePostErrorCopyWith<CreatePostError> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -620,14 +592,12 @@ mixin _$UpdatePostInfo {
   AppUser? get removeUser => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $UpdatePostInfoCopyWith<UpdatePostInfo> get copyWith =>
-      throw _privateConstructorUsedError;
+  $UpdatePostInfoCopyWith<UpdatePostInfo> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $UpdatePostInfoCopyWith<$Res> {
-  factory $UpdatePostInfoCopyWith(
-          UpdatePostInfo value, $Res Function(UpdatePostInfo) then) =
+  factory $UpdatePostInfoCopyWith(UpdatePostInfo value, $Res Function(UpdatePostInfo) then) =
       _$UpdatePostInfoCopyWithImpl<$Res>;
   $Res call(
       {String? addImage,
@@ -640,8 +610,7 @@ abstract class $UpdatePostInfoCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$UpdatePostInfoCopyWithImpl<$Res>
-    implements $UpdatePostInfoCopyWith<$Res> {
+class _$UpdatePostInfoCopyWithImpl<$Res> implements $UpdatePostInfoCopyWith<$Res> {
   _$UpdatePostInfoCopyWithImpl(this._value, this._then);
 
   final UpdatePostInfo _value;
@@ -692,10 +661,8 @@ class _$UpdatePostInfoCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class $UpdatePostInfo$CopyWith<$Res>
-    implements $UpdatePostInfoCopyWith<$Res> {
-  factory $UpdatePostInfo$CopyWith(
-          UpdatePostInfo$ value, $Res Function(UpdatePostInfo$) then) =
+abstract class $UpdatePostInfo$CopyWith<$Res> implements $UpdatePostInfoCopyWith<$Res> {
+  factory $UpdatePostInfo$CopyWith(UpdatePostInfo$ value, $Res Function(UpdatePostInfo$) then) =
       _$UpdatePostInfo$CopyWithImpl<$Res>;
   @override
   $Res call(
@@ -709,11 +676,9 @@ abstract class $UpdatePostInfo$CopyWith<$Res>
 }
 
 /// @nodoc
-class _$UpdatePostInfo$CopyWithImpl<$Res>
-    extends _$UpdatePostInfoCopyWithImpl<$Res>
+class _$UpdatePostInfo$CopyWithImpl<$Res> extends _$UpdatePostInfoCopyWithImpl<$Res>
     implements $UpdatePostInfo$CopyWith<$Res> {
-  _$UpdatePostInfo$CopyWithImpl(
-      UpdatePostInfo$ _value, $Res Function(UpdatePostInfo$) _then)
+  _$UpdatePostInfo$CopyWithImpl(UpdatePostInfo$ _value, $Res Function(UpdatePostInfo$) _then)
       : super(_value, (v) => _then(v as UpdatePostInfo$));
 
   @override
@@ -766,13 +731,7 @@ class _$UpdatePostInfo$CopyWithImpl<$Res>
 
 class _$UpdatePostInfo$ implements UpdatePostInfo$ {
   const _$UpdatePostInfo$(
-      {this.addImage,
-      this.removeImage,
-      this.description,
-      this.lng,
-      this.lat,
-      this.addUser,
-      this.removeUser});
+      {this.addImage, this.removeImage, this.description, this.lng, this.lat, this.addUser, this.removeUser});
 
   @override
   final String? addImage;
@@ -799,22 +758,17 @@ class _$UpdatePostInfo$ implements UpdatePostInfo$ {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is UpdatePostInfo$ &&
-            (identical(other.addImage, addImage) ||
-                other.addImage == addImage) &&
-            (identical(other.removeImage, removeImage) ||
-                other.removeImage == removeImage) &&
-            (identical(other.description, description) ||
-                other.description == description) &&
+            (identical(other.addImage, addImage) || other.addImage == addImage) &&
+            (identical(other.removeImage, removeImage) || other.removeImage == removeImage) &&
+            (identical(other.description, description) || other.description == description) &&
             (identical(other.lng, lng) || other.lng == lng) &&
             (identical(other.lat, lat) || other.lat == lat) &&
             (identical(other.addUser, addUser) || other.addUser == addUser) &&
-            (identical(other.removeUser, removeUser) ||
-                other.removeUser == removeUser));
+            (identical(other.removeUser, removeUser) || other.removeUser == removeUser));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, addImage, removeImage,
-      description, lng, lat, addUser, removeUser);
+  int get hashCode => Object.hash(runtimeType, addImage, removeImage, description, lng, lat, addUser, removeUser);
 
   @JsonKey(ignore: true)
   @override
@@ -848,8 +802,7 @@ abstract class UpdatePostInfo$ implements UpdatePostInfo {
   AppUser? get removeUser;
   @override
   @JsonKey(ignore: true)
-  $UpdatePostInfo$CopyWith<UpdatePostInfo$> get copyWith =>
-      throw _privateConstructorUsedError;
+  $UpdatePostInfo$CopyWith<UpdatePostInfo$> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -862,8 +815,7 @@ class _$GetPostsTearOff {
     );
   }
 
-  GetPostsSuccessful successful(List<Post> posts,
-      [String pendingId = _kgetPostsPendingId]) {
+  GetPostsSuccessful successful(List<Post> posts, [String pendingId = _kgetPostsPendingId]) {
     return GetPostsSuccessful(
       posts,
       pendingId,
@@ -931,14 +883,12 @@ mixin _$GetPosts {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $GetPostsCopyWith<GetPosts> get copyWith =>
-      throw _privateConstructorUsedError;
+  $GetPostsCopyWith<GetPosts> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $GetPostsCopyWith<$Res> {
-  factory $GetPostsCopyWith(GetPosts value, $Res Function(GetPosts) then) =
-      _$GetPostsCopyWithImpl<$Res>;
+  factory $GetPostsCopyWith(GetPosts value, $Res Function(GetPosts) then) = _$GetPostsCopyWithImpl<$Res>;
   $Res call({String pendingId});
 }
 
@@ -965,15 +915,13 @@ class _$GetPostsCopyWithImpl<$Res> implements $GetPostsCopyWith<$Res> {
 
 /// @nodoc
 abstract class $GetPosts$CopyWith<$Res> implements $GetPostsCopyWith<$Res> {
-  factory $GetPosts$CopyWith(GetPosts$ value, $Res Function(GetPosts$) then) =
-      _$GetPosts$CopyWithImpl<$Res>;
+  factory $GetPosts$CopyWith(GetPosts$ value, $Res Function(GetPosts$) then) = _$GetPosts$CopyWithImpl<$Res>;
   @override
   $Res call({String pendingId});
 }
 
 /// @nodoc
-class _$GetPosts$CopyWithImpl<$Res> extends _$GetPostsCopyWithImpl<$Res>
-    implements $GetPosts$CopyWith<$Res> {
+class _$GetPosts$CopyWithImpl<$Res> extends _$GetPostsCopyWithImpl<$Res> implements $GetPosts$CopyWith<$Res> {
   _$GetPosts$CopyWithImpl(GetPosts$ _value, $Res Function(GetPosts$) _then)
       : super(_value, (v) => _then(v as GetPosts$));
 
@@ -1012,8 +960,7 @@ class _$GetPosts$ implements GetPosts$ {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is GetPosts$ &&
-            (identical(other.pendingId, pendingId) ||
-                other.pendingId == pendingId));
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
   }
 
   @override
@@ -1021,8 +968,7 @@ class _$GetPosts$ implements GetPosts$ {
 
   @JsonKey(ignore: true)
   @override
-  $GetPosts$CopyWith<GetPosts$> get copyWith =>
-      _$GetPosts$CopyWithImpl<GetPosts$>(this, _$identity);
+  $GetPosts$CopyWith<GetPosts$> get copyWith => _$GetPosts$CopyWithImpl<GetPosts$>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1100,26 +1046,21 @@ abstract class GetPosts$ implements GetPosts {
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  $GetPosts$CopyWith<GetPosts$> get copyWith =>
-      throw _privateConstructorUsedError;
+  $GetPosts$CopyWith<GetPosts$> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $GetPostsSuccessfulCopyWith<$Res>
-    implements $GetPostsCopyWith<$Res> {
-  factory $GetPostsSuccessfulCopyWith(
-          GetPostsSuccessful value, $Res Function(GetPostsSuccessful) then) =
+abstract class $GetPostsSuccessfulCopyWith<$Res> implements $GetPostsCopyWith<$Res> {
+  factory $GetPostsSuccessfulCopyWith(GetPostsSuccessful value, $Res Function(GetPostsSuccessful) then) =
       _$GetPostsSuccessfulCopyWithImpl<$Res>;
   @override
   $Res call({List<Post> posts, String pendingId});
 }
 
 /// @nodoc
-class _$GetPostsSuccessfulCopyWithImpl<$Res>
-    extends _$GetPostsCopyWithImpl<$Res>
+class _$GetPostsSuccessfulCopyWithImpl<$Res> extends _$GetPostsCopyWithImpl<$Res>
     implements $GetPostsSuccessfulCopyWith<$Res> {
-  _$GetPostsSuccessfulCopyWithImpl(
-      GetPostsSuccessful _value, $Res Function(GetPostsSuccessful) _then)
+  _$GetPostsSuccessfulCopyWithImpl(GetPostsSuccessful _value, $Res Function(GetPostsSuccessful) _then)
       : super(_value, (v) => _then(v as GetPostsSuccessful));
 
   @override
@@ -1146,8 +1087,7 @@ class _$GetPostsSuccessfulCopyWithImpl<$Res>
 /// @nodoc
 
 class _$GetPostsSuccessful implements GetPostsSuccessful {
-  const _$GetPostsSuccessful(this.posts,
-      [this.pendingId = _kgetPostsPendingId]);
+  const _$GetPostsSuccessful(this.posts, [this.pendingId = _kgetPostsPendingId]);
 
   @override
   final List<Post> posts;
@@ -1166,13 +1106,11 @@ class _$GetPostsSuccessful implements GetPostsSuccessful {
         (other.runtimeType == runtimeType &&
             other is GetPostsSuccessful &&
             const DeepCollectionEquality().equals(other.posts, posts) &&
-            (identical(other.pendingId, pendingId) ||
-                other.pendingId == pendingId));
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(posts), pendingId);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(posts), pendingId);
 
   @JsonKey(ignore: true)
   @override
@@ -1249,32 +1187,27 @@ class _$GetPostsSuccessful implements GetPostsSuccessful {
 }
 
 abstract class GetPostsSuccessful implements GetPosts {
-  const factory GetPostsSuccessful(List<Post> posts, [String pendingId]) =
-      _$GetPostsSuccessful;
+  const factory GetPostsSuccessful(List<Post> posts, [String pendingId]) = _$GetPostsSuccessful;
 
   List<Post> get posts;
   @override
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  $GetPostsSuccessfulCopyWith<GetPostsSuccessful> get copyWith =>
-      throw _privateConstructorUsedError;
+  $GetPostsSuccessfulCopyWith<GetPostsSuccessful> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $GetPostsErrorCopyWith<$Res> implements $GetPostsCopyWith<$Res> {
-  factory $GetPostsErrorCopyWith(
-          GetPostsError value, $Res Function(GetPostsError) then) =
+  factory $GetPostsErrorCopyWith(GetPostsError value, $Res Function(GetPostsError) then) =
       _$GetPostsErrorCopyWithImpl<$Res>;
   @override
   $Res call({Object error, String pendingId});
 }
 
 /// @nodoc
-class _$GetPostsErrorCopyWithImpl<$Res> extends _$GetPostsCopyWithImpl<$Res>
-    implements $GetPostsErrorCopyWith<$Res> {
-  _$GetPostsErrorCopyWithImpl(
-      GetPostsError _value, $Res Function(GetPostsError) _then)
+class _$GetPostsErrorCopyWithImpl<$Res> extends _$GetPostsCopyWithImpl<$Res> implements $GetPostsErrorCopyWith<$Res> {
+  _$GetPostsErrorCopyWithImpl(GetPostsError _value, $Res Function(GetPostsError) _then)
       : super(_value, (v) => _then(v as GetPostsError));
 
   @override
@@ -1321,18 +1254,15 @@ class _$GetPostsError implements GetPostsError {
         (other.runtimeType == runtimeType &&
             other is GetPostsError &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.pendingId, pendingId) ||
-                other.pendingId == pendingId));
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(error), pendingId);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), pendingId);
 
   @JsonKey(ignore: true)
   @override
-  $GetPostsErrorCopyWith<GetPostsError> get copyWith =>
-      _$GetPostsErrorCopyWithImpl<GetPostsError>(this, _$identity);
+  $GetPostsErrorCopyWith<GetPostsError> get copyWith => _$GetPostsErrorCopyWithImpl<GetPostsError>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1404,14 +1334,12 @@ class _$GetPostsError implements GetPostsError {
 }
 
 abstract class GetPostsError implements GetPosts, ErrorAction {
-  const factory GetPostsError(Object error, [String pendingId]) =
-      _$GetPostsError;
+  const factory GetPostsError(Object error, [String pendingId]) = _$GetPostsError;
 
   Object get error;
   @override
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  $GetPostsErrorCopyWith<GetPostsError> get copyWith =>
-      throw _privateConstructorUsedError;
+  $GetPostsErrorCopyWith<GetPostsError> get copyWith => throw _privateConstructorUsedError;
 }

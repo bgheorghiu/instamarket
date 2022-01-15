@@ -19,23 +19,26 @@ class _$AppStateSerializer implements StructuredSerializer<AppState> {
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
       'auth',
-      serializers.serialize(object.auth,
-          specifiedType: const FullType(AuthState)),
+      serializers.serialize(object.auth, specifiedType: const FullType(AuthState)),
       'posts',
-      serializers.serialize(object.posts,
-          specifiedType: const FullType(PostsState)),
+      serializers.serialize(object.posts, specifiedType: const FullType(PostsState)),
       'likes',
-      serializers.serialize(object.likes,
-          specifiedType: const FullType(LikesState)),
+      serializers.serialize(object.likes, specifiedType: const FullType(LikesState)),
       'comments',
-      serializers.serialize(object.comments,
-          specifiedType: const FullType(CommentsState)),
+      serializers.serialize(object.comments, specifiedType: const FullType(CommentsState)),
+      'messages',
+      serializers.serialize(object.messages, specifiedType: const FullType(MessagesState)),
       'pendingActions',
       serializers.serialize(object.pendingActions,
-          specifiedType:
-              const FullType(BuiltSet, const [const FullType(String)])),
+          specifiedType: const FullType(BuiltSet, const [const FullType(String)])),
     ];
-
+    Object? value;
+    value = object.chattingWith;
+    if (value != null) {
+      result
+        ..add('chattingWith')
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
+    }
     return result;
   }
 
@@ -51,26 +54,30 @@ class _$AppStateSerializer implements StructuredSerializer<AppState> {
       final Object? value = iterator.current;
       switch (key) {
         case 'auth':
-          result.auth.replace(serializers.deserialize(value,
-              specifiedType: const FullType(AuthState))! as AuthState);
+          result.auth.replace(serializers.deserialize(value, specifiedType: const FullType(AuthState))! as AuthState);
           break;
         case 'posts':
-          result.posts.replace(serializers.deserialize(value,
-              specifiedType: const FullType(PostsState))! as PostsState);
+          result.posts
+              .replace(serializers.deserialize(value, specifiedType: const FullType(PostsState))! as PostsState);
           break;
         case 'likes':
-          result.likes.replace(serializers.deserialize(value,
-              specifiedType: const FullType(LikesState))! as LikesState);
+          result.likes
+              .replace(serializers.deserialize(value, specifiedType: const FullType(LikesState))! as LikesState);
           break;
         case 'comments':
-          result.comments.replace(serializers.deserialize(value,
-              specifiedType: const FullType(CommentsState))! as CommentsState);
+          result.comments
+              .replace(serializers.deserialize(value, specifiedType: const FullType(CommentsState))! as CommentsState);
+          break;
+        case 'messages':
+          result.messages
+              .replace(serializers.deserialize(value, specifiedType: const FullType(MessagesState))! as MessagesState);
           break;
         case 'pendingActions':
           result.pendingActions.replace(serializers.deserialize(value,
-                  specifiedType:
-                      const FullType(BuiltSet, const [const FullType(String)]))!
-              as BuiltSet<Object?>);
+              specifiedType: const FullType(BuiltSet, const [const FullType(String)]))! as BuiltSet<Object?>);
+          break;
+        case 'chattingWith':
+          result.chattingWith = serializers.deserialize(value, specifiedType: const FullType(String)) as String?;
           break;
       }
     }
@@ -89,29 +96,33 @@ class _$AppState extends AppState {
   @override
   final CommentsState comments;
   @override
+  final MessagesState messages;
+  @override
   final BuiltSet<String> pendingActions;
+  @override
+  final String? chattingWith;
 
-  factory _$AppState([void Function(AppStateBuilder)? updates]) =>
-      (new AppStateBuilder()..update(updates)).build();
+  factory _$AppState([void Function(AppStateBuilder)? updates]) => (new AppStateBuilder()..update(updates)).build();
 
   _$AppState._(
       {required this.auth,
       required this.posts,
       required this.likes,
       required this.comments,
-      required this.pendingActions})
+      required this.messages,
+      required this.pendingActions,
+      this.chattingWith})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(auth, 'AppState', 'auth');
     BuiltValueNullFieldError.checkNotNull(posts, 'AppState', 'posts');
     BuiltValueNullFieldError.checkNotNull(likes, 'AppState', 'likes');
     BuiltValueNullFieldError.checkNotNull(comments, 'AppState', 'comments');
-    BuiltValueNullFieldError.checkNotNull(
-        pendingActions, 'AppState', 'pendingActions');
+    BuiltValueNullFieldError.checkNotNull(messages, 'AppState', 'messages');
+    BuiltValueNullFieldError.checkNotNull(pendingActions, 'AppState', 'pendingActions');
   }
 
   @override
-  AppState rebuild(void Function(AppStateBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+  AppState rebuild(void Function(AppStateBuilder) updates) => (toBuilder()..update(updates)).build();
 
   @override
   AppStateBuilder toBuilder() => new AppStateBuilder()..replace(this);
@@ -124,15 +135,19 @@ class _$AppState extends AppState {
         posts == other.posts &&
         likes == other.likes &&
         comments == other.comments &&
-        pendingActions == other.pendingActions;
+        messages == other.messages &&
+        pendingActions == other.pendingActions &&
+        chattingWith == other.chattingWith;
   }
 
   @override
   int get hashCode {
     return $jf($jc(
-        $jc($jc($jc($jc(0, auth.hashCode), posts.hashCode), likes.hashCode),
-            comments.hashCode),
-        pendingActions.hashCode));
+        $jc(
+            $jc($jc($jc($jc($jc(0, auth.hashCode), posts.hashCode), likes.hashCode), comments.hashCode),
+                messages.hashCode),
+            pendingActions.hashCode),
+        chattingWith.hashCode));
   }
 
   @override
@@ -142,7 +157,9 @@ class _$AppState extends AppState {
           ..add('posts', posts)
           ..add('likes', likes)
           ..add('comments', comments)
-          ..add('pendingActions', pendingActions))
+          ..add('messages', messages)
+          ..add('pendingActions', pendingActions)
+          ..add('chattingWith', chattingWith))
         .toString();
   }
 }
@@ -163,15 +180,20 @@ class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
   set likes(LikesStateBuilder? likes) => _$this._likes = likes;
 
   CommentsStateBuilder? _comments;
-  CommentsStateBuilder get comments =>
-      _$this._comments ??= new CommentsStateBuilder();
+  CommentsStateBuilder get comments => _$this._comments ??= new CommentsStateBuilder();
   set comments(CommentsStateBuilder? comments) => _$this._comments = comments;
 
+  MessagesStateBuilder? _messages;
+  MessagesStateBuilder get messages => _$this._messages ??= new MessagesStateBuilder();
+  set messages(MessagesStateBuilder? messages) => _$this._messages = messages;
+
   SetBuilder<String>? _pendingActions;
-  SetBuilder<String> get pendingActions =>
-      _$this._pendingActions ??= new SetBuilder<String>();
-  set pendingActions(SetBuilder<String>? pendingActions) =>
-      _$this._pendingActions = pendingActions;
+  SetBuilder<String> get pendingActions => _$this._pendingActions ??= new SetBuilder<String>();
+  set pendingActions(SetBuilder<String>? pendingActions) => _$this._pendingActions = pendingActions;
+
+  String? _chattingWith;
+  String? get chattingWith => _$this._chattingWith;
+  set chattingWith(String? chattingWith) => _$this._chattingWith = chattingWith;
 
   AppStateBuilder();
 
@@ -182,7 +204,9 @@ class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
       _posts = $v.posts.toBuilder();
       _likes = $v.likes.toBuilder();
       _comments = $v.comments.toBuilder();
+      _messages = $v.messages.toBuilder();
       _pendingActions = $v.pendingActions.toBuilder();
+      _chattingWith = $v.chattingWith;
       _$v = null;
     }
     return this;
@@ -209,7 +233,9 @@ class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
               posts: posts.build(),
               likes: likes.build(),
               comments: comments.build(),
-              pendingActions: pendingActions.build());
+              messages: messages.build(),
+              pendingActions: pendingActions.build(),
+              chattingWith: chattingWith);
     } catch (_) {
       late String _$failedField;
       try {
@@ -221,11 +247,12 @@ class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
         likes.build();
         _$failedField = 'comments';
         comments.build();
+        _$failedField = 'messages';
+        messages.build();
         _$failedField = 'pendingActions';
         pendingActions.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            'AppState', _$failedField, e.toString());
+        throw new BuiltValueNestedFieldError('AppState', _$failedField, e.toString());
       }
       rethrow;
     }

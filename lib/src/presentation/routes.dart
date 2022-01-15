@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:instamarket/src/presentation/chat/chat.dart';
 import 'package:instamarket/src/presentation/login/reset_password_page.dart';
 import 'package:instamarket/src/presentation/posts/create_post.dart';
 import 'package:instamarket/src/presentation/posts/posts_details.dart';
@@ -19,6 +20,7 @@ class AppRoutes {
   static const String createPost = '/createPost';
   static const String postsDetails = '/postsDetails';
   static const String searchUsers = '/searchUsers';
+  static const String chat = '/chat';
 
   static Map<String, WidgetBuilder> routes = <String, WidgetBuilder>{
     home: (BuildContext context) {
@@ -44,6 +46,9 @@ class AppRoutes {
     },
     searchUsers: (BuildContext context) {
       return const SearchUsersPage();
+    },
+    chat: (BuildContext context) {
+      return const ChatPage();
     }
   };
 }

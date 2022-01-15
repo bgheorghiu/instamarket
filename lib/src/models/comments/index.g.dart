@@ -7,8 +7,7 @@ part of comments_models;
 // **************************************************************************
 
 Serializer<Comment> _$commentSerializer = new _$CommentSerializer();
-Serializer<CommentsState> _$commentsStateSerializer =
-    new _$CommentsStateSerializer();
+Serializer<CommentsState> _$commentsStateSerializer = new _$CommentsStateSerializer();
 
 class _$CommentSerializer implements StructuredSerializer<Comment> {
   @override
@@ -23,11 +22,9 @@ class _$CommentSerializer implements StructuredSerializer<Comment> {
       'id',
       serializers.serialize(object.id, specifiedType: const FullType(String)),
       'postId',
-      serializers.serialize(object.postId,
-          specifiedType: const FullType(String)),
+      serializers.serialize(object.postId, specifiedType: const FullType(String)),
       'comment',
-      serializers.serialize(object.comment,
-          specifiedType: const FullType(String)),
+      serializers.serialize(object.comment, specifiedType: const FullType(String)),
       'uid',
       serializers.serialize(object.uid, specifiedType: const FullType(String)),
     ];
@@ -47,20 +44,16 @@ class _$CommentSerializer implements StructuredSerializer<Comment> {
       final Object? value = iterator.current;
       switch (key) {
         case 'id':
-          result.id = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.id = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'postId':
-          result.postId = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.postId = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'comment':
-          result.comment = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.comment = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'uid':
-          result.uid = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.uid = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
       }
     }
@@ -80,17 +73,14 @@ class _$CommentsStateSerializer implements StructuredSerializer<CommentsState> {
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
       'comments',
-      serializers.serialize(object.comments,
-          specifiedType:
-              const FullType(BuiltList, const [const FullType(Comment)])),
+      serializers.serialize(object.comments, specifiedType: const FullType(BuiltList, const [const FullType(Comment)])),
     ];
 
     return result;
   }
 
   @override
-  CommentsState deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
+  CommentsState deserialize(Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new CommentsStateBuilder();
 
@@ -102,9 +92,7 @@ class _$CommentsStateSerializer implements StructuredSerializer<CommentsState> {
       switch (key) {
         case 'comments':
           result.comments.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(
-                      BuiltList, const [const FullType(Comment)]))!
-              as BuiltList<Object?>);
+              specifiedType: const FullType(BuiltList, const [const FullType(Comment)]))! as BuiltList<Object?>);
           break;
       }
     }
@@ -125,15 +113,9 @@ class _$Comment extends Comment {
   @override
   final DocumentChangeType? changeType;
 
-  factory _$Comment([void Function(CommentBuilder)? updates]) =>
-      (new CommentBuilder()..update(updates)).build();
+  factory _$Comment([void Function(CommentBuilder)? updates]) => (new CommentBuilder()..update(updates)).build();
 
-  _$Comment._(
-      {required this.id,
-      required this.postId,
-      required this.comment,
-      required this.uid,
-      this.changeType})
+  _$Comment._({required this.id, required this.postId, required this.comment, required this.uid, this.changeType})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(id, 'Comment', 'id');
     BuiltValueNullFieldError.checkNotNull(postId, 'Comment', 'postId');
@@ -142,8 +124,7 @@ class _$Comment extends Comment {
   }
 
   @override
-  Comment rebuild(void Function(CommentBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+  Comment rebuild(void Function(CommentBuilder) updates) => (toBuilder()..update(updates)).build();
 
   @override
   CommentBuilder toBuilder() => new CommentBuilder()..replace(this);
@@ -161,10 +142,8 @@ class _$Comment extends Comment {
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc($jc($jc($jc(0, id.hashCode), postId.hashCode), comment.hashCode),
-            uid.hashCode),
-        changeType.hashCode));
+    return $jf(
+        $jc($jc($jc($jc($jc(0, id.hashCode), postId.hashCode), comment.hashCode), uid.hashCode), changeType.hashCode));
   }
 
   @override
@@ -200,8 +179,7 @@ class CommentBuilder implements Builder<Comment, CommentBuilder> {
 
   DocumentChangeType? _changeType;
   DocumentChangeType? get changeType => _$this._changeType;
-  set changeType(DocumentChangeType? changeType) =>
-      _$this._changeType = changeType;
+  set changeType(DocumentChangeType? changeType) => _$this._changeType = changeType;
 
   CommentBuilder();
 
@@ -234,10 +212,8 @@ class CommentBuilder implements Builder<Comment, CommentBuilder> {
     final _$result = _$v ??
         new _$Comment._(
             id: BuiltValueNullFieldError.checkNotNull(id, 'Comment', 'id'),
-            postId: BuiltValueNullFieldError.checkNotNull(
-                postId, 'Comment', 'postId'),
-            comment: BuiltValueNullFieldError.checkNotNull(
-                comment, 'Comment', 'comment'),
+            postId: BuiltValueNullFieldError.checkNotNull(postId, 'Comment', 'postId'),
+            comment: BuiltValueNullFieldError.checkNotNull(comment, 'Comment', 'comment'),
             uid: BuiltValueNullFieldError.checkNotNull(uid, 'Comment', 'uid'),
             changeType: changeType);
     replace(_$result);
@@ -253,13 +229,11 @@ class _$CommentsState extends CommentsState {
       (new CommentsStateBuilder()..update(updates)).build();
 
   _$CommentsState._({required this.comments}) : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        comments, 'CommentsState', 'comments');
+    BuiltValueNullFieldError.checkNotNull(comments, 'CommentsState', 'comments');
   }
 
   @override
-  CommentsState rebuild(void Function(CommentsStateBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+  CommentsState rebuild(void Function(CommentsStateBuilder) updates) => (toBuilder()..update(updates)).build();
 
   @override
   CommentsStateBuilder toBuilder() => new CommentsStateBuilder()..replace(this);
@@ -277,19 +251,15 @@ class _$CommentsState extends CommentsState {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('CommentsState')
-          ..add('comments', comments))
-        .toString();
+    return (newBuiltValueToStringHelper('CommentsState')..add('comments', comments)).toString();
   }
 }
 
-class CommentsStateBuilder
-    implements Builder<CommentsState, CommentsStateBuilder> {
+class CommentsStateBuilder implements Builder<CommentsState, CommentsStateBuilder> {
   _$CommentsState? _$v;
 
   ListBuilder<Comment>? _comments;
-  ListBuilder<Comment> get comments =>
-      _$this._comments ??= new ListBuilder<Comment>();
+  ListBuilder<Comment> get comments => _$this._comments ??= new ListBuilder<Comment>();
   set comments(ListBuilder<Comment>? comments) => _$this._comments = comments;
 
   CommentsStateBuilder();
@@ -325,8 +295,7 @@ class CommentsStateBuilder
         _$failedField = 'comments';
         comments.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            'CommentsState', _$failedField, e.toString());
+        throw new BuiltValueNestedFieldError('CommentsState', _$failedField, e.toString());
       }
       rethrow;
     }

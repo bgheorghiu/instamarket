@@ -33,8 +33,10 @@ class CommentsApi {
             Stream<DocumentChange<Map<String, dynamic>>>.fromIterable(snapshot.docChanges) //
                 .where((DocumentChange<Map<String, dynamic>> change) => change.doc.exists)
                 .flatMap((DocumentChange<Map<String, dynamic>> change) async* {
-              print('inCommentsApi');
-              yield Comment.fromJson(change.doc.data()!);
+              final Comment comment = Comment.fromJson(change.doc.data()!);
+              if (postsIds.contains(comment.postId)) {
+                yield comment;
+              }
             }));
   }
 

@@ -17,10 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$CreateCommentTearOff {
   const _$CreateCommentTearOff();
 
-  CreateComment$ call(
-      {required String postId,
-      required String text,
-      String pendingId = _kcreateCommentPendingId}) {
+  CreateComment$ call({required String postId, required String text, String pendingId = _kcreateCommentPendingId}) {
     return CreateComment$(
       postId: postId,
       text: text,
@@ -28,16 +25,14 @@ class _$CreateCommentTearOff {
     );
   }
 
-  CreateCommentSuccessful successful(Comment comment,
-      [String pendingId = _kcreateCommentPendingId]) {
+  CreateCommentSuccessful successful(Comment comment, [String pendingId = _kcreateCommentPendingId]) {
     return CreateCommentSuccessful(
       comment,
       pendingId,
     );
   }
 
-  CreateCommentError error(Object error,
-      [String pendingId = _kcreateCommentPendingId]) {
+  CreateCommentError error(Object error, [String pendingId = _kcreateCommentPendingId]) {
     return CreateCommentError(
       error,
       pendingId,
@@ -98,21 +93,18 @@ mixin _$CreateComment {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $CreateCommentCopyWith<CreateComment> get copyWith =>
-      throw _privateConstructorUsedError;
+  $CreateCommentCopyWith<CreateComment> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $CreateCommentCopyWith<$Res> {
-  factory $CreateCommentCopyWith(
-          CreateComment value, $Res Function(CreateComment) then) =
+  factory $CreateCommentCopyWith(CreateComment value, $Res Function(CreateComment) then) =
       _$CreateCommentCopyWithImpl<$Res>;
   $Res call({String pendingId});
 }
 
 /// @nodoc
-class _$CreateCommentCopyWithImpl<$Res>
-    implements $CreateCommentCopyWith<$Res> {
+class _$CreateCommentCopyWithImpl<$Res> implements $CreateCommentCopyWith<$Res> {
   _$CreateCommentCopyWithImpl(this._value, this._then);
 
   final CreateComment _value;
@@ -133,21 +125,17 @@ class _$CreateCommentCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class $CreateComment$CopyWith<$Res>
-    implements $CreateCommentCopyWith<$Res> {
-  factory $CreateComment$CopyWith(
-          CreateComment$ value, $Res Function(CreateComment$) then) =
+abstract class $CreateComment$CopyWith<$Res> implements $CreateCommentCopyWith<$Res> {
+  factory $CreateComment$CopyWith(CreateComment$ value, $Res Function(CreateComment$) then) =
       _$CreateComment$CopyWithImpl<$Res>;
   @override
   $Res call({String postId, String text, String pendingId});
 }
 
 /// @nodoc
-class _$CreateComment$CopyWithImpl<$Res>
-    extends _$CreateCommentCopyWithImpl<$Res>
+class _$CreateComment$CopyWithImpl<$Res> extends _$CreateCommentCopyWithImpl<$Res>
     implements $CreateComment$CopyWith<$Res> {
-  _$CreateComment$CopyWithImpl(
-      CreateComment$ _value, $Res Function(CreateComment$) _then)
+  _$CreateComment$CopyWithImpl(CreateComment$ _value, $Res Function(CreateComment$) _then)
       : super(_value, (v) => _then(v as CreateComment$));
 
   @override
@@ -179,10 +167,7 @@ class _$CreateComment$CopyWithImpl<$Res>
 /// @nodoc
 
 class _$CreateComment$ implements CreateComment$ {
-  const _$CreateComment$(
-      {required this.postId,
-      required this.text,
-      this.pendingId = _kcreateCommentPendingId});
+  const _$CreateComment$({required this.postId, required this.text, this.pendingId = _kcreateCommentPendingId});
 
   @override
   final String postId;
@@ -204,8 +189,7 @@ class _$CreateComment$ implements CreateComment$ {
             other is CreateComment$ &&
             (identical(other.postId, postId) || other.postId == postId) &&
             (identical(other.text, text) || other.text == text) &&
-            (identical(other.pendingId, pendingId) ||
-                other.pendingId == pendingId));
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
   }
 
   @override
@@ -286,10 +270,7 @@ class _$CreateComment$ implements CreateComment$ {
 }
 
 abstract class CreateComment$ implements CreateComment {
-  const factory CreateComment$(
-      {required String postId,
-      required String text,
-      String pendingId}) = _$CreateComment$;
+  const factory CreateComment$({required String postId, required String text, String pendingId}) = _$CreateComment$;
 
   String get postId;
   String get text;
@@ -297,26 +278,21 @@ abstract class CreateComment$ implements CreateComment {
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  $CreateComment$CopyWith<CreateComment$> get copyWith =>
-      throw _privateConstructorUsedError;
+  $CreateComment$CopyWith<CreateComment$> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $CreateCommentSuccessfulCopyWith<$Res>
-    implements $CreateCommentCopyWith<$Res> {
-  factory $CreateCommentSuccessfulCopyWith(CreateCommentSuccessful value,
-          $Res Function(CreateCommentSuccessful) then) =
+abstract class $CreateCommentSuccessfulCopyWith<$Res> implements $CreateCommentCopyWith<$Res> {
+  factory $CreateCommentSuccessfulCopyWith(CreateCommentSuccessful value, $Res Function(CreateCommentSuccessful) then) =
       _$CreateCommentSuccessfulCopyWithImpl<$Res>;
   @override
   $Res call({Comment comment, String pendingId});
 }
 
 /// @nodoc
-class _$CreateCommentSuccessfulCopyWithImpl<$Res>
-    extends _$CreateCommentCopyWithImpl<$Res>
+class _$CreateCommentSuccessfulCopyWithImpl<$Res> extends _$CreateCommentCopyWithImpl<$Res>
     implements $CreateCommentSuccessfulCopyWith<$Res> {
-  _$CreateCommentSuccessfulCopyWithImpl(CreateCommentSuccessful _value,
-      $Res Function(CreateCommentSuccessful) _then)
+  _$CreateCommentSuccessfulCopyWithImpl(CreateCommentSuccessful _value, $Res Function(CreateCommentSuccessful) _then)
       : super(_value, (v) => _then(v as CreateCommentSuccessful));
 
   @override
@@ -343,8 +319,7 @@ class _$CreateCommentSuccessfulCopyWithImpl<$Res>
 /// @nodoc
 
 class _$CreateCommentSuccessful implements CreateCommentSuccessful {
-  const _$CreateCommentSuccessful(this.comment,
-      [this.pendingId = _kcreateCommentPendingId]);
+  const _$CreateCommentSuccessful(this.comment, [this.pendingId = _kcreateCommentPendingId]);
 
   @override
   final Comment comment;
@@ -363,8 +338,7 @@ class _$CreateCommentSuccessful implements CreateCommentSuccessful {
         (other.runtimeType == runtimeType &&
             other is CreateCommentSuccessful &&
             (identical(other.comment, comment) || other.comment == comment) &&
-            (identical(other.pendingId, pendingId) ||
-                other.pendingId == pendingId));
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
   }
 
   @override
@@ -373,8 +347,7 @@ class _$CreateCommentSuccessful implements CreateCommentSuccessful {
   @JsonKey(ignore: true)
   @override
   $CreateCommentSuccessfulCopyWith<CreateCommentSuccessful> get copyWith =>
-      _$CreateCommentSuccessfulCopyWithImpl<CreateCommentSuccessful>(
-          this, _$identity);
+      _$CreateCommentSuccessfulCopyWithImpl<CreateCommentSuccessful>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -446,34 +419,28 @@ class _$CreateCommentSuccessful implements CreateCommentSuccessful {
 }
 
 abstract class CreateCommentSuccessful implements CreateComment {
-  const factory CreateCommentSuccessful(Comment comment, [String pendingId]) =
-      _$CreateCommentSuccessful;
+  const factory CreateCommentSuccessful(Comment comment, [String pendingId]) = _$CreateCommentSuccessful;
 
   Comment get comment;
   @override
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  $CreateCommentSuccessfulCopyWith<CreateCommentSuccessful> get copyWith =>
-      throw _privateConstructorUsedError;
+  $CreateCommentSuccessfulCopyWith<CreateCommentSuccessful> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $CreateCommentErrorCopyWith<$Res>
-    implements $CreateCommentCopyWith<$Res> {
-  factory $CreateCommentErrorCopyWith(
-          CreateCommentError value, $Res Function(CreateCommentError) then) =
+abstract class $CreateCommentErrorCopyWith<$Res> implements $CreateCommentCopyWith<$Res> {
+  factory $CreateCommentErrorCopyWith(CreateCommentError value, $Res Function(CreateCommentError) then) =
       _$CreateCommentErrorCopyWithImpl<$Res>;
   @override
   $Res call({Object error, String pendingId});
 }
 
 /// @nodoc
-class _$CreateCommentErrorCopyWithImpl<$Res>
-    extends _$CreateCommentCopyWithImpl<$Res>
+class _$CreateCommentErrorCopyWithImpl<$Res> extends _$CreateCommentCopyWithImpl<$Res>
     implements $CreateCommentErrorCopyWith<$Res> {
-  _$CreateCommentErrorCopyWithImpl(
-      CreateCommentError _value, $Res Function(CreateCommentError) _then)
+  _$CreateCommentErrorCopyWithImpl(CreateCommentError _value, $Res Function(CreateCommentError) _then)
       : super(_value, (v) => _then(v as CreateCommentError));
 
   @override
@@ -501,8 +468,7 @@ class _$CreateCommentErrorCopyWithImpl<$Res>
 
 @Implements<ErrorAction>()
 class _$CreateCommentError implements CreateCommentError {
-  const _$CreateCommentError(this.error,
-      [this.pendingId = _kcreateCommentPendingId]);
+  const _$CreateCommentError(this.error, [this.pendingId = _kcreateCommentPendingId]);
 
   @override
   final Object error;
@@ -521,13 +487,11 @@ class _$CreateCommentError implements CreateCommentError {
         (other.runtimeType == runtimeType &&
             other is CreateCommentError &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.pendingId, pendingId) ||
-                other.pendingId == pendingId));
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(error), pendingId);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), pendingId);
 
   @JsonKey(ignore: true)
   @override
@@ -604,40 +568,35 @@ class _$CreateCommentError implements CreateCommentError {
 }
 
 abstract class CreateCommentError implements CreateComment, ErrorAction {
-  const factory CreateCommentError(Object error, [String pendingId]) =
-      _$CreateCommentError;
+  const factory CreateCommentError(Object error, [String pendingId]) = _$CreateCommentError;
 
   Object get error;
   @override
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  $CreateCommentErrorCopyWith<CreateCommentError> get copyWith =>
-      throw _privateConstructorUsedError;
+  $CreateCommentErrorCopyWith<CreateCommentError> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 class _$DeleteCommentTearOff {
   const _$DeleteCommentTearOff();
 
-  DeleteComment$ call(String commentId,
-      [String pendingId = _kDeleteCommentPendingId]) {
+  DeleteComment$ call(String commentId, [String pendingId = _kDeleteCommentPendingId]) {
     return DeleteComment$(
       commentId,
       pendingId,
     );
   }
 
-  DeleteCommentSuccessful successful(String commentId,
-      [String pendingId = _kDeleteCommentPendingId]) {
+  DeleteCommentSuccessful successful(String commentId, [String pendingId = _kDeleteCommentPendingId]) {
     return DeleteCommentSuccessful(
       commentId,
       pendingId,
     );
   }
 
-  DeleteCommentError error(Object error,
-      [String pendingId = _kDeleteCommentPendingId]) {
+  DeleteCommentError error(Object error, [String pendingId = _kDeleteCommentPendingId]) {
     return DeleteCommentError(
       error,
       pendingId,
@@ -698,21 +657,18 @@ mixin _$DeleteComment {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $DeleteCommentCopyWith<DeleteComment> get copyWith =>
-      throw _privateConstructorUsedError;
+  $DeleteCommentCopyWith<DeleteComment> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $DeleteCommentCopyWith<$Res> {
-  factory $DeleteCommentCopyWith(
-          DeleteComment value, $Res Function(DeleteComment) then) =
+  factory $DeleteCommentCopyWith(DeleteComment value, $Res Function(DeleteComment) then) =
       _$DeleteCommentCopyWithImpl<$Res>;
   $Res call({String pendingId});
 }
 
 /// @nodoc
-class _$DeleteCommentCopyWithImpl<$Res>
-    implements $DeleteCommentCopyWith<$Res> {
+class _$DeleteCommentCopyWithImpl<$Res> implements $DeleteCommentCopyWith<$Res> {
   _$DeleteCommentCopyWithImpl(this._value, this._then);
 
   final DeleteComment _value;
@@ -733,21 +689,17 @@ class _$DeleteCommentCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class $DeleteComment$CopyWith<$Res>
-    implements $DeleteCommentCopyWith<$Res> {
-  factory $DeleteComment$CopyWith(
-          DeleteComment$ value, $Res Function(DeleteComment$) then) =
+abstract class $DeleteComment$CopyWith<$Res> implements $DeleteCommentCopyWith<$Res> {
+  factory $DeleteComment$CopyWith(DeleteComment$ value, $Res Function(DeleteComment$) then) =
       _$DeleteComment$CopyWithImpl<$Res>;
   @override
   $Res call({String commentId, String pendingId});
 }
 
 /// @nodoc
-class _$DeleteComment$CopyWithImpl<$Res>
-    extends _$DeleteCommentCopyWithImpl<$Res>
+class _$DeleteComment$CopyWithImpl<$Res> extends _$DeleteCommentCopyWithImpl<$Res>
     implements $DeleteComment$CopyWith<$Res> {
-  _$DeleteComment$CopyWithImpl(
-      DeleteComment$ _value, $Res Function(DeleteComment$) _then)
+  _$DeleteComment$CopyWithImpl(DeleteComment$ _value, $Res Function(DeleteComment$) _then)
       : super(_value, (v) => _then(v as DeleteComment$));
 
   @override
@@ -774,8 +726,7 @@ class _$DeleteComment$CopyWithImpl<$Res>
 /// @nodoc
 
 class _$DeleteComment$ implements DeleteComment$ {
-  const _$DeleteComment$(this.commentId,
-      [this.pendingId = _kDeleteCommentPendingId]);
+  const _$DeleteComment$(this.commentId, [this.pendingId = _kDeleteCommentPendingId]);
 
   @override
   final String commentId;
@@ -793,10 +744,8 @@ class _$DeleteComment$ implements DeleteComment$ {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is DeleteComment$ &&
-            (identical(other.commentId, commentId) ||
-                other.commentId == commentId) &&
-            (identical(other.pendingId, pendingId) ||
-                other.pendingId == pendingId));
+            (identical(other.commentId, commentId) || other.commentId == commentId) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
   }
 
   @override
@@ -877,34 +826,28 @@ class _$DeleteComment$ implements DeleteComment$ {
 }
 
 abstract class DeleteComment$ implements DeleteComment {
-  const factory DeleteComment$(String commentId, [String pendingId]) =
-      _$DeleteComment$;
+  const factory DeleteComment$(String commentId, [String pendingId]) = _$DeleteComment$;
 
   String get commentId;
   @override
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  $DeleteComment$CopyWith<DeleteComment$> get copyWith =>
-      throw _privateConstructorUsedError;
+  $DeleteComment$CopyWith<DeleteComment$> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $DeleteCommentSuccessfulCopyWith<$Res>
-    implements $DeleteCommentCopyWith<$Res> {
-  factory $DeleteCommentSuccessfulCopyWith(DeleteCommentSuccessful value,
-          $Res Function(DeleteCommentSuccessful) then) =
+abstract class $DeleteCommentSuccessfulCopyWith<$Res> implements $DeleteCommentCopyWith<$Res> {
+  factory $DeleteCommentSuccessfulCopyWith(DeleteCommentSuccessful value, $Res Function(DeleteCommentSuccessful) then) =
       _$DeleteCommentSuccessfulCopyWithImpl<$Res>;
   @override
   $Res call({String commentId, String pendingId});
 }
 
 /// @nodoc
-class _$DeleteCommentSuccessfulCopyWithImpl<$Res>
-    extends _$DeleteCommentCopyWithImpl<$Res>
+class _$DeleteCommentSuccessfulCopyWithImpl<$Res> extends _$DeleteCommentCopyWithImpl<$Res>
     implements $DeleteCommentSuccessfulCopyWith<$Res> {
-  _$DeleteCommentSuccessfulCopyWithImpl(DeleteCommentSuccessful _value,
-      $Res Function(DeleteCommentSuccessful) _then)
+  _$DeleteCommentSuccessfulCopyWithImpl(DeleteCommentSuccessful _value, $Res Function(DeleteCommentSuccessful) _then)
       : super(_value, (v) => _then(v as DeleteCommentSuccessful));
 
   @override
@@ -931,8 +874,7 @@ class _$DeleteCommentSuccessfulCopyWithImpl<$Res>
 /// @nodoc
 
 class _$DeleteCommentSuccessful implements DeleteCommentSuccessful {
-  const _$DeleteCommentSuccessful(this.commentId,
-      [this.pendingId = _kDeleteCommentPendingId]);
+  const _$DeleteCommentSuccessful(this.commentId, [this.pendingId = _kDeleteCommentPendingId]);
 
   @override
   final String commentId;
@@ -950,10 +892,8 @@ class _$DeleteCommentSuccessful implements DeleteCommentSuccessful {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is DeleteCommentSuccessful &&
-            (identical(other.commentId, commentId) ||
-                other.commentId == commentId) &&
-            (identical(other.pendingId, pendingId) ||
-                other.pendingId == pendingId));
+            (identical(other.commentId, commentId) || other.commentId == commentId) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
   }
 
   @override
@@ -962,8 +902,7 @@ class _$DeleteCommentSuccessful implements DeleteCommentSuccessful {
   @JsonKey(ignore: true)
   @override
   $DeleteCommentSuccessfulCopyWith<DeleteCommentSuccessful> get copyWith =>
-      _$DeleteCommentSuccessfulCopyWithImpl<DeleteCommentSuccessful>(
-          this, _$identity);
+      _$DeleteCommentSuccessfulCopyWithImpl<DeleteCommentSuccessful>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1035,34 +974,28 @@ class _$DeleteCommentSuccessful implements DeleteCommentSuccessful {
 }
 
 abstract class DeleteCommentSuccessful implements DeleteComment {
-  const factory DeleteCommentSuccessful(String commentId, [String pendingId]) =
-      _$DeleteCommentSuccessful;
+  const factory DeleteCommentSuccessful(String commentId, [String pendingId]) = _$DeleteCommentSuccessful;
 
   String get commentId;
   @override
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  $DeleteCommentSuccessfulCopyWith<DeleteCommentSuccessful> get copyWith =>
-      throw _privateConstructorUsedError;
+  $DeleteCommentSuccessfulCopyWith<DeleteCommentSuccessful> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $DeleteCommentErrorCopyWith<$Res>
-    implements $DeleteCommentCopyWith<$Res> {
-  factory $DeleteCommentErrorCopyWith(
-          DeleteCommentError value, $Res Function(DeleteCommentError) then) =
+abstract class $DeleteCommentErrorCopyWith<$Res> implements $DeleteCommentCopyWith<$Res> {
+  factory $DeleteCommentErrorCopyWith(DeleteCommentError value, $Res Function(DeleteCommentError) then) =
       _$DeleteCommentErrorCopyWithImpl<$Res>;
   @override
   $Res call({Object error, String pendingId});
 }
 
 /// @nodoc
-class _$DeleteCommentErrorCopyWithImpl<$Res>
-    extends _$DeleteCommentCopyWithImpl<$Res>
+class _$DeleteCommentErrorCopyWithImpl<$Res> extends _$DeleteCommentCopyWithImpl<$Res>
     implements $DeleteCommentErrorCopyWith<$Res> {
-  _$DeleteCommentErrorCopyWithImpl(
-      DeleteCommentError _value, $Res Function(DeleteCommentError) _then)
+  _$DeleteCommentErrorCopyWithImpl(DeleteCommentError _value, $Res Function(DeleteCommentError) _then)
       : super(_value, (v) => _then(v as DeleteCommentError));
 
   @override
@@ -1090,8 +1023,7 @@ class _$DeleteCommentErrorCopyWithImpl<$Res>
 
 @Implements<ErrorAction>()
 class _$DeleteCommentError implements DeleteCommentError {
-  const _$DeleteCommentError(this.error,
-      [this.pendingId = _kDeleteCommentPendingId]);
+  const _$DeleteCommentError(this.error, [this.pendingId = _kDeleteCommentPendingId]);
 
   @override
   final Object error;
@@ -1110,13 +1042,11 @@ class _$DeleteCommentError implements DeleteCommentError {
         (other.runtimeType == runtimeType &&
             other is DeleteCommentError &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.pendingId, pendingId) ||
-                other.pendingId == pendingId));
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(error), pendingId);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), pendingId);
 
   @JsonKey(ignore: true)
   @override
@@ -1193,35 +1123,29 @@ class _$DeleteCommentError implements DeleteCommentError {
 }
 
 abstract class DeleteCommentError implements DeleteComment, ErrorAction {
-  const factory DeleteCommentError(Object error, [String pendingId]) =
-      _$DeleteCommentError;
+  const factory DeleteCommentError(Object error, [String pendingId]) = _$DeleteCommentError;
 
   Object get error;
   @override
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  $DeleteCommentErrorCopyWith<DeleteCommentError> get copyWith =>
-      throw _privateConstructorUsedError;
+  $DeleteCommentErrorCopyWith<DeleteCommentError> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 class _$ListenForCommentsTearOff {
   const _$ListenForCommentsTearOff();
 
-  ListenForCommentsStart start(List<String> postsIds,
-      [String pendingId = _kListenForCommentsPendingId]) {
+  ListenForCommentsStart start(List<String> postsIds) {
     return ListenForCommentsStart(
       postsIds,
-      pendingId,
     );
   }
 
-  ListenForCommentsEvent event(Comment comment,
-      [String pendingId = _kListenForCommentsPendingId]) {
+  ListenForCommentsEvent event(Comment comment) {
     return ListenForCommentsEvent(
       comment,
-      pendingId,
     );
   }
 
@@ -1229,11 +1153,9 @@ class _$ListenForCommentsTearOff {
     return const ListenForCommentsDone();
   }
 
-  ListenForCommentsError error(Object error,
-      [String pendingId = _kListenForCommentsPendingId]) {
+  ListenForCommentsError error(Object error) {
     return ListenForCommentsError(
       error,
-      pendingId,
     );
   }
 }
@@ -1245,26 +1167,26 @@ const $ListenForComments = _$ListenForCommentsTearOff();
 mixin _$ListenForComments {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(List<String> postsIds, String pendingId) start,
-    required TResult Function(Comment comment, String pendingId) event,
+    required TResult Function(List<String> postsIds) start,
+    required TResult Function(Comment comment) event,
     required TResult Function() done,
-    required TResult Function(Object error, String pendingId) error,
+    required TResult Function(Object error) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(List<String> postsIds, String pendingId)? start,
-    TResult Function(Comment comment, String pendingId)? event,
+    TResult Function(List<String> postsIds)? start,
+    TResult Function(Comment comment)? event,
     TResult Function()? done,
-    TResult Function(Object error, String pendingId)? error,
+    TResult Function(Object error)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<String> postsIds, String pendingId)? start,
-    TResult Function(Comment comment, String pendingId)? event,
+    TResult Function(List<String> postsIds)? start,
+    TResult Function(Comment comment)? event,
     TResult Function()? done,
-    TResult Function(Object error, String pendingId)? error,
+    TResult Function(Object error)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -1297,14 +1219,12 @@ mixin _$ListenForComments {
 
 /// @nodoc
 abstract class $ListenForCommentsCopyWith<$Res> {
-  factory $ListenForCommentsCopyWith(
-          ListenForComments value, $Res Function(ListenForComments) then) =
+  factory $ListenForCommentsCopyWith(ListenForComments value, $Res Function(ListenForComments) then) =
       _$ListenForCommentsCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ListenForCommentsCopyWithImpl<$Res>
-    implements $ListenForCommentsCopyWith<$Res> {
+class _$ListenForCommentsCopyWithImpl<$Res> implements $ListenForCommentsCopyWith<$Res> {
   _$ListenForCommentsCopyWithImpl(this._value, this._then);
 
   final ListenForComments _value;
@@ -1314,18 +1234,15 @@ class _$ListenForCommentsCopyWithImpl<$Res>
 
 /// @nodoc
 abstract class $ListenForCommentsStartCopyWith<$Res> {
-  factory $ListenForCommentsStartCopyWith(ListenForCommentsStart value,
-          $Res Function(ListenForCommentsStart) then) =
+  factory $ListenForCommentsStartCopyWith(ListenForCommentsStart value, $Res Function(ListenForCommentsStart) then) =
       _$ListenForCommentsStartCopyWithImpl<$Res>;
-  $Res call({List<String> postsIds, String pendingId});
+  $Res call({List<String> postsIds});
 }
 
 /// @nodoc
-class _$ListenForCommentsStartCopyWithImpl<$Res>
-    extends _$ListenForCommentsCopyWithImpl<$Res>
+class _$ListenForCommentsStartCopyWithImpl<$Res> extends _$ListenForCommentsCopyWithImpl<$Res>
     implements $ListenForCommentsStartCopyWith<$Res> {
-  _$ListenForCommentsStartCopyWithImpl(ListenForCommentsStart _value,
-      $Res Function(ListenForCommentsStart) _then)
+  _$ListenForCommentsStartCopyWithImpl(ListenForCommentsStart _value, $Res Function(ListenForCommentsStart) _then)
       : super(_value, (v) => _then(v as ListenForCommentsStart));
 
   @override
@@ -1334,17 +1251,12 @@ class _$ListenForCommentsStartCopyWithImpl<$Res>
   @override
   $Res call({
     Object? postsIds = freezed,
-    Object? pendingId = freezed,
   }) {
     return _then(ListenForCommentsStart(
       postsIds == freezed
           ? _value.postsIds
           : postsIds // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      pendingId == freezed
-          ? _value.pendingId
-          : pendingId // ignore: cast_nullable_to_non_nullable
-              as String,
     ));
   }
 }
@@ -1352,18 +1264,14 @@ class _$ListenForCommentsStartCopyWithImpl<$Res>
 /// @nodoc
 
 class _$ListenForCommentsStart implements ListenForCommentsStart {
-  const _$ListenForCommentsStart(this.postsIds,
-      [this.pendingId = _kListenForCommentsPendingId]);
+  const _$ListenForCommentsStart(this.postsIds);
 
   @override
   final List<String> postsIds;
-  @JsonKey(defaultValue: _kListenForCommentsPendingId)
-  @override
-  final String pendingId;
 
   @override
   String toString() {
-    return 'ListenForComments.start(postsIds: $postsIds, pendingId: $pendingId)';
+    return 'ListenForComments.start(postsIds: $postsIds)';
   }
 
   @override
@@ -1371,54 +1279,50 @@ class _$ListenForCommentsStart implements ListenForCommentsStart {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is ListenForCommentsStart &&
-            const DeepCollectionEquality().equals(other.postsIds, postsIds) &&
-            (identical(other.pendingId, pendingId) ||
-                other.pendingId == pendingId));
+            const DeepCollectionEquality().equals(other.postsIds, postsIds));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(postsIds), pendingId);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(postsIds));
 
   @JsonKey(ignore: true)
   @override
   $ListenForCommentsStartCopyWith<ListenForCommentsStart> get copyWith =>
-      _$ListenForCommentsStartCopyWithImpl<ListenForCommentsStart>(
-          this, _$identity);
+      _$ListenForCommentsStartCopyWithImpl<ListenForCommentsStart>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(List<String> postsIds, String pendingId) start,
-    required TResult Function(Comment comment, String pendingId) event,
+    required TResult Function(List<String> postsIds) start,
+    required TResult Function(Comment comment) event,
     required TResult Function() done,
-    required TResult Function(Object error, String pendingId) error,
+    required TResult Function(Object error) error,
   }) {
-    return start(postsIds, pendingId);
+    return start(postsIds);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(List<String> postsIds, String pendingId)? start,
-    TResult Function(Comment comment, String pendingId)? event,
+    TResult Function(List<String> postsIds)? start,
+    TResult Function(Comment comment)? event,
     TResult Function()? done,
-    TResult Function(Object error, String pendingId)? error,
+    TResult Function(Object error)? error,
   }) {
-    return start?.call(postsIds, pendingId);
+    return start?.call(postsIds);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<String> postsIds, String pendingId)? start,
-    TResult Function(Comment comment, String pendingId)? event,
+    TResult Function(List<String> postsIds)? start,
+    TResult Function(Comment comment)? event,
     TResult Function()? done,
-    TResult Function(Object error, String pendingId)? error,
+    TResult Function(Object error)? error,
     required TResult orElse(),
   }) {
     if (start != null) {
-      return start(postsIds, pendingId);
+      return start(postsIds);
     }
     return orElse();
   }
@@ -1462,30 +1366,24 @@ class _$ListenForCommentsStart implements ListenForCommentsStart {
 }
 
 abstract class ListenForCommentsStart implements ListenForComments {
-  const factory ListenForCommentsStart(List<String> postsIds,
-      [String pendingId]) = _$ListenForCommentsStart;
+  const factory ListenForCommentsStart(List<String> postsIds) = _$ListenForCommentsStart;
 
   List<String> get postsIds;
-  String get pendingId;
   @JsonKey(ignore: true)
-  $ListenForCommentsStartCopyWith<ListenForCommentsStart> get copyWith =>
-      throw _privateConstructorUsedError;
+  $ListenForCommentsStartCopyWith<ListenForCommentsStart> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ListenForCommentsEventCopyWith<$Res> {
-  factory $ListenForCommentsEventCopyWith(ListenForCommentsEvent value,
-          $Res Function(ListenForCommentsEvent) then) =
+  factory $ListenForCommentsEventCopyWith(ListenForCommentsEvent value, $Res Function(ListenForCommentsEvent) then) =
       _$ListenForCommentsEventCopyWithImpl<$Res>;
-  $Res call({Comment comment, String pendingId});
+  $Res call({Comment comment});
 }
 
 /// @nodoc
-class _$ListenForCommentsEventCopyWithImpl<$Res>
-    extends _$ListenForCommentsCopyWithImpl<$Res>
+class _$ListenForCommentsEventCopyWithImpl<$Res> extends _$ListenForCommentsCopyWithImpl<$Res>
     implements $ListenForCommentsEventCopyWith<$Res> {
-  _$ListenForCommentsEventCopyWithImpl(ListenForCommentsEvent _value,
-      $Res Function(ListenForCommentsEvent) _then)
+  _$ListenForCommentsEventCopyWithImpl(ListenForCommentsEvent _value, $Res Function(ListenForCommentsEvent) _then)
       : super(_value, (v) => _then(v as ListenForCommentsEvent));
 
   @override
@@ -1494,17 +1392,12 @@ class _$ListenForCommentsEventCopyWithImpl<$Res>
   @override
   $Res call({
     Object? comment = freezed,
-    Object? pendingId = freezed,
   }) {
     return _then(ListenForCommentsEvent(
       comment == freezed
           ? _value.comment
           : comment // ignore: cast_nullable_to_non_nullable
               as Comment,
-      pendingId == freezed
-          ? _value.pendingId
-          : pendingId // ignore: cast_nullable_to_non_nullable
-              as String,
     ));
   }
 }
@@ -1512,18 +1405,14 @@ class _$ListenForCommentsEventCopyWithImpl<$Res>
 /// @nodoc
 
 class _$ListenForCommentsEvent implements ListenForCommentsEvent {
-  const _$ListenForCommentsEvent(this.comment,
-      [this.pendingId = _kListenForCommentsPendingId]);
+  const _$ListenForCommentsEvent(this.comment);
 
   @override
   final Comment comment;
-  @JsonKey(defaultValue: _kListenForCommentsPendingId)
-  @override
-  final String pendingId;
 
   @override
   String toString() {
-    return 'ListenForComments.event(comment: $comment, pendingId: $pendingId)';
+    return 'ListenForComments.event(comment: $comment)';
   }
 
   @override
@@ -1531,53 +1420,50 @@ class _$ListenForCommentsEvent implements ListenForCommentsEvent {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is ListenForCommentsEvent &&
-            (identical(other.comment, comment) || other.comment == comment) &&
-            (identical(other.pendingId, pendingId) ||
-                other.pendingId == pendingId));
+            (identical(other.comment, comment) || other.comment == comment));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, comment, pendingId);
+  int get hashCode => Object.hash(runtimeType, comment);
 
   @JsonKey(ignore: true)
   @override
   $ListenForCommentsEventCopyWith<ListenForCommentsEvent> get copyWith =>
-      _$ListenForCommentsEventCopyWithImpl<ListenForCommentsEvent>(
-          this, _$identity);
+      _$ListenForCommentsEventCopyWithImpl<ListenForCommentsEvent>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(List<String> postsIds, String pendingId) start,
-    required TResult Function(Comment comment, String pendingId) event,
+    required TResult Function(List<String> postsIds) start,
+    required TResult Function(Comment comment) event,
     required TResult Function() done,
-    required TResult Function(Object error, String pendingId) error,
+    required TResult Function(Object error) error,
   }) {
-    return event(comment, pendingId);
+    return event(comment);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(List<String> postsIds, String pendingId)? start,
-    TResult Function(Comment comment, String pendingId)? event,
+    TResult Function(List<String> postsIds)? start,
+    TResult Function(Comment comment)? event,
     TResult Function()? done,
-    TResult Function(Object error, String pendingId)? error,
+    TResult Function(Object error)? error,
   }) {
-    return event?.call(comment, pendingId);
+    return event?.call(comment);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<String> postsIds, String pendingId)? start,
-    TResult Function(Comment comment, String pendingId)? event,
+    TResult Function(List<String> postsIds)? start,
+    TResult Function(Comment comment)? event,
     TResult Function()? done,
-    TResult Function(Object error, String pendingId)? error,
+    TResult Function(Object error)? error,
     required TResult orElse(),
   }) {
     if (event != null) {
-      return event(comment, pendingId);
+      return event(comment);
     }
     return orElse();
   }
@@ -1621,29 +1507,23 @@ class _$ListenForCommentsEvent implements ListenForCommentsEvent {
 }
 
 abstract class ListenForCommentsEvent implements ListenForComments {
-  const factory ListenForCommentsEvent(Comment comment, [String pendingId]) =
-      _$ListenForCommentsEvent;
+  const factory ListenForCommentsEvent(Comment comment) = _$ListenForCommentsEvent;
 
   Comment get comment;
-  String get pendingId;
   @JsonKey(ignore: true)
-  $ListenForCommentsEventCopyWith<ListenForCommentsEvent> get copyWith =>
-      throw _privateConstructorUsedError;
+  $ListenForCommentsEventCopyWith<ListenForCommentsEvent> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ListenForCommentsDoneCopyWith<$Res> {
-  factory $ListenForCommentsDoneCopyWith(ListenForCommentsDone value,
-          $Res Function(ListenForCommentsDone) then) =
+  factory $ListenForCommentsDoneCopyWith(ListenForCommentsDone value, $Res Function(ListenForCommentsDone) then) =
       _$ListenForCommentsDoneCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ListenForCommentsDoneCopyWithImpl<$Res>
-    extends _$ListenForCommentsCopyWithImpl<$Res>
+class _$ListenForCommentsDoneCopyWithImpl<$Res> extends _$ListenForCommentsCopyWithImpl<$Res>
     implements $ListenForCommentsDoneCopyWith<$Res> {
-  _$ListenForCommentsDoneCopyWithImpl(
-      ListenForCommentsDone _value, $Res Function(ListenForCommentsDone) _then)
+  _$ListenForCommentsDoneCopyWithImpl(ListenForCommentsDone _value, $Res Function(ListenForCommentsDone) _then)
       : super(_value, (v) => _then(v as ListenForCommentsDone));
 
   @override
@@ -1662,8 +1542,7 @@ class _$ListenForCommentsDone implements ListenForCommentsDone {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is ListenForCommentsDone);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is ListenForCommentsDone);
   }
 
   @override
@@ -1672,10 +1551,10 @@ class _$ListenForCommentsDone implements ListenForCommentsDone {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(List<String> postsIds, String pendingId) start,
-    required TResult Function(Comment comment, String pendingId) event,
+    required TResult Function(List<String> postsIds) start,
+    required TResult Function(Comment comment) event,
     required TResult Function() done,
-    required TResult Function(Object error, String pendingId) error,
+    required TResult Function(Object error) error,
   }) {
     return done();
   }
@@ -1683,10 +1562,10 @@ class _$ListenForCommentsDone implements ListenForCommentsDone {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(List<String> postsIds, String pendingId)? start,
-    TResult Function(Comment comment, String pendingId)? event,
+    TResult Function(List<String> postsIds)? start,
+    TResult Function(Comment comment)? event,
     TResult Function()? done,
-    TResult Function(Object error, String pendingId)? error,
+    TResult Function(Object error)? error,
   }) {
     return done?.call();
   }
@@ -1694,10 +1573,10 @@ class _$ListenForCommentsDone implements ListenForCommentsDone {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<String> postsIds, String pendingId)? start,
-    TResult Function(Comment comment, String pendingId)? event,
+    TResult Function(List<String> postsIds)? start,
+    TResult Function(Comment comment)? event,
     TResult Function()? done,
-    TResult Function(Object error, String pendingId)? error,
+    TResult Function(Object error)? error,
     required TResult orElse(),
   }) {
     if (done != null) {
@@ -1750,18 +1629,15 @@ abstract class ListenForCommentsDone implements ListenForComments {
 
 /// @nodoc
 abstract class $ListenForCommentsErrorCopyWith<$Res> {
-  factory $ListenForCommentsErrorCopyWith(ListenForCommentsError value,
-          $Res Function(ListenForCommentsError) then) =
+  factory $ListenForCommentsErrorCopyWith(ListenForCommentsError value, $Res Function(ListenForCommentsError) then) =
       _$ListenForCommentsErrorCopyWithImpl<$Res>;
-  $Res call({Object error, String pendingId});
+  $Res call({Object error});
 }
 
 /// @nodoc
-class _$ListenForCommentsErrorCopyWithImpl<$Res>
-    extends _$ListenForCommentsCopyWithImpl<$Res>
+class _$ListenForCommentsErrorCopyWithImpl<$Res> extends _$ListenForCommentsCopyWithImpl<$Res>
     implements $ListenForCommentsErrorCopyWith<$Res> {
-  _$ListenForCommentsErrorCopyWithImpl(ListenForCommentsError _value,
-      $Res Function(ListenForCommentsError) _then)
+  _$ListenForCommentsErrorCopyWithImpl(ListenForCommentsError _value, $Res Function(ListenForCommentsError) _then)
       : super(_value, (v) => _then(v as ListenForCommentsError));
 
   @override
@@ -1770,17 +1646,12 @@ class _$ListenForCommentsErrorCopyWithImpl<$Res>
   @override
   $Res call({
     Object? error = freezed,
-    Object? pendingId = freezed,
   }) {
     return _then(ListenForCommentsError(
       error == freezed
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
               as Object,
-      pendingId == freezed
-          ? _value.pendingId
-          : pendingId // ignore: cast_nullable_to_non_nullable
-              as String,
     ));
   }
 }
@@ -1789,18 +1660,14 @@ class _$ListenForCommentsErrorCopyWithImpl<$Res>
 
 @Implements<ErrorAction>()
 class _$ListenForCommentsError implements ListenForCommentsError {
-  const _$ListenForCommentsError(this.error,
-      [this.pendingId = _kListenForCommentsPendingId]);
+  const _$ListenForCommentsError(this.error);
 
   @override
   final Object error;
-  @JsonKey(defaultValue: _kListenForCommentsPendingId)
-  @override
-  final String pendingId;
 
   @override
   String toString() {
-    return 'ListenForComments.error(error: $error, pendingId: $pendingId)';
+    return 'ListenForComments.error(error: $error)';
   }
 
   @override
@@ -1808,54 +1675,50 @@ class _$ListenForCommentsError implements ListenForCommentsError {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is ListenForCommentsError &&
-            const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.pendingId, pendingId) ||
-                other.pendingId == pendingId));
+            const DeepCollectionEquality().equals(other.error, error));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(error), pendingId);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error));
 
   @JsonKey(ignore: true)
   @override
   $ListenForCommentsErrorCopyWith<ListenForCommentsError> get copyWith =>
-      _$ListenForCommentsErrorCopyWithImpl<ListenForCommentsError>(
-          this, _$identity);
+      _$ListenForCommentsErrorCopyWithImpl<ListenForCommentsError>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(List<String> postsIds, String pendingId) start,
-    required TResult Function(Comment comment, String pendingId) event,
+    required TResult Function(List<String> postsIds) start,
+    required TResult Function(Comment comment) event,
     required TResult Function() done,
-    required TResult Function(Object error, String pendingId) error,
+    required TResult Function(Object error) error,
   }) {
-    return error(this.error, pendingId);
+    return error(this.error);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(List<String> postsIds, String pendingId)? start,
-    TResult Function(Comment comment, String pendingId)? event,
+    TResult Function(List<String> postsIds)? start,
+    TResult Function(Comment comment)? event,
     TResult Function()? done,
-    TResult Function(Object error, String pendingId)? error,
+    TResult Function(Object error)? error,
   }) {
-    return error?.call(this.error, pendingId);
+    return error?.call(this.error);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<String> postsIds, String pendingId)? start,
-    TResult Function(Comment comment, String pendingId)? event,
+    TResult Function(List<String> postsIds)? start,
+    TResult Function(Comment comment)? event,
     TResult Function()? done,
-    TResult Function(Object error, String pendingId)? error,
+    TResult Function(Object error)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
-      return error(this.error, pendingId);
+      return error(this.error);
     }
     return orElse();
   }
@@ -1898,14 +1761,10 @@ class _$ListenForCommentsError implements ListenForCommentsError {
   }
 }
 
-abstract class ListenForCommentsError
-    implements ListenForComments, ErrorAction {
-  const factory ListenForCommentsError(Object error, [String pendingId]) =
-      _$ListenForCommentsError;
+abstract class ListenForCommentsError implements ListenForComments, ErrorAction {
+  const factory ListenForCommentsError(Object error) = _$ListenForCommentsError;
 
   Object get error;
-  String get pendingId;
   @JsonKey(ignore: true)
-  $ListenForCommentsErrorCopyWith<ListenForCommentsError> get copyWith =>
-      throw _privateConstructorUsedError;
+  $ListenForCommentsErrorCopyWith<ListenForCommentsError> get copyWith => throw _privateConstructorUsedError;
 }

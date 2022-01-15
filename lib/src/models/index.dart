@@ -6,6 +6,7 @@ import 'package:built_value/serializer.dart';
 import 'package:instamarket/src/models/auth/index.dart';
 import 'package:instamarket/src/models/comments/index.dart';
 import 'package:instamarket/src/models/likes/index.dart';
+import 'package:instamarket/src/models/messages/index.dart';
 import 'package:instamarket/src/models/posts/index.dart';
 import 'package:instamarket/src/models/serializers.dart';
 

@@ -17,24 +17,21 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$CreateLikeTearOff {
   const _$CreateLikeTearOff();
 
-  CreateLike$ call(
-      {required String postId, String pendingId = _kcreateLikePendingId}) {
+  CreateLike$ call({required String postId, String pendingId = _kcreateLikePendingId}) {
     return CreateLike$(
       postId: postId,
       pendingId: pendingId,
     );
   }
 
-  CreateLikeSuccessful successful(Like like,
-      [String pendingId = _kcreateLikePendingId]) {
+  CreateLikeSuccessful successful(Like like, [String pendingId = _kcreateLikePendingId]) {
     return CreateLikeSuccessful(
       like,
       pendingId,
     );
   }
 
-  CreateLikeError error(Object error,
-      [String pendingId = _kcreateLikePendingId]) {
+  CreateLikeError error(Object error, [String pendingId = _kcreateLikePendingId]) {
     return CreateLikeError(
       error,
       pendingId,
@@ -95,15 +92,12 @@ mixin _$CreateLike {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $CreateLikeCopyWith<CreateLike> get copyWith =>
-      throw _privateConstructorUsedError;
+  $CreateLikeCopyWith<CreateLike> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $CreateLikeCopyWith<$Res> {
-  factory $CreateLikeCopyWith(
-          CreateLike value, $Res Function(CreateLike) then) =
-      _$CreateLikeCopyWithImpl<$Res>;
+  factory $CreateLikeCopyWith(CreateLike value, $Res Function(CreateLike) then) = _$CreateLikeCopyWithImpl<$Res>;
   $Res call({String pendingId});
 }
 
@@ -130,18 +124,14 @@ class _$CreateLikeCopyWithImpl<$Res> implements $CreateLikeCopyWith<$Res> {
 
 /// @nodoc
 abstract class $CreateLike$CopyWith<$Res> implements $CreateLikeCopyWith<$Res> {
-  factory $CreateLike$CopyWith(
-          CreateLike$ value, $Res Function(CreateLike$) then) =
-      _$CreateLike$CopyWithImpl<$Res>;
+  factory $CreateLike$CopyWith(CreateLike$ value, $Res Function(CreateLike$) then) = _$CreateLike$CopyWithImpl<$Res>;
   @override
   $Res call({String postId, String pendingId});
 }
 
 /// @nodoc
-class _$CreateLike$CopyWithImpl<$Res> extends _$CreateLikeCopyWithImpl<$Res>
-    implements $CreateLike$CopyWith<$Res> {
-  _$CreateLike$CopyWithImpl(
-      CreateLike$ _value, $Res Function(CreateLike$) _then)
+class _$CreateLike$CopyWithImpl<$Res> extends _$CreateLikeCopyWithImpl<$Res> implements $CreateLike$CopyWith<$Res> {
+  _$CreateLike$CopyWithImpl(CreateLike$ _value, $Res Function(CreateLike$) _then)
       : super(_value, (v) => _then(v as CreateLike$));
 
   @override
@@ -168,8 +158,7 @@ class _$CreateLike$CopyWithImpl<$Res> extends _$CreateLikeCopyWithImpl<$Res>
 /// @nodoc
 
 class _$CreateLike$ implements CreateLike$ {
-  const _$CreateLike$(
-      {required this.postId, this.pendingId = _kcreateLikePendingId});
+  const _$CreateLike$({required this.postId, this.pendingId = _kcreateLikePendingId});
 
   @override
   final String postId;
@@ -188,8 +177,7 @@ class _$CreateLike$ implements CreateLike$ {
         (other.runtimeType == runtimeType &&
             other is CreateLike$ &&
             (identical(other.postId, postId) || other.postId == postId) &&
-            (identical(other.pendingId, pendingId) ||
-                other.pendingId == pendingId));
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
   }
 
   @override
@@ -197,8 +185,7 @@ class _$CreateLike$ implements CreateLike$ {
 
   @JsonKey(ignore: true)
   @override
-  $CreateLike$CopyWith<CreateLike$> get copyWith =>
-      _$CreateLike$CopyWithImpl<CreateLike$>(this, _$identity);
+  $CreateLike$CopyWith<CreateLike$> get copyWith => _$CreateLike$CopyWithImpl<CreateLike$>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -270,34 +257,28 @@ class _$CreateLike$ implements CreateLike$ {
 }
 
 abstract class CreateLike$ implements CreateLike {
-  const factory CreateLike$({required String postId, String pendingId}) =
-      _$CreateLike$;
+  const factory CreateLike$({required String postId, String pendingId}) = _$CreateLike$;
 
   String get postId;
   @override
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  $CreateLike$CopyWith<CreateLike$> get copyWith =>
-      throw _privateConstructorUsedError;
+  $CreateLike$CopyWith<CreateLike$> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $CreateLikeSuccessfulCopyWith<$Res>
-    implements $CreateLikeCopyWith<$Res> {
-  factory $CreateLikeSuccessfulCopyWith(CreateLikeSuccessful value,
-          $Res Function(CreateLikeSuccessful) then) =
+abstract class $CreateLikeSuccessfulCopyWith<$Res> implements $CreateLikeCopyWith<$Res> {
+  factory $CreateLikeSuccessfulCopyWith(CreateLikeSuccessful value, $Res Function(CreateLikeSuccessful) then) =
       _$CreateLikeSuccessfulCopyWithImpl<$Res>;
   @override
   $Res call({Like like, String pendingId});
 }
 
 /// @nodoc
-class _$CreateLikeSuccessfulCopyWithImpl<$Res>
-    extends _$CreateLikeCopyWithImpl<$Res>
+class _$CreateLikeSuccessfulCopyWithImpl<$Res> extends _$CreateLikeCopyWithImpl<$Res>
     implements $CreateLikeSuccessfulCopyWith<$Res> {
-  _$CreateLikeSuccessfulCopyWithImpl(
-      CreateLikeSuccessful _value, $Res Function(CreateLikeSuccessful) _then)
+  _$CreateLikeSuccessfulCopyWithImpl(CreateLikeSuccessful _value, $Res Function(CreateLikeSuccessful) _then)
       : super(_value, (v) => _then(v as CreateLikeSuccessful));
 
   @override
@@ -324,8 +305,7 @@ class _$CreateLikeSuccessfulCopyWithImpl<$Res>
 /// @nodoc
 
 class _$CreateLikeSuccessful implements CreateLikeSuccessful {
-  const _$CreateLikeSuccessful(this.like,
-      [this.pendingId = _kcreateLikePendingId]);
+  const _$CreateLikeSuccessful(this.like, [this.pendingId = _kcreateLikePendingId]);
 
   @override
   final Like like;
@@ -344,8 +324,7 @@ class _$CreateLikeSuccessful implements CreateLikeSuccessful {
         (other.runtimeType == runtimeType &&
             other is CreateLikeSuccessful &&
             (identical(other.like, like) || other.like == like) &&
-            (identical(other.pendingId, pendingId) ||
-                other.pendingId == pendingId));
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
   }
 
   @override
@@ -354,8 +333,7 @@ class _$CreateLikeSuccessful implements CreateLikeSuccessful {
   @JsonKey(ignore: true)
   @override
   $CreateLikeSuccessfulCopyWith<CreateLikeSuccessful> get copyWith =>
-      _$CreateLikeSuccessfulCopyWithImpl<CreateLikeSuccessful>(
-          this, _$identity);
+      _$CreateLikeSuccessfulCopyWithImpl<CreateLikeSuccessful>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -427,23 +405,19 @@ class _$CreateLikeSuccessful implements CreateLikeSuccessful {
 }
 
 abstract class CreateLikeSuccessful implements CreateLike {
-  const factory CreateLikeSuccessful(Like like, [String pendingId]) =
-      _$CreateLikeSuccessful;
+  const factory CreateLikeSuccessful(Like like, [String pendingId]) = _$CreateLikeSuccessful;
 
   Like get like;
   @override
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  $CreateLikeSuccessfulCopyWith<CreateLikeSuccessful> get copyWith =>
-      throw _privateConstructorUsedError;
+  $CreateLikeSuccessfulCopyWith<CreateLikeSuccessful> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $CreateLikeErrorCopyWith<$Res>
-    implements $CreateLikeCopyWith<$Res> {
-  factory $CreateLikeErrorCopyWith(
-          CreateLikeError value, $Res Function(CreateLikeError) then) =
+abstract class $CreateLikeErrorCopyWith<$Res> implements $CreateLikeCopyWith<$Res> {
+  factory $CreateLikeErrorCopyWith(CreateLikeError value, $Res Function(CreateLikeError) then) =
       _$CreateLikeErrorCopyWithImpl<$Res>;
   @override
   $Res call({Object error, String pendingId});
@@ -452,8 +426,7 @@ abstract class $CreateLikeErrorCopyWith<$Res>
 /// @nodoc
 class _$CreateLikeErrorCopyWithImpl<$Res> extends _$CreateLikeCopyWithImpl<$Res>
     implements $CreateLikeErrorCopyWith<$Res> {
-  _$CreateLikeErrorCopyWithImpl(
-      CreateLikeError _value, $Res Function(CreateLikeError) _then)
+  _$CreateLikeErrorCopyWithImpl(CreateLikeError _value, $Res Function(CreateLikeError) _then)
       : super(_value, (v) => _then(v as CreateLikeError));
 
   @override
@@ -500,13 +473,11 @@ class _$CreateLikeError implements CreateLikeError {
         (other.runtimeType == runtimeType &&
             other is CreateLikeError &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.pendingId, pendingId) ||
-                other.pendingId == pendingId));
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(error), pendingId);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), pendingId);
 
   @JsonKey(ignore: true)
   @override
@@ -583,16 +554,14 @@ class _$CreateLikeError implements CreateLikeError {
 }
 
 abstract class CreateLikeError implements CreateLike, ErrorAction {
-  const factory CreateLikeError(Object error, [String pendingId]) =
-      _$CreateLikeError;
+  const factory CreateLikeError(Object error, [String pendingId]) = _$CreateLikeError;
 
   Object get error;
   @override
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  $CreateLikeErrorCopyWith<CreateLikeError> get copyWith =>
-      throw _privateConstructorUsedError;
+  $CreateLikeErrorCopyWith<CreateLikeError> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -606,16 +575,14 @@ class _$DeleteLikeTearOff {
     );
   }
 
-  DeleteLikeSuccessful successful(String likeId,
-      [String pendingId = _kDeleteLikePendingId]) {
+  DeleteLikeSuccessful successful(String likeId, [String pendingId = _kDeleteLikePendingId]) {
     return DeleteLikeSuccessful(
       likeId,
       pendingId,
     );
   }
 
-  DeleteLikeError error(Object error,
-      [String pendingId = _kDeleteLikePendingId]) {
+  DeleteLikeError error(Object error, [String pendingId = _kDeleteLikePendingId]) {
     return DeleteLikeError(
       error,
       pendingId,
@@ -676,15 +643,12 @@ mixin _$DeleteLike {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $DeleteLikeCopyWith<DeleteLike> get copyWith =>
-      throw _privateConstructorUsedError;
+  $DeleteLikeCopyWith<DeleteLike> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $DeleteLikeCopyWith<$Res> {
-  factory $DeleteLikeCopyWith(
-          DeleteLike value, $Res Function(DeleteLike) then) =
-      _$DeleteLikeCopyWithImpl<$Res>;
+  factory $DeleteLikeCopyWith(DeleteLike value, $Res Function(DeleteLike) then) = _$DeleteLikeCopyWithImpl<$Res>;
   $Res call({String pendingId});
 }
 
@@ -711,18 +675,14 @@ class _$DeleteLikeCopyWithImpl<$Res> implements $DeleteLikeCopyWith<$Res> {
 
 /// @nodoc
 abstract class $DeleteLike$CopyWith<$Res> implements $DeleteLikeCopyWith<$Res> {
-  factory $DeleteLike$CopyWith(
-          DeleteLike$ value, $Res Function(DeleteLike$) then) =
-      _$DeleteLike$CopyWithImpl<$Res>;
+  factory $DeleteLike$CopyWith(DeleteLike$ value, $Res Function(DeleteLike$) then) = _$DeleteLike$CopyWithImpl<$Res>;
   @override
   $Res call({String likeId, String pendingId});
 }
 
 /// @nodoc
-class _$DeleteLike$CopyWithImpl<$Res> extends _$DeleteLikeCopyWithImpl<$Res>
-    implements $DeleteLike$CopyWith<$Res> {
-  _$DeleteLike$CopyWithImpl(
-      DeleteLike$ _value, $Res Function(DeleteLike$) _then)
+class _$DeleteLike$CopyWithImpl<$Res> extends _$DeleteLikeCopyWithImpl<$Res> implements $DeleteLike$CopyWith<$Res> {
+  _$DeleteLike$CopyWithImpl(DeleteLike$ _value, $Res Function(DeleteLike$) _then)
       : super(_value, (v) => _then(v as DeleteLike$));
 
   @override
@@ -768,8 +728,7 @@ class _$DeleteLike$ implements DeleteLike$ {
         (other.runtimeType == runtimeType &&
             other is DeleteLike$ &&
             (identical(other.likeId, likeId) || other.likeId == likeId) &&
-            (identical(other.pendingId, pendingId) ||
-                other.pendingId == pendingId));
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
   }
 
   @override
@@ -777,8 +736,7 @@ class _$DeleteLike$ implements DeleteLike$ {
 
   @JsonKey(ignore: true)
   @override
-  $DeleteLike$CopyWith<DeleteLike$> get copyWith =>
-      _$DeleteLike$CopyWithImpl<DeleteLike$>(this, _$identity);
+  $DeleteLike$CopyWith<DeleteLike$> get copyWith => _$DeleteLike$CopyWithImpl<DeleteLike$>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -857,26 +815,21 @@ abstract class DeleteLike$ implements DeleteLike {
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  $DeleteLike$CopyWith<DeleteLike$> get copyWith =>
-      throw _privateConstructorUsedError;
+  $DeleteLike$CopyWith<DeleteLike$> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $DeleteLikeSuccessfulCopyWith<$Res>
-    implements $DeleteLikeCopyWith<$Res> {
-  factory $DeleteLikeSuccessfulCopyWith(DeleteLikeSuccessful value,
-          $Res Function(DeleteLikeSuccessful) then) =
+abstract class $DeleteLikeSuccessfulCopyWith<$Res> implements $DeleteLikeCopyWith<$Res> {
+  factory $DeleteLikeSuccessfulCopyWith(DeleteLikeSuccessful value, $Res Function(DeleteLikeSuccessful) then) =
       _$DeleteLikeSuccessfulCopyWithImpl<$Res>;
   @override
   $Res call({String likeId, String pendingId});
 }
 
 /// @nodoc
-class _$DeleteLikeSuccessfulCopyWithImpl<$Res>
-    extends _$DeleteLikeCopyWithImpl<$Res>
+class _$DeleteLikeSuccessfulCopyWithImpl<$Res> extends _$DeleteLikeCopyWithImpl<$Res>
     implements $DeleteLikeSuccessfulCopyWith<$Res> {
-  _$DeleteLikeSuccessfulCopyWithImpl(
-      DeleteLikeSuccessful _value, $Res Function(DeleteLikeSuccessful) _then)
+  _$DeleteLikeSuccessfulCopyWithImpl(DeleteLikeSuccessful _value, $Res Function(DeleteLikeSuccessful) _then)
       : super(_value, (v) => _then(v as DeleteLikeSuccessful));
 
   @override
@@ -903,8 +856,7 @@ class _$DeleteLikeSuccessfulCopyWithImpl<$Res>
 /// @nodoc
 
 class _$DeleteLikeSuccessful implements DeleteLikeSuccessful {
-  const _$DeleteLikeSuccessful(this.likeId,
-      [this.pendingId = _kDeleteLikePendingId]);
+  const _$DeleteLikeSuccessful(this.likeId, [this.pendingId = _kDeleteLikePendingId]);
 
   @override
   final String likeId;
@@ -923,8 +875,7 @@ class _$DeleteLikeSuccessful implements DeleteLikeSuccessful {
         (other.runtimeType == runtimeType &&
             other is DeleteLikeSuccessful &&
             (identical(other.likeId, likeId) || other.likeId == likeId) &&
-            (identical(other.pendingId, pendingId) ||
-                other.pendingId == pendingId));
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
   }
 
   @override
@@ -933,8 +884,7 @@ class _$DeleteLikeSuccessful implements DeleteLikeSuccessful {
   @JsonKey(ignore: true)
   @override
   $DeleteLikeSuccessfulCopyWith<DeleteLikeSuccessful> get copyWith =>
-      _$DeleteLikeSuccessfulCopyWithImpl<DeleteLikeSuccessful>(
-          this, _$identity);
+      _$DeleteLikeSuccessfulCopyWithImpl<DeleteLikeSuccessful>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1006,23 +956,19 @@ class _$DeleteLikeSuccessful implements DeleteLikeSuccessful {
 }
 
 abstract class DeleteLikeSuccessful implements DeleteLike {
-  const factory DeleteLikeSuccessful(String likeId, [String pendingId]) =
-      _$DeleteLikeSuccessful;
+  const factory DeleteLikeSuccessful(String likeId, [String pendingId]) = _$DeleteLikeSuccessful;
 
   String get likeId;
   @override
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  $DeleteLikeSuccessfulCopyWith<DeleteLikeSuccessful> get copyWith =>
-      throw _privateConstructorUsedError;
+  $DeleteLikeSuccessfulCopyWith<DeleteLikeSuccessful> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $DeleteLikeErrorCopyWith<$Res>
-    implements $DeleteLikeCopyWith<$Res> {
-  factory $DeleteLikeErrorCopyWith(
-          DeleteLikeError value, $Res Function(DeleteLikeError) then) =
+abstract class $DeleteLikeErrorCopyWith<$Res> implements $DeleteLikeCopyWith<$Res> {
+  factory $DeleteLikeErrorCopyWith(DeleteLikeError value, $Res Function(DeleteLikeError) then) =
       _$DeleteLikeErrorCopyWithImpl<$Res>;
   @override
   $Res call({Object error, String pendingId});
@@ -1031,8 +977,7 @@ abstract class $DeleteLikeErrorCopyWith<$Res>
 /// @nodoc
 class _$DeleteLikeErrorCopyWithImpl<$Res> extends _$DeleteLikeCopyWithImpl<$Res>
     implements $DeleteLikeErrorCopyWith<$Res> {
-  _$DeleteLikeErrorCopyWithImpl(
-      DeleteLikeError _value, $Res Function(DeleteLikeError) _then)
+  _$DeleteLikeErrorCopyWithImpl(DeleteLikeError _value, $Res Function(DeleteLikeError) _then)
       : super(_value, (v) => _then(v as DeleteLikeError));
 
   @override
@@ -1079,13 +1024,11 @@ class _$DeleteLikeError implements DeleteLikeError {
         (other.runtimeType == runtimeType &&
             other is DeleteLikeError &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.pendingId, pendingId) ||
-                other.pendingId == pendingId));
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(error), pendingId);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), pendingId);
 
   @JsonKey(ignore: true)
   @override
@@ -1162,16 +1105,14 @@ class _$DeleteLikeError implements DeleteLikeError {
 }
 
 abstract class DeleteLikeError implements DeleteLike, ErrorAction {
-  const factory DeleteLikeError(Object error, [String pendingId]) =
-      _$DeleteLikeError;
+  const factory DeleteLikeError(Object error, [String pendingId]) = _$DeleteLikeError;
 
   Object get error;
   @override
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  $DeleteLikeErrorCopyWith<DeleteLikeError> get copyWith =>
-      throw _privateConstructorUsedError;
+  $DeleteLikeErrorCopyWith<DeleteLikeError> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1185,8 +1126,7 @@ class _$GetLikesTearOff {
     );
   }
 
-  GetLikesSuccessful successful(List<Like> likes,
-      [String pendingId = _kGetLikesPendingId]) {
+  GetLikesSuccessful successful(List<Like> likes, [String pendingId = _kGetLikesPendingId]) {
     return GetLikesSuccessful(
       likes,
       pendingId,
@@ -1254,14 +1194,12 @@ mixin _$GetLikes {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $GetLikesCopyWith<GetLikes> get copyWith =>
-      throw _privateConstructorUsedError;
+  $GetLikesCopyWith<GetLikes> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $GetLikesCopyWith<$Res> {
-  factory $GetLikesCopyWith(GetLikes value, $Res Function(GetLikes) then) =
-      _$GetLikesCopyWithImpl<$Res>;
+  factory $GetLikesCopyWith(GetLikes value, $Res Function(GetLikes) then) = _$GetLikesCopyWithImpl<$Res>;
   $Res call({String pendingId});
 }
 
@@ -1288,15 +1226,13 @@ class _$GetLikesCopyWithImpl<$Res> implements $GetLikesCopyWith<$Res> {
 
 /// @nodoc
 abstract class $GetLikes$CopyWith<$Res> implements $GetLikesCopyWith<$Res> {
-  factory $GetLikes$CopyWith(GetLikes$ value, $Res Function(GetLikes$) then) =
-      _$GetLikes$CopyWithImpl<$Res>;
+  factory $GetLikes$CopyWith(GetLikes$ value, $Res Function(GetLikes$) then) = _$GetLikes$CopyWithImpl<$Res>;
   @override
   $Res call({String postId, String pendingId});
 }
 
 /// @nodoc
-class _$GetLikes$CopyWithImpl<$Res> extends _$GetLikesCopyWithImpl<$Res>
-    implements $GetLikes$CopyWith<$Res> {
+class _$GetLikes$CopyWithImpl<$Res> extends _$GetLikesCopyWithImpl<$Res> implements $GetLikes$CopyWith<$Res> {
   _$GetLikes$CopyWithImpl(GetLikes$ _value, $Res Function(GetLikes$) _then)
       : super(_value, (v) => _then(v as GetLikes$));
 
@@ -1343,8 +1279,7 @@ class _$GetLikes$ implements GetLikes$ {
         (other.runtimeType == runtimeType &&
             other is GetLikes$ &&
             (identical(other.postId, postId) || other.postId == postId) &&
-            (identical(other.pendingId, pendingId) ||
-                other.pendingId == pendingId));
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
   }
 
   @override
@@ -1352,8 +1287,7 @@ class _$GetLikes$ implements GetLikes$ {
 
   @JsonKey(ignore: true)
   @override
-  $GetLikes$CopyWith<GetLikes$> get copyWith =>
-      _$GetLikes$CopyWithImpl<GetLikes$>(this, _$identity);
+  $GetLikes$CopyWith<GetLikes$> get copyWith => _$GetLikes$CopyWithImpl<GetLikes$>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1432,26 +1366,21 @@ abstract class GetLikes$ implements GetLikes {
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  $GetLikes$CopyWith<GetLikes$> get copyWith =>
-      throw _privateConstructorUsedError;
+  $GetLikes$CopyWith<GetLikes$> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $GetLikesSuccessfulCopyWith<$Res>
-    implements $GetLikesCopyWith<$Res> {
-  factory $GetLikesSuccessfulCopyWith(
-          GetLikesSuccessful value, $Res Function(GetLikesSuccessful) then) =
+abstract class $GetLikesSuccessfulCopyWith<$Res> implements $GetLikesCopyWith<$Res> {
+  factory $GetLikesSuccessfulCopyWith(GetLikesSuccessful value, $Res Function(GetLikesSuccessful) then) =
       _$GetLikesSuccessfulCopyWithImpl<$Res>;
   @override
   $Res call({List<Like> likes, String pendingId});
 }
 
 /// @nodoc
-class _$GetLikesSuccessfulCopyWithImpl<$Res>
-    extends _$GetLikesCopyWithImpl<$Res>
+class _$GetLikesSuccessfulCopyWithImpl<$Res> extends _$GetLikesCopyWithImpl<$Res>
     implements $GetLikesSuccessfulCopyWith<$Res> {
-  _$GetLikesSuccessfulCopyWithImpl(
-      GetLikesSuccessful _value, $Res Function(GetLikesSuccessful) _then)
+  _$GetLikesSuccessfulCopyWithImpl(GetLikesSuccessful _value, $Res Function(GetLikesSuccessful) _then)
       : super(_value, (v) => _then(v as GetLikesSuccessful));
 
   @override
@@ -1478,8 +1407,7 @@ class _$GetLikesSuccessfulCopyWithImpl<$Res>
 /// @nodoc
 
 class _$GetLikesSuccessful implements GetLikesSuccessful {
-  const _$GetLikesSuccessful(this.likes,
-      [this.pendingId = _kGetLikesPendingId]);
+  const _$GetLikesSuccessful(this.likes, [this.pendingId = _kGetLikesPendingId]);
 
   @override
   final List<Like> likes;
@@ -1498,13 +1426,11 @@ class _$GetLikesSuccessful implements GetLikesSuccessful {
         (other.runtimeType == runtimeType &&
             other is GetLikesSuccessful &&
             const DeepCollectionEquality().equals(other.likes, likes) &&
-            (identical(other.pendingId, pendingId) ||
-                other.pendingId == pendingId));
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(likes), pendingId);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(likes), pendingId);
 
   @JsonKey(ignore: true)
   @override
@@ -1581,32 +1507,27 @@ class _$GetLikesSuccessful implements GetLikesSuccessful {
 }
 
 abstract class GetLikesSuccessful implements GetLikes {
-  const factory GetLikesSuccessful(List<Like> likes, [String pendingId]) =
-      _$GetLikesSuccessful;
+  const factory GetLikesSuccessful(List<Like> likes, [String pendingId]) = _$GetLikesSuccessful;
 
   List<Like> get likes;
   @override
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  $GetLikesSuccessfulCopyWith<GetLikesSuccessful> get copyWith =>
-      throw _privateConstructorUsedError;
+  $GetLikesSuccessfulCopyWith<GetLikesSuccessful> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $GetLikesErrorCopyWith<$Res> implements $GetLikesCopyWith<$Res> {
-  factory $GetLikesErrorCopyWith(
-          GetLikesError value, $Res Function(GetLikesError) then) =
+  factory $GetLikesErrorCopyWith(GetLikesError value, $Res Function(GetLikesError) then) =
       _$GetLikesErrorCopyWithImpl<$Res>;
   @override
   $Res call({Object error, String pendingId});
 }
 
 /// @nodoc
-class _$GetLikesErrorCopyWithImpl<$Res> extends _$GetLikesCopyWithImpl<$Res>
-    implements $GetLikesErrorCopyWith<$Res> {
-  _$GetLikesErrorCopyWithImpl(
-      GetLikesError _value, $Res Function(GetLikesError) _then)
+class _$GetLikesErrorCopyWithImpl<$Res> extends _$GetLikesCopyWithImpl<$Res> implements $GetLikesErrorCopyWith<$Res> {
+  _$GetLikesErrorCopyWithImpl(GetLikesError _value, $Res Function(GetLikesError) _then)
       : super(_value, (v) => _then(v as GetLikesError));
 
   @override
@@ -1653,18 +1574,15 @@ class _$GetLikesError implements GetLikesError {
         (other.runtimeType == runtimeType &&
             other is GetLikesError &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.pendingId, pendingId) ||
-                other.pendingId == pendingId));
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(error), pendingId);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), pendingId);
 
   @JsonKey(ignore: true)
   @override
-  $GetLikesErrorCopyWith<GetLikesError> get copyWith =>
-      _$GetLikesErrorCopyWithImpl<GetLikesError>(this, _$identity);
+  $GetLikesErrorCopyWith<GetLikesError> get copyWith => _$GetLikesErrorCopyWithImpl<GetLikesError>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1736,14 +1654,12 @@ class _$GetLikesError implements GetLikesError {
 }
 
 abstract class GetLikesError implements GetLikes, ErrorAction {
-  const factory GetLikesError(Object error, [String pendingId]) =
-      _$GetLikesError;
+  const factory GetLikesError(Object error, [String pendingId]) = _$GetLikesError;
 
   Object get error;
   @override
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  $GetLikesErrorCopyWith<GetLikesError> get copyWith =>
-      throw _privateConstructorUsedError;
+  $GetLikesErrorCopyWith<GetLikesError> get copyWith => throw _privateConstructorUsedError;
 }

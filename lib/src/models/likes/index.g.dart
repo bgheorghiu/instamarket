@@ -16,14 +16,12 @@ class _$LikeSerializer implements StructuredSerializer<Like> {
   final String wireName = 'Like';
 
   @override
-  Iterable<Object?> serialize(Serializers serializers, Like object,
-      {FullType specifiedType = FullType.unspecified}) {
+  Iterable<Object?> serialize(Serializers serializers, Like object, {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
       'id',
       serializers.serialize(object.id, specifiedType: const FullType(String)),
       'postId',
-      serializers.serialize(object.postId,
-          specifiedType: const FullType(String)),
+      serializers.serialize(object.postId, specifiedType: const FullType(String)),
       'uid',
       serializers.serialize(object.uid, specifiedType: const FullType(String)),
     ];
@@ -43,16 +41,13 @@ class _$LikeSerializer implements StructuredSerializer<Like> {
       final Object? value = iterator.current;
       switch (key) {
         case 'id':
-          result.id = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.id = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'postId':
-          result.postId = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.postId = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'uid':
-          result.uid = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.uid = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
       }
     }
@@ -72,9 +67,7 @@ class _$LikesStateSerializer implements StructuredSerializer<LikesState> {
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
       'likes',
-      serializers.serialize(object.likes,
-          specifiedType:
-              const FullType(BuiltList, const [const FullType(Like)])),
+      serializers.serialize(object.likes, specifiedType: const FullType(BuiltList, const [const FullType(Like)])),
     ];
 
     return result;
@@ -93,9 +86,7 @@ class _$LikesStateSerializer implements StructuredSerializer<LikesState> {
       switch (key) {
         case 'likes':
           result.likes.replace(serializers.deserialize(value,
-                  specifiedType:
-                      const FullType(BuiltList, const [const FullType(Like)]))!
-              as BuiltList<Object?>);
+              specifiedType: const FullType(BuiltList, const [const FullType(Like)]))! as BuiltList<Object?>);
           break;
       }
     }
@@ -112,19 +103,16 @@ class _$Like extends Like {
   @override
   final String uid;
 
-  factory _$Like([void Function(LikeBuilder)? updates]) =>
-      (new LikeBuilder()..update(updates)).build();
+  factory _$Like([void Function(LikeBuilder)? updates]) => (new LikeBuilder()..update(updates)).build();
 
-  _$Like._({required this.id, required this.postId, required this.uid})
-      : super._() {
+  _$Like._({required this.id, required this.postId, required this.uid}) : super._() {
     BuiltValueNullFieldError.checkNotNull(id, 'Like', 'id');
     BuiltValueNullFieldError.checkNotNull(postId, 'Like', 'postId');
     BuiltValueNullFieldError.checkNotNull(uid, 'Like', 'uid');
   }
 
   @override
-  Like rebuild(void Function(LikeBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+  Like rebuild(void Function(LikeBuilder) updates) => (toBuilder()..update(updates)).build();
 
   @override
   LikeBuilder toBuilder() => new LikeBuilder()..replace(this);
@@ -132,10 +120,7 @@ class _$Like extends Like {
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is Like &&
-        id == other.id &&
-        postId == other.postId &&
-        uid == other.uid;
+    return other is Like && id == other.id && postId == other.postId && uid == other.uid;
   }
 
   @override
@@ -197,8 +182,7 @@ class LikeBuilder implements Builder<Like, LikeBuilder> {
     final _$result = _$v ??
         new _$Like._(
             id: BuiltValueNullFieldError.checkNotNull(id, 'Like', 'id'),
-            postId:
-                BuiltValueNullFieldError.checkNotNull(postId, 'Like', 'postId'),
+            postId: BuiltValueNullFieldError.checkNotNull(postId, 'Like', 'postId'),
             uid: BuiltValueNullFieldError.checkNotNull(uid, 'Like', 'uid'));
     replace(_$result);
     return _$result;
@@ -217,8 +201,7 @@ class _$LikesState extends LikesState {
   }
 
   @override
-  LikesState rebuild(void Function(LikesStateBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+  LikesState rebuild(void Function(LikesStateBuilder) updates) => (toBuilder()..update(updates)).build();
 
   @override
   LikesStateBuilder toBuilder() => new LikesStateBuilder()..replace(this);
@@ -236,8 +219,7 @@ class _$LikesState extends LikesState {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('LikesState')..add('likes', likes))
-        .toString();
+    return (newBuiltValueToStringHelper('LikesState')..add('likes', likes)).toString();
   }
 }
 
@@ -281,8 +263,7 @@ class LikesStateBuilder implements Builder<LikesState, LikesStateBuilder> {
         _$failedField = 'likes';
         likes.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            'LikesState', _$failedField, e.toString());
+        throw new BuiltValueNestedFieldError('LikesState', _$failedField, e.toString());
       }
       rethrow;
     }

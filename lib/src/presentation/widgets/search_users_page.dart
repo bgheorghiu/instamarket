@@ -29,57 +29,55 @@ class SearchUsersPage extends StatelessWidget {
                   },
                 ),
               ),
-              body: Builder(
-                builder: (BuildContext context) {
-                  if (users == null || users.isEmpty){
-                    return const Center(
-                      child: Text('No users found'),
-                    );
-                  }
-                  return ListView.builder(
-                    itemCount: users.length,
-                    itemBuilder: (BuildContext context, int index) {
-                      if (users.isEmpty) {
-                        return ListTile(
-                          title: const Text('No results found'),
-                          onTap: () {
-                            Navigator.pop(context);
-                          },
-                        );
-                      }
-
-                      final AppUser user = users[index];
-
-                      final bool following = currentUser!.following.contains(user.uid);
-
-                      return ListTile(
-                        leading: user.photoUrl != null ? Image.network(user.photoUrl!) : null,
-                        title: Text('@${user.username}'),
-                        onTap: () {
-                          Navigator.pop(context, user);
-                        },
-                        subtitle: Text(user.email),
-                        trailing: showFollow
-                            ? TextButton(
-                                child: Text(following ? 'Unfollow' : 'Follow'),
-                                onPressed: () {
-                                  AppAction action;
-
-                                  if (following) {
-                                    action = UpdateFollowing(remove: user.uid);
-                                  } else {
-                                    action = UpdateFollowing(add: user.uid);
-                                  }
-
-                                  StoreProvider.of<AppState>(context).dispatch(action);
-                                },
-                              )
-                            : null,
-                      );
-                    },
+              body: Builder(builder: (BuildContext context) {
+                if (users == null || users.isEmpty) {
+                  return const Center(
+                    child: Text('No users found'),
                   );
                 }
-              ),
+                return ListView.builder(
+                  itemCount: users.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    if (users.isEmpty) {
+                      return ListTile(
+                        title: const Text('No results found'),
+                        onTap: () {
+                          Navigator.pop(context);
+                        },
+                      );
+                    }
+
+                    final AppUser user = users[index];
+
+                    final bool following = currentUser!.following.contains(user.uid);
+
+                    return ListTile(
+                      leading: user.photoUrl != null ? Image.network(user.photoUrl!) : null,
+                      title: Text('@${user.username}'),
+                      onTap: () {
+                        Navigator.pop(context, user);
+                      },
+                      subtitle: Text(user.email),
+                      trailing: showFollow
+                          ? TextButton(
+                              child: Text(following ? 'Unfollow' : 'Follow'),
+                              onPressed: () {
+                                AppAction action;
+
+                                if (following) {
+                                  action = UpdateFollowing(remove: user.uid);
+                                } else {
+                                  action = UpdateFollowing(add: user.uid);
+                                }
+
+                                StoreProvider.of<AppState>(context).dispatch(action);
+                              },
+                            )
+                          : null,
+                    );
+                  },
+                );
+              }),
             );
           },
         );

@@ -7,6 +7,7 @@ import 'package:instamarket/src/actions/auth/index.dart';
 import 'package:instamarket/src/data/auth_api.dart';
 import 'package:instamarket/src/data/comments_api.dart';
 import 'package:instamarket/src/data/likes_api.dart';
+import 'package:instamarket/src/data/messages_api.dart';
 import 'package:instamarket/src/data/post_api.dart';
 import 'package:instamarket/src/epics/app_epics.dart';
 import 'package:instamarket/src/models/index.dart';
@@ -26,11 +27,14 @@ Future<Store<AppState>> init() async {
   final PostApi postApi = PostApi(firestore: firestore, storage: storage);
   final LikesApi likesApi = LikesApi(firestore: firestore);
   final CommentsApi commentsApi = CommentsApi(firestore: firestore);
+  final MessagesApi messagesApi = MessagesApi(firestore: firestore, storage: storage);
+
   final AppEpics epic = AppEpics(
     authApi: authApi,
     postApi: postApi,
     likesApi: likesApi,
     commentsApi: commentsApi,
+    messagesApi: messagesApi,
   );
 
   return Store<AppState>(

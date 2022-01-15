@@ -29,9 +29,7 @@ CommentsState _deleteCommentSuccessful(CommentsState state, DeleteCommentSuccess
 
 CommentsState _listenForCommentsEvent(CommentsState state, ListenForCommentsEvent action) {
   return state.rebuild((CommentsStateBuilder b) {
-    print('inHere');
-    print(action.comment.changeType);
-    if (action.comment.changeType == DocumentChangeType.added) {
+    if (action.comment.changeType == DocumentChangeType.added || action.comment.changeType == null) {
       b.comments.add(action.comment);
     } else if (action.comment.changeType == DocumentChangeType.modified) {
       final int index = state.comments.indexWhere((Comment item) => item.id == action.comment.id);

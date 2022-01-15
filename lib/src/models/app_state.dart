@@ -7,6 +7,7 @@ abstract class AppState implements Built<AppState, AppStateBuilder> {
         ..auth = AuthState.initialState().toBuilder()
         ..posts = PostsState.initialState().toBuilder()
         ..likes = LikesState.initialState().toBuilder()
+        ..messages = MessagesState.initialState().toBuilder()
         ..comments = CommentsState.initialState().toBuilder();
     });
   }
@@ -23,7 +24,11 @@ abstract class AppState implements Built<AppState, AppStateBuilder> {
 
   CommentsState get comments;
 
+  MessagesState get messages;
+
   BuiltSet<String> get pendingActions;
+
+  String? get chattingWith;
 
   Map<String, dynamic> get json => serializers.serializeWith(serializer, this) as Map<String, dynamic>;
 

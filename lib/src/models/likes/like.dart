@@ -1,14 +1,14 @@
 part of likes_models;
 
 abstract class Like implements Built<Like, LikeBuilder> {
-  factory Like({required String id, required String postId, required String uid}) { return _$Like(( LikeBuilder b) {
-    b
-      ..id = id
-      ..postId = postId
-      ..uid = uid;
-  });
+  factory Like({required String id, required String postId, required String uid}) {
+    return _$Like((LikeBuilder b) {
+      b
+        ..id = id
+        ..postId = postId
+        ..uid = uid;
+    });
   }
-
 
   factory Like.fromJson(dynamic json) => serializers.deserializeWith<dynamic>(serializer, json);
 

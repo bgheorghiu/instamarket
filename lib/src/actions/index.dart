@@ -1,4 +1,12 @@
+library actions;
+
+import 'package:freezed_annotation/freezed_annotation.dart';
+
 export 'auth/index.dart';
+
+part 'index.freezed.dart';
+
+part 'set.dart';
 
 abstract class AppAction {
   const AppAction();

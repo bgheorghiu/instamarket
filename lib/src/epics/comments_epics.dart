@@ -14,7 +14,7 @@ class CommentsEpics {
   Epic<AppState> get epics {
     return combineEpics<AppState>(<Epic<AppState>>[
       TypedEpic<AppState, CreateComment$>(_createComment),
-      TypedEpic<AppState, ListenForCommentsStart>(_listenForComments),
+      _listenForComments,
       TypedEpic<AppState, DeleteComment$>(_deleteComment),
     ]);
   }
@@ -31,16 +31,14 @@ class CommentsEpics {
             .onErrorReturnWith((dynamic error, dynamic stackTrace) => CreateComment.error(error)));
   }
 
-  Stream<AppAction> _listenForComments(Stream<ListenForCommentsStart> actions, EpicStore<AppState> store) {
+  Stream<AppAction> _listenForComments(Stream<dynamic> actions, EpicStore<AppState> store) {
     return actions //
         .whereType<ListenForCommentsStart>()
         .flatMap((ListenForCommentsStart action) => Stream<void>.value(null)
             .flatMap((_) => _commentsApi.listenForComments(action.postsIds))
             .map((Comment item) {
-              print('item');
-              print(ListenForComments.event(item));
               return ListenForComments.event(item);
-    })
+            })
             .takeUntil(actions.whereType<ListenForCommentsDone>())
             .onErrorReturnWith((dynamic error, dynamic stackTrace) => ListenForComments.error(error)));
   }

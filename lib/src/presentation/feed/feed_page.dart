@@ -2,7 +2,9 @@ import 'package:collection/src/iterable_extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:instamarket/src/actions/comments/index.dart';
+import 'package:instamarket/src/actions/index.dart';
 import 'package:instamarket/src/actions/likes/index.dart';
+import 'package:instamarket/src/actions/messages/index.dart';
 import 'package:instamarket/src/actions/posts/index.dart';
 import 'package:instamarket/src/containers/auth/index.dart';
 import 'package:instamarket/src/containers/comments/index.dart';
@@ -13,6 +15,8 @@ import 'package:instamarket/src/models/comments/index.dart';
 import 'package:instamarket/src/models/index.dart';
 import 'package:instamarket/src/models/likes/index.dart';
 import 'package:instamarket/src/models/posts/index.dart';
+
+import '../routes.dart';
 
 class FeedPage extends StatefulWidget {
   const FeedPage({Key? key}) : super(key: key);
@@ -35,7 +39,7 @@ class _FeedPageState extends State<FeedPage> {
 
   @override
   void dispose() {
-    StoreProvider.of<AppState>(context, listen: false).dispatch(const ListenForComments.done());
+    StoreProvider.of<AppState>(context, listen: true).dispatch(const ListenForComments.done());
     super.dispose();
   }
 
@@ -82,8 +86,6 @@ class _FeedPageState extends State<FeedPage> {
                                   .firstWhereOrNull((Like like) => like.postId == post.id && like.uid == authUser!.uid);
                               final int noOfLikes = likes.where((Like like) => like.postId == post.id).length;
 
-                              print(comments);
-                              print('inComments');
                               final List<Comment> postComments =
                                   comments.where((Comment comment) => comment.postId == post.id).toList();
 
@@ -139,7 +141,12 @@ class _FeedPageState extends State<FeedPage> {
                                       ),
                                       IconButton(
                                         icon: const Icon(Icons.send_outlined),
-                                        onPressed: () {},
+                                        onPressed: () {
+                                          StoreProvider.of<AppState>(context).dispatch(SetChattingWith(post.uid));
+                                          StoreProvider.of<AppState>(context)
+                                              .dispatch(const ListenForMessages.start(limit: 20));
+                                          Navigator.of(context).pushNamed(AppRoutes.chat);
+                                        },
                                       ),
                                       const Spacer(),
                                       IconButton(

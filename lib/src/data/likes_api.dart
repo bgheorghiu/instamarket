@@ -15,7 +15,7 @@ class LikesApi {
     final Like like = Like(id: ref.id, postId: postId, uid: uid);
     try {
       await ref.set(like.json);
-    } catch(e){
+    } catch (e) {
       print(e);
       print('inHere');
     }
@@ -44,7 +44,7 @@ class LikesApi {
     final DocumentReference<Map<String, dynamic>> documentRef = _firestore.doc('likes/$likeId');
     try {
       await documentRef.delete();
-    } catch(e){
+    } catch (e) {
       print(e);
       print('inHere2');
     }

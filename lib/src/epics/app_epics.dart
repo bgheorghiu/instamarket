@@ -1,10 +1,12 @@
 import 'package:instamarket/src/data/auth_api.dart';
 import 'package:instamarket/src/data/comments_api.dart';
 import 'package:instamarket/src/data/likes_api.dart';
+import 'package:instamarket/src/data/messages_api.dart';
 import 'package:instamarket/src/data/post_api.dart';
 import 'package:instamarket/src/epics/auth_epics.dart';
 import 'package:instamarket/src/epics/comments_epics.dart';
 import 'package:instamarket/src/epics/likes_epics.dart';
+import 'package:instamarket/src/epics/messages_epics.dart';
 import 'package:instamarket/src/epics/posts_epics.dart';
 import 'package:instamarket/src/models/index.dart';
 import 'package:redux_epics/redux_epics.dart';
@@ -15,15 +17,18 @@ class AppEpics {
     required PostApi postApi,
     required LikesApi likesApi,
     required CommentsApi commentsApi,
+    required MessagesApi messagesApi,
   })  : _authApi = authApi,
         _postApi = postApi,
         _likesApi = likesApi,
-        _commentsApi = commentsApi;
+        _commentsApi = commentsApi,
+        _messagesApi = messagesApi;
 
   final AuthApi _authApi;
   final PostApi _postApi;
   final LikesApi _likesApi;
   final CommentsApi _commentsApi;
+  final MessagesApi _messagesApi;
 
   Epic<AppState> get epics {
     return combineEpics<AppState>(<Epic<AppState>>[
@@ -31,6 +36,7 @@ class AppEpics {
       PostsEpics(postApi: _postApi).epics,
       LikesEpics(likesApi: _likesApi).epics,
       CommentsEpics(commentsApi: _commentsApi).epics,
+      MessagesEpics(messagesApi: _messagesApi).epics,
     ]);
   }
 }
