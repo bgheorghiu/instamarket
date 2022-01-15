@@ -43,7 +43,6 @@ class _ChatPageState extends State<ChatPage> {
   }
 
   Future<bool> onBackPress() {
-    StoreProvider.of<AppState>(context).dispatch(const SetChattingWith(null));
     Navigator.pop(context);
 
     return Future<bool>.value(false);
@@ -78,15 +77,23 @@ class _ChatPageState extends State<ChatPage> {
   }
 
   @override
+  void dispose() {
+    StoreProvider.of<AppState>(context, listen: true).dispatch(const SetChattingWith(null));
+    StoreProvider.of<AppState>(context, listen: true).dispatch(const ListenForMessages.done());
+
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return UserContainer(
       builder: (BuildContext context, AppUser? user) {
         return ChattingWithContainer(
           builder: (BuildContext context, String? peerId) {
+            peerId ??= 'Unknown';
+
             return MessagesContainer(
-              builder: (BuildContext context, List<Message> messages) {
-                print('inMessages');
-                print(messages);
+              builder: (BuildContext context, List<Message>? messages) {
                 return Scaffold(
                   backgroundColor: Colors.black,
                   appBar: AppBar(
@@ -106,22 +113,29 @@ class _ChatPageState extends State<ChatPage> {
                         Column(
                           children: <Widget>[
                             Flexible(
-                              child: ListView.builder(
-                                padding: const EdgeInsets.all(10.0),
-                                itemBuilder: (BuildContext context, int index) {
-                                  return MessageTile(
-                                    message: messages[index],
-                                    currentUserId: user!.uid,
-                                    isLastMessageRight: isLastMessageRight(index, messages, user.uid),
-                                    isLastMessageLeft: isLastMessageLeft(index, messages, user.uid),
-                                    peerAvatar: user.photoUrl!,
-                                    peerName: peerId,
+                              child: Builder(builder: (BuildContext context) {
+                                if (messages == null || messages.isEmpty) {
+                                  return const Center(
+                                    child: Text('No message found'),
                                   );
-                                },
-                                itemCount: messages.length,
-                                reverse: true,
-                                controller: _listScrollController,
-                              ),
+                                }
+                                return ListView.builder(
+                                  padding: const EdgeInsets.all(10.0),
+                                  itemBuilder: (BuildContext context, int index) {
+                                    return MessageTile(
+                                      message: messages[index],
+                                      currentUserId: user!.uid,
+                                      isLastMessageRight: isLastMessageRight(index, messages, user.uid),
+                                      isLastMessageLeft: isLastMessageLeft(index, messages, user.uid),
+                                      peerAvatar: user.photoUrl!,
+                                      peerName: peerId!,
+                                    );
+                                  },
+                                  itemCount: messages.length,
+                                  reverse: true,
+                                  controller: _listScrollController,
+                                );
+                              }),
                             ),
                             Container(
                               child: Row(
@@ -132,7 +146,7 @@ class _ChatPageState extends State<ChatPage> {
                                       child: IconButton(
                                         icon: const Icon(Icons.camera_enhance),
                                         onPressed: () {
-                                          getImage(user!.uid, peerId);
+                                          getImage(user!.uid, peerId!);
                                         },
                                         color: Colors.blue,
                                       ),
@@ -147,8 +161,9 @@ class _ChatPageState extends State<ChatPage> {
                                             content: _controller.text,
                                             type: 0,
                                             uid: user!.uid,
-                                            peerId: peerId,
+                                            peerId: peerId!,
                                           ));
+                                          _controller.clear();
                                         },
                                         style: const TextStyle(
                                           color: Colors.blue,
@@ -174,7 +189,7 @@ class _ChatPageState extends State<ChatPage> {
                                             content: _controller.text,
                                             type: 0,
                                             uid: user!.uid,
-                                            peerId: peerId,
+                                            peerId: peerId!,
                                           ));
                                         },
                                         color: Colors.blue,

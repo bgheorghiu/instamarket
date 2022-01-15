@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:instamarket/src/actions/auth/index.dart';
 import 'package:instamarket/src/actions/index.dart';
 import 'package:instamarket/src/actions/posts/index.dart';
 import 'package:instamarket/src/containers/posts/index.dart';

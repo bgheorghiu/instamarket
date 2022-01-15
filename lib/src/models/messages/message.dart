@@ -1,12 +1,14 @@
 part of messages_models;
 
-abstract class Message implements Built<Message, MessageBuilder> {
+abstract class Message implements Built<Message, MessageBuilder>, Comparable<Message> {
   factory Message({
     required String idFrom,
     required String idTo,
     required String timestamp,
     required String content,
     required int type,
+    required String id,
+    required DocumentChangeType changeType,
   }) {
     return _$Message((MessageBuilder b) {
       b
@@ -14,13 +16,19 @@ abstract class Message implements Built<Message, MessageBuilder> {
         ..idTo = idTo
         ..timestamp = timestamp
         ..content = content
-        ..type = type;
+        ..type = type
+        ..id = id
+        ..changeType = changeType;
     });
   }
 
-  factory Message.fromJson(dynamic json) => serializers.deserializeWith<dynamic>(serializer, json);
+  factory Message.fromJson(dynamic json, [DocumentChangeType? type]) {
+    return serializers.deserializeWith(serializer, json)!.rebuild((MessageBuilder b) => b.changeType = type);
+  }
 
   Message._();
+
+  String get id;
 
   String get idFrom;
 
@@ -31,6 +39,14 @@ abstract class Message implements Built<Message, MessageBuilder> {
   String get content;
 
   int get type;
+
+  @BuiltValueField(serialize: false)
+  DocumentChangeType? get changeType;
+
+  @override
+  int compareTo(Message other) {
+    return other.timestamp.compareTo(timestamp);
+  }
 
   Map<String, dynamic> get json => serializers.serializeWith(serializer, this) as Map<String, dynamic>;
 

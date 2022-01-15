@@ -6,17 +6,21 @@ abstract class Comment implements Built<Comment, CommentBuilder> {
     required String postId,
     required String uid,
     required String comment,
+    required DocumentChangeType changeType,
   }) {
-    return _$Comment((b) {
+    return _$Comment((CommentBuilder b) {
       b
         ..id = id
         ..postId = postId
         ..uid = uid
-        ..comment = comment;
+        ..comment = comment
+        ..changeType = changeType;
     });
   }
 
-  factory Comment.fromJson(dynamic json) => serializers.deserializeWith<dynamic>(serializer, json);
+  factory Comment.fromJson(dynamic json, [DocumentChangeType? type]) {
+    return serializers.deserializeWith(serializer, json)!.rebuild((CommentBuilder b) => b.changeType = type);
+  }
 
   Comment._();
 
@@ -28,7 +32,6 @@ abstract class Comment implements Built<Comment, CommentBuilder> {
 
   String get uid;
 
-  @override
   @BuiltValueField(serialize: false)
   DocumentChangeType? get changeType;
 

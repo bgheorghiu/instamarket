@@ -36,7 +36,7 @@ class CommentsEpics {
         .whereType<ListenForCommentsStart>()
         .flatMap((ListenForCommentsStart action) => Stream<void>.value(null)
             .flatMap((_) => _commentsApi.listenForComments(action.postsIds))
-            .map((Comment item) {
+            .map((Comment? item) {
               return ListenForComments.event(item);
             })
             .takeUntil(actions.whereType<ListenForCommentsDone>())

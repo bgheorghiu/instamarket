@@ -4,7 +4,7 @@ part of comments_actions;
 class ListenForComments with _$ListenForComments implements AppAction {
   const factory ListenForComments.start(List<String> postsIds) = ListenForCommentsStart;
 
-  const factory ListenForComments.event(Comment comment) = ListenForCommentsEvent;
+  const factory ListenForComments.event(Comment? comment) = ListenForCommentsEvent;
 
   const factory ListenForComments.done() = ListenForCommentsDone;
 

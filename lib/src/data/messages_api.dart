@@ -3,7 +3,6 @@ import 'dart:io';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:instamarket/src/models/messages/index.dart';
-import 'package:rxdart/src/transformers/flat_map.dart';
 
 class MessagesApi {
   const MessagesApi({
@@ -45,11 +44,14 @@ class MessagesApi {
         .orderBy('timestamp', descending: true)
         .limit(limit)
         .snapshots()
-        .flatMap((QuerySnapshot<Map<String, dynamic>> snapshot) =>
-            Stream<QueryDocumentSnapshot<Map<String, dynamic>>>.fromIterable(snapshot.docs)
-                .flatMap((QueryDocumentSnapshot<Map<String, dynamic>> document) async* {
-              yield Message.fromJson(document.data());
-            }));
+        .expand((QuerySnapshot<Map<String, dynamic>> snapshot) => snapshot.docChanges)
+        .where((DocumentChange<Map<String, dynamic>> change) => change.doc.exists)
+        .map((DocumentChange<Map<String, dynamic>> change) {
+      return Message.fromJson(
+        change.doc.data()!,
+        change.type,
+      );
+    });
   }
 
   Future<void> sendMessage(String content, int type, String peerId, String uid) async {
@@ -74,11 +76,13 @@ class MessagesApi {
     }
 
     final Message message = Message(
+      id: documentReference.id,
       idFrom: uid,
       idTo: peerId,
       timestamp: DateTime.now().millisecondsSinceEpoch.toString(),
       content: content,
       type: type,
+      changeType: DocumentChangeType.added,
     );
 
     print('inSecondApi');

@@ -156,27 +156,31 @@ class _FeedPageState extends State<FeedPage> {
                                     ],
                                   ),
                                   if (postComments.isNotEmpty)
-                                    Column(
-                                        children: postComments
-                                            .map(
-                                              (Comment c) => Text.rich(
-                                                TextSpan(
-                                                  text: user.username,
-                                                  style: const TextStyle(
-                                                    fontWeight: FontWeight.bold,
-                                                  ),
-                                                  children: <TextSpan>[
-                                                    TextSpan(
-                                                      text: ' ${c.comment}',
-                                                      style: const TextStyle(
-                                                        fontWeight: FontWeight.normal,
-                                                      ),
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                                      child: Column(
+                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          children: postComments
+                                              .map(
+                                                (Comment c) => Text.rich(
+                                                  TextSpan(
+                                                    text: user.username,
+                                                    style: const TextStyle(
+                                                      fontWeight: FontWeight.bold,
                                                     ),
-                                                  ],
+                                                    children: <TextSpan>[
+                                                      TextSpan(
+                                                        text: ' ${c.comment}',
+                                                        style: const TextStyle(
+                                                          fontWeight: FontWeight.normal,
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
                                                 ),
-                                              ),
-                                            )
-                                            .toList()),
+                                              )
+                                              .toList()),
+                                    ),
                                   TextFormField(
                                     controller: _controller,
                                   ),

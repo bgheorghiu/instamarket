@@ -23,77 +23,83 @@ class MessageTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (message.idFrom == currentUserId) {
-      return Row(
-        children: <Widget>[
-          if (message.type == TypeMessage.text)
-            Container(
-              child: Text(
-                message.content,
-                style: const TextStyle(color: Colors.black),
-              ),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8.0),
-                color: Colors.white,
-              ),
-              padding: EdgeInsets.only(bottom: isLastMessageRight ? 20 : 10, right: 10),
-            )
-          else
-            Container(
-              child: OutlinedButton(
-                child: Material(
-                  child: Image.network(
+      return Padding(
+        padding: const EdgeInsets.all(2.0),
+        child: Row(
+          children: <Widget>[
+            if (message.type == TypeMessage.text)
+              Container(
+                child: Center(
+                  child: Text(
                     message.content,
-                    loadingBuilder: (BuildContext context, Widget child, ImageChunkEvent? loadingProgress) {
-                      if (loadingProgress == null) {
-                        return child;
-                      } else {
-                        return Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(8.0),
-                            color: Colors.white,
-                          ),
-                          width: 200,
-                          height: 200,
-                          child: Center(
-                            child: CircularProgressIndicator(
-                              color: Colors.yellow,
-                              value: loadingProgress.expectedTotalBytes != null &&
-                                      loadingProgress.expectedTotalBytes != null
-                                  ? loadingProgress.cumulativeBytesLoaded / loadingProgress.expectedTotalBytes!
-                                  : null,
-                            ),
-                          ),
-                        );
-                      }
-                    },
-                    errorBuilder: (BuildContext context, Object object, StackTrace? stackTrace) {
-                      return const Material(
-                        child: Icon(
-                          Icons.error_outline,
-                          size: 200,
-                        ),
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(8),
-                        ),
-                        clipBehavior: Clip.hardEdge,
-                      );
-                    },
-                    width: 200,
-                    height: 200,
-                    fit: BoxFit.cover,
+                    style: const TextStyle(color: Colors.black),
                   ),
-                  borderRadius: const BorderRadius.all(
-                    Radius.circular(8),
-                  ),
-                  clipBehavior: Clip.hardEdge,
                 ),
-                onPressed: () {},
-                style: ButtonStyle(padding: MaterialStateProperty.all<EdgeInsets>(const EdgeInsets.all(0))),
-              ),
-              margin: EdgeInsets.only(bottom: isLastMessageRight ? 20 : 10, right: 10),
-            )
-        ],
-        mainAxisAlignment: MainAxisAlignment.end,
+                width: 150,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8.0),
+                  color: Colors.white,
+                ),
+                padding: const EdgeInsets.all(10.0),
+              )
+            else
+              Container(
+                child: OutlinedButton(
+                  child: Material(
+                    child: Image.network(
+                      message.content,
+                      loadingBuilder: (BuildContext context, Widget child, ImageChunkEvent? loadingProgress) {
+                        if (loadingProgress == null) {
+                          return child;
+                        } else {
+                          return Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(8.0),
+                              color: Colors.white,
+                            ),
+                            width: 200,
+                            height: 200,
+                            child: Center(
+                              child: CircularProgressIndicator(
+                                color: Colors.yellow,
+                                value: loadingProgress.expectedTotalBytes != null &&
+                                        loadingProgress.expectedTotalBytes != null
+                                    ? loadingProgress.cumulativeBytesLoaded / loadingProgress.expectedTotalBytes!
+                                    : null,
+                              ),
+                            ),
+                          );
+                        }
+                      },
+                      errorBuilder: (BuildContext context, Object object, StackTrace? stackTrace) {
+                        return const Material(
+                          child: Icon(
+                            Icons.error_outline,
+                            size: 200,
+                          ),
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(8),
+                          ),
+                          clipBehavior: Clip.hardEdge,
+                        );
+                      },
+                      width: 200,
+                      height: 200,
+                      fit: BoxFit.cover,
+                    ),
+                    borderRadius: const BorderRadius.all(
+                      Radius.circular(8),
+                    ),
+                    clipBehavior: Clip.hardEdge,
+                  ),
+                  onPressed: () {},
+                  style: ButtonStyle(padding: MaterialStateProperty.all<EdgeInsets>(const EdgeInsets.all(0))),
+                ),
+                margin: EdgeInsets.only(bottom: isLastMessageRight ? 20 : 10, right: 10),
+              )
+          ],
+          mainAxisAlignment: MainAxisAlignment.end,
+        ),
       );
     } else {
       return Container(
@@ -142,11 +148,13 @@ class MessageTile extends StatelessWidget {
                   ),
                 if (message.type == TypeMessage.text)
                   Container(
-                    child: Text(
-                      message.content,
-                      style: const TextStyle(color: Colors.white),
+                    child: Center(
+                      child: Text(
+                        message.content,
+                        style: const TextStyle(color: Colors.white),
+                      ),
                     ),
-                    width: 200,
+                    width: 150,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(8.0),
                       color: Colors.white,

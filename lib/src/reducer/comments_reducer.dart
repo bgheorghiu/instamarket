@@ -29,14 +29,16 @@ CommentsState _deleteCommentSuccessful(CommentsState state, DeleteCommentSuccess
 
 CommentsState _listenForCommentsEvent(CommentsState state, ListenForCommentsEvent action) {
   return state.rebuild((CommentsStateBuilder b) {
-    if (action.comment.changeType == DocumentChangeType.added || action.comment.changeType == null) {
-      b.comments.add(action.comment);
-    } else if (action.comment.changeType == DocumentChangeType.modified) {
-      final int index = state.comments.indexWhere((Comment item) => item.id == action.comment.id);
-      b.comments[index] = action.comment;
-    } else if (action.comment.changeType == DocumentChangeType.removed) {
-      final int index = state.comments.indexWhere((Comment item) => item.id == action.comment.id);
-      b.comments.removeAt(index);
+    if (action.comment != null) {
+      if (action.comment!.changeType == DocumentChangeType.added || action.comment!.changeType == null) {
+        b.comments.add(action.comment!);
+      } else if (action.comment!.changeType == DocumentChangeType.modified) {
+        final int index = state.comments.indexWhere((Comment item) => item.id == action.comment!.id);
+        b.comments[index] = action.comment!;
+      } else if (action.comment!.changeType == DocumentChangeType.removed) {
+        final int index = state.comments.indexWhere((Comment item) => item.id == action.comment!.id);
+        b.comments.removeAt(index);
+      }
     }
   });
 }

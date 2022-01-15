@@ -19,6 +19,8 @@ class _$MessageSerializer implements StructuredSerializer<Message> {
   Iterable<Object?> serialize(Serializers serializers, Message object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
+      'id',
+      serializers.serialize(object.id, specifiedType: const FullType(String)),
       'idFrom',
       serializers.serialize(object.idFrom, specifiedType: const FullType(String)),
       'idTo',
@@ -45,6 +47,9 @@ class _$MessageSerializer implements StructuredSerializer<Message> {
       iterator.moveNext();
       final Object? value = iterator.current;
       switch (key) {
+        case 'id':
+          result.id = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
+          break;
         case 'idFrom':
           result.idFrom = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
@@ -108,6 +113,8 @@ class _$MessagesStateSerializer implements StructuredSerializer<MessagesState> {
 
 class _$Message extends Message {
   @override
+  final String id;
+  @override
   final String idFrom;
   @override
   final String idTo;
@@ -117,12 +124,21 @@ class _$Message extends Message {
   final String content;
   @override
   final int type;
+  @override
+  final DocumentChangeType? changeType;
 
   factory _$Message([void Function(MessageBuilder)? updates]) => (new MessageBuilder()..update(updates)).build();
 
   _$Message._(
-      {required this.idFrom, required this.idTo, required this.timestamp, required this.content, required this.type})
+      {required this.id,
+      required this.idFrom,
+      required this.idTo,
+      required this.timestamp,
+      required this.content,
+      required this.type,
+      this.changeType})
       : super._() {
+    BuiltValueNullFieldError.checkNotNull(id, 'Message', 'id');
     BuiltValueNullFieldError.checkNotNull(idFrom, 'Message', 'idFrom');
     BuiltValueNullFieldError.checkNotNull(idTo, 'Message', 'idTo');
     BuiltValueNullFieldError.checkNotNull(timestamp, 'Message', 'timestamp');
@@ -140,33 +156,45 @@ class _$Message extends Message {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is Message &&
+        id == other.id &&
         idFrom == other.idFrom &&
         idTo == other.idTo &&
         timestamp == other.timestamp &&
         content == other.content &&
-        type == other.type;
+        type == other.type &&
+        changeType == other.changeType;
   }
 
   @override
   int get hashCode {
     return $jf($jc(
-        $jc($jc($jc($jc(0, idFrom.hashCode), idTo.hashCode), timestamp.hashCode), content.hashCode), type.hashCode));
+        $jc(
+            $jc($jc($jc($jc($jc(0, id.hashCode), idFrom.hashCode), idTo.hashCode), timestamp.hashCode),
+                content.hashCode),
+            type.hashCode),
+        changeType.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('Message')
+          ..add('id', id)
           ..add('idFrom', idFrom)
           ..add('idTo', idTo)
           ..add('timestamp', timestamp)
           ..add('content', content)
-          ..add('type', type))
+          ..add('type', type)
+          ..add('changeType', changeType))
         .toString();
   }
 }
 
 class MessageBuilder implements Builder<Message, MessageBuilder> {
   _$Message? _$v;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
 
   String? _idFrom;
   String? get idFrom => _$this._idFrom;
@@ -188,16 +216,22 @@ class MessageBuilder implements Builder<Message, MessageBuilder> {
   int? get type => _$this._type;
   set type(int? type) => _$this._type = type;
 
+  DocumentChangeType? _changeType;
+  DocumentChangeType? get changeType => _$this._changeType;
+  set changeType(DocumentChangeType? changeType) => _$this._changeType = changeType;
+
   MessageBuilder();
 
   MessageBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _id = $v.id;
       _idFrom = $v.idFrom;
       _idTo = $v.idTo;
       _timestamp = $v.timestamp;
       _content = $v.content;
       _type = $v.type;
+      _changeType = $v.changeType;
       _$v = null;
     }
     return this;
@@ -218,11 +252,13 @@ class MessageBuilder implements Builder<Message, MessageBuilder> {
   _$Message build() {
     final _$result = _$v ??
         new _$Message._(
+            id: BuiltValueNullFieldError.checkNotNull(id, 'Message', 'id'),
             idFrom: BuiltValueNullFieldError.checkNotNull(idFrom, 'Message', 'idFrom'),
             idTo: BuiltValueNullFieldError.checkNotNull(idTo, 'Message', 'idTo'),
             timestamp: BuiltValueNullFieldError.checkNotNull(timestamp, 'Message', 'timestamp'),
             content: BuiltValueNullFieldError.checkNotNull(content, 'Message', 'content'),
-            type: BuiltValueNullFieldError.checkNotNull(type, 'Message', 'type'));
+            type: BuiltValueNullFieldError.checkNotNull(type, 'Message', 'type'),
+            changeType: changeType);
     replace(_$result);
     return _$result;
   }

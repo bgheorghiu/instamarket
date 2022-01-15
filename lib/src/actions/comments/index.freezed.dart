@@ -1143,7 +1143,7 @@ class _$ListenForCommentsTearOff {
     );
   }
 
-  ListenForCommentsEvent event(Comment comment) {
+  ListenForCommentsEvent event(Comment? comment) {
     return ListenForCommentsEvent(
       comment,
     );
@@ -1168,7 +1168,7 @@ mixin _$ListenForComments {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(List<String> postsIds) start,
-    required TResult Function(Comment comment) event,
+    required TResult Function(Comment? comment) event,
     required TResult Function() done,
     required TResult Function(Object error) error,
   }) =>
@@ -1176,7 +1176,7 @@ mixin _$ListenForComments {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(List<String> postsIds)? start,
-    TResult Function(Comment comment)? event,
+    TResult Function(Comment? comment)? event,
     TResult Function()? done,
     TResult Function(Object error)? error,
   }) =>
@@ -1184,7 +1184,7 @@ mixin _$ListenForComments {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(List<String> postsIds)? start,
-    TResult Function(Comment comment)? event,
+    TResult Function(Comment? comment)? event,
     TResult Function()? done,
     TResult Function(Object error)? error,
     required TResult orElse(),
@@ -1294,7 +1294,7 @@ class _$ListenForCommentsStart implements ListenForCommentsStart {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(List<String> postsIds) start,
-    required TResult Function(Comment comment) event,
+    required TResult Function(Comment? comment) event,
     required TResult Function() done,
     required TResult Function(Object error) error,
   }) {
@@ -1305,7 +1305,7 @@ class _$ListenForCommentsStart implements ListenForCommentsStart {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(List<String> postsIds)? start,
-    TResult Function(Comment comment)? event,
+    TResult Function(Comment? comment)? event,
     TResult Function()? done,
     TResult Function(Object error)? error,
   }) {
@@ -1316,7 +1316,7 @@ class _$ListenForCommentsStart implements ListenForCommentsStart {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(List<String> postsIds)? start,
-    TResult Function(Comment comment)? event,
+    TResult Function(Comment? comment)? event,
     TResult Function()? done,
     TResult Function(Object error)? error,
     required TResult orElse(),
@@ -1377,7 +1377,7 @@ abstract class ListenForCommentsStart implements ListenForComments {
 abstract class $ListenForCommentsEventCopyWith<$Res> {
   factory $ListenForCommentsEventCopyWith(ListenForCommentsEvent value, $Res Function(ListenForCommentsEvent) then) =
       _$ListenForCommentsEventCopyWithImpl<$Res>;
-  $Res call({Comment comment});
+  $Res call({Comment? comment});
 }
 
 /// @nodoc
@@ -1397,7 +1397,7 @@ class _$ListenForCommentsEventCopyWithImpl<$Res> extends _$ListenForCommentsCopy
       comment == freezed
           ? _value.comment
           : comment // ignore: cast_nullable_to_non_nullable
-              as Comment,
+              as Comment?,
     ));
   }
 }
@@ -1408,7 +1408,7 @@ class _$ListenForCommentsEvent implements ListenForCommentsEvent {
   const _$ListenForCommentsEvent(this.comment);
 
   @override
-  final Comment comment;
+  final Comment? comment;
 
   @override
   String toString() {
@@ -1435,7 +1435,7 @@ class _$ListenForCommentsEvent implements ListenForCommentsEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(List<String> postsIds) start,
-    required TResult Function(Comment comment) event,
+    required TResult Function(Comment? comment) event,
     required TResult Function() done,
     required TResult Function(Object error) error,
   }) {
@@ -1446,7 +1446,7 @@ class _$ListenForCommentsEvent implements ListenForCommentsEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(List<String> postsIds)? start,
-    TResult Function(Comment comment)? event,
+    TResult Function(Comment? comment)? event,
     TResult Function()? done,
     TResult Function(Object error)? error,
   }) {
@@ -1457,7 +1457,7 @@ class _$ListenForCommentsEvent implements ListenForCommentsEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(List<String> postsIds)? start,
-    TResult Function(Comment comment)? event,
+    TResult Function(Comment? comment)? event,
     TResult Function()? done,
     TResult Function(Object error)? error,
     required TResult orElse(),
@@ -1507,9 +1507,9 @@ class _$ListenForCommentsEvent implements ListenForCommentsEvent {
 }
 
 abstract class ListenForCommentsEvent implements ListenForComments {
-  const factory ListenForCommentsEvent(Comment comment) = _$ListenForCommentsEvent;
+  const factory ListenForCommentsEvent(Comment? comment) = _$ListenForCommentsEvent;
 
-  Comment get comment;
+  Comment? get comment;
   @JsonKey(ignore: true)
   $ListenForCommentsEventCopyWith<ListenForCommentsEvent> get copyWith => throw _privateConstructorUsedError;
 }
@@ -1552,7 +1552,7 @@ class _$ListenForCommentsDone implements ListenForCommentsDone {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(List<String> postsIds) start,
-    required TResult Function(Comment comment) event,
+    required TResult Function(Comment? comment) event,
     required TResult Function() done,
     required TResult Function(Object error) error,
   }) {
@@ -1563,7 +1563,7 @@ class _$ListenForCommentsDone implements ListenForCommentsDone {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(List<String> postsIds)? start,
-    TResult Function(Comment comment)? event,
+    TResult Function(Comment? comment)? event,
     TResult Function()? done,
     TResult Function(Object error)? error,
   }) {
@@ -1574,7 +1574,7 @@ class _$ListenForCommentsDone implements ListenForCommentsDone {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(List<String> postsIds)? start,
-    TResult Function(Comment comment)? event,
+    TResult Function(Comment? comment)? event,
     TResult Function()? done,
     TResult Function(Object error)? error,
     required TResult orElse(),
@@ -1690,7 +1690,7 @@ class _$ListenForCommentsError implements ListenForCommentsError {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(List<String> postsIds) start,
-    required TResult Function(Comment comment) event,
+    required TResult Function(Comment? comment) event,
     required TResult Function() done,
     required TResult Function(Object error) error,
   }) {
@@ -1701,7 +1701,7 @@ class _$ListenForCommentsError implements ListenForCommentsError {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(List<String> postsIds)? start,
-    TResult Function(Comment comment)? event,
+    TResult Function(Comment? comment)? event,
     TResult Function()? done,
     TResult Function(Object error)? error,
   }) {
@@ -1712,7 +1712,7 @@ class _$ListenForCommentsError implements ListenForCommentsError {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(List<String> postsIds)? start,
-    TResult Function(Comment comment)? event,
+    TResult Function(Comment? comment)? event,
     TResult Function()? done,
     TResult Function(Object error)? error,
     required TResult orElse(),

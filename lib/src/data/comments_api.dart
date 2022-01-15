@@ -13,7 +13,13 @@ class CommentsApi {
     final DocumentReference<Map<String, dynamic>> ref = _firestore.collection('comments').doc();
 
     print('inComment1');
-    final Comment comment = Comment(id: ref.id, postId: postId, uid: uid, comment: text);
+    final Comment comment = Comment(
+      id: ref.id,
+      postId: postId,
+      uid: uid,
+      comment: text,
+      changeType: DocumentChangeType.added,
+    );
     try {
       await ref.set(comment.json);
     } catch (e) {
@@ -25,19 +31,23 @@ class CommentsApi {
     return comment;
   }
 
-  Stream<Comment> listenForComments(List<String> postsIds) {
+  Stream<Comment?> listenForComments(List<String> postsIds) {
     return _firestore //
         .collection('comments')
         .snapshots()
-        .flatMap((QuerySnapshot<Map<String, dynamic>> snapshot) =>
-            Stream<DocumentChange<Map<String, dynamic>>>.fromIterable(snapshot.docChanges) //
-                .where((DocumentChange<Map<String, dynamic>> change) => change.doc.exists)
-                .flatMap((DocumentChange<Map<String, dynamic>> change) async* {
-              final Comment comment = Comment.fromJson(change.doc.data()!);
-              if (postsIds.contains(comment.postId)) {
-                yield comment;
-              }
-            }));
+        .expand((QuerySnapshot<Map<String, dynamic>> snapshot) => snapshot.docChanges)
+        .where((DocumentChange<Map<String, dynamic>> change) => change.doc.exists)
+        .map((DocumentChange<Map<String, dynamic>> change) {
+      final Comment comment = Comment.fromJson(
+        change.doc.data()!,
+        change.type,
+      );
+      if (postsIds.contains(comment.id)) {
+        return comment;
+      } else {
+        return null;
+      }
+    });
   }
 
   Future<void> delete(String commentId) async {
