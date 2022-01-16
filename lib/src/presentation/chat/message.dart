@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:instamarket/constants.dart';
 import 'package:instamarket/src/models/messages/index.dart';
 import 'package:intl/intl.dart';
 
@@ -32,13 +33,13 @@ class MessageTile extends StatelessWidget {
                 child: Center(
                   child: Text(
                     message.content,
-                    style: const TextStyle(color: Colors.black),
+                    style: const TextStyle(color: Colors.black54),
                   ),
                 ),
                 width: 150,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8.0),
-                  color: Colors.white,
+                  color: kPrimaryLightColor,
                 ),
                 padding: const EdgeInsets.all(10.0),
               )
@@ -55,7 +56,7 @@ class MessageTile extends StatelessWidget {
                           return Container(
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(8.0),
-                              color: Colors.white,
+                              color: kPrimaryLightColor,
                             ),
                             width: 200,
                             height: 200,
@@ -130,7 +131,7 @@ class MessageTile extends StatelessWidget {
                         return const Icon(
                           Icons.account_circle,
                           size: 35.0,
-                          color: Colors.white,
+                          color: kPrimaryLightColor,
                         );
                       },
                       width: 35.0,
@@ -151,13 +152,13 @@ class MessageTile extends StatelessWidget {
                     child: Center(
                       child: Text(
                         message.content,
-                        style: const TextStyle(color: Colors.white),
+                        style: const TextStyle(color: Colors.black12),
                       ),
                     ),
                     width: 150,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(8.0),
-                      color: Colors.white,
+                      color: kPrimaryLightColor,
                     ),
                     padding: const EdgeInsets.fromLTRB(15, 10, 15, 10),
                     margin: const EdgeInsets.only(left: 10),
@@ -176,7 +177,7 @@ class MessageTile extends StatelessWidget {
                                     return Container(
                                       decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(8.0),
-                                        color: Colors.white,
+                                        color: kPrimaryLightColor,
                                       ),
                                       width: 200,
                                       height: 200,
@@ -243,7 +244,7 @@ class MessageTile extends StatelessWidget {
                       child: Text(
                         DateFormat('dd MMM yyyy, hh:mm a')
                             .format(DateTime.fromMillisecondsSinceEpoch(int.parse(message.timestamp))),
-                        style: const TextStyle(color: Colors.white, fontSize: 12, fontStyle: FontStyle.italic),
+                        style: const TextStyle(color: kPrimaryLightColor, fontSize: 12, fontStyle: FontStyle.italic),
                       ),
                       margin: const EdgeInsets.only(left: 50, top: 5, bottom: 5),
                     ),

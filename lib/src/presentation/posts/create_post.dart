@@ -19,65 +19,83 @@ class CreatePostPage extends StatefulWidget {
 class _CreatePostPageState extends State<CreatePostPage> {
   @override
   Widget build(BuildContext context) {
-    return PostInfoContainer(builder: (BuildContext context, PostInfo postInfo) {
-      return Scaffold(
-        appBar: AppBar(
-          title: const Text('Create post'),
-          actions: <Widget>[
-            TextButton(
-              child: const Text('Next'),
-              onPressed: () {
-                if (postInfo.paths.isNotEmpty) {
-                  Navigator.pushNamed(context, AppRoutes.postsDetails);
-                } else {
-                  // show error
+    return PostInfoContainer(
+      builder: (BuildContext context, PostInfo postInfo) {
+        return Scaffold(
+          appBar: AppBar(
+            leadingWidth: 28.0,
+            title: const Text(
+              'Create post',
+              style: TextStyle(
+                fontSize: 20.0,
+                color: Colors.white,
+              ),
+            ),
+            actions: <Widget>[
+              TextButton(
+                child: const Text(
+                  'Next',
+                  style: TextStyle(
+                    fontSize: 20.0,
+                    color: Colors.white,
+                  ),
+                ),
+                onPressed: () {
+                  if (postInfo.paths.isNotEmpty) {
+                    Navigator.pushNamed(context, AppRoutes.postsDetails);
+                  } else {
+                    // show error
+                  }
+                },
+              ),
+            ],
+          ),
+          body: Padding(
+            padding: const EdgeInsets.all(24.0),
+            child: GridView.builder(
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 3,
+                mainAxisSpacing: 4.0,
+                crossAxisSpacing: 4.0,
+              ),
+              itemCount: postInfo.paths.isNotEmpty ? (postInfo.paths.length + 1) : 1,
+              itemBuilder: (BuildContext context, int index) {
+                if (index == 0) {
+                  return Center(
+                    child: IconButton(
+                      icon: const Icon(Icons.add),
+                      onPressed: () async {
+                        final XFile? file = await ImagePicker().pickImage(source: ImageSource.gallery);
+
+                        if (file != null) {
+                          StoreProvider.of<AppState>(context).dispatch(UpdatePostInfo(addImage: file.path));
+                        }
+                      },
+                    ),
+                  );
                 }
+
+                return GridTile(
+                  child: Image.file(
+                    File(postInfo.paths[index - 1]),
+                    fit: BoxFit.cover,
+                  ),
+                  header: GridTileBar(
+                    title: const Text(''),
+                    trailing: IconButton(
+                      icon: const Icon(Icons.delete),
+                      onPressed: () {
+                        StoreProvider.of<AppState>(context)
+                            .dispatch(UpdatePostInfo(removeImage: postInfo.paths[index - 1]));
+                      },
+                    ),
+                  ),
+                );
               },
             ),
-          ],
-        ),
-        body: GridView.builder(
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 3,
-            mainAxisSpacing: 4.0,
-            crossAxisSpacing: 4.0,
           ),
-          itemCount: postInfo.paths.isNotEmpty ? (postInfo.paths.length + 1) : 1,
-          itemBuilder: (BuildContext context, int index) {
-            if (index == 0) {
-              return Center(
-                child: IconButton(
-                  icon: const Icon(Icons.add),
-                  onPressed: () async {
-                    final XFile? file = await ImagePicker().pickImage(source: ImageSource.gallery);
-
-                    if (file != null) {
-                      StoreProvider.of<AppState>(context).dispatch(UpdatePostInfo(addImage: file.path));
-                    }
-                  },
-                ),
-              );
-            }
-
-            return GridTile(
-              child: Image.file(
-                File(postInfo.paths[index - 1]),
-                fit: BoxFit.cover,
-              ),
-              header: GridTileBar(
-                title: const Text(''),
-                trailing: IconButton(
-                  icon: const Icon(Icons.delete),
-                  onPressed: () {
-                    StoreProvider.of<AppState>(context)
-                        .dispatch(UpdatePostInfo(removeImage: postInfo.paths[index - 1]));
-                  },
-                ),
-              ),
-            );
-          },
-        ),
-      );
-    });
+        );
+      },
+    );
   }
 }

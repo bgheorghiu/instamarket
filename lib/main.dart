@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
+import 'package:instamarket/constants.dart';
 import 'package:instamarket/src/mixins/init_mixin.dart';
 import 'package:instamarket/src/models/index.dart';
 import 'package:instamarket/src/presentation/routes.dart';
@@ -25,27 +26,27 @@ class _InstamarketState extends State<Instamarket> with InitMixin<Instamarket> {
         if (snapshot.hasData) {
           final Store<AppState>? store = snapshot.data;
 
+          if (store == null) {
+            return const CircularProgressIndicator();
+          }
+
           return StoreProvider<AppState>(
-            store: store!,
+            store: store,
             child: MaterialApp(
               title: 'Instamarket',
-              theme: ThemeData.dark(),
+              theme: ThemeData(
+                appBarTheme: const AppBarTheme(
+                  color: kPrimaryColor,
+                ),
+                primaryColor: kPrimaryColor,
+                scaffoldBackgroundColor: Colors.white,
+              ),
               routes: AppRoutes.routes,
             ),
           );
-        } else if (snapshot.hasError) {
-          throw snapshot.error!;
+        } else {
+          return const CircularProgressIndicator();
         }
-
-        return MaterialApp(
-          title: 'Instamarket',
-          theme: ThemeData.dark(),
-          home: const Scaffold(
-            body: Center(
-              child: FlutterLogo(),
-            ),
-          ),
-        );
       },
     );
   }

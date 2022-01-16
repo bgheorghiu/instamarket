@@ -24,10 +24,23 @@ class _PostsDetailsPageState extends State<PostsDetailsPage> {
       builder: (BuildContext context, PostInfo postInfo) {
         return Scaffold(
           appBar: AppBar(
-            title: const Text('New post'),
+            leadingWidth: 28.0,
+            title: const Text(
+              'New post',
+              style: TextStyle(
+                fontSize: 20.0,
+                color: Colors.white,
+              ),
+            ),
             actions: <Widget>[
               TextButton(
-                child: const Text('Share'),
+                child: const Text(
+                  'Share',
+                  style: TextStyle(
+                    fontSize: 20.0,
+                    color: Colors.white,
+                  ),
+                ),
                 onPressed: () {
                   StoreProvider.of<AppState>(context).dispatch(const CreatePost());
                   Navigator.popUntil(context, ModalRoute.withName(AppRoutes.home));
@@ -54,7 +67,11 @@ class _PostsDetailsPageState extends State<PostsDetailsPage> {
                         if (postInfo.paths.isNotEmpty)
                           const Padding(
                             padding: EdgeInsets.all(4.0),
-                            child: Icon(Icons.photo_library_outlined),
+                            child: Icon(
+                              Icons.photo_library_outlined,
+                              color: Colors.white,
+                              size: 20.0,
+                            ),
                           ),
                       ],
                     ),

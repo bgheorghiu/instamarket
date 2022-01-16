@@ -6,7 +6,7 @@ import 'package:instamarket/src/presentation/posts/posts_details.dart';
 import 'package:instamarket/src/presentation/signup/password_page.dart';
 import 'package:instamarket/src/presentation/signup/signup_page.dart';
 import 'package:instamarket/src/presentation/signup/username_page.dart';
-import 'package:instamarket/src/presentation/widgets/search_users_page.dart';
+import 'package:instamarket/src/presentation/search/search_users_page.dart';
 
 import 'home.dart';
 

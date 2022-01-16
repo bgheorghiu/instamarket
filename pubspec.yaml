@@ -44,4 +44,7 @@ dev_dependencies:
   freezed: ^0.15.0+1
 
 flutter:
+  assets:
+    - assets/images/
+    - assets/icons/
   uses-material-design: true

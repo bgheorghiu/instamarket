@@ -12,7 +12,6 @@ class CommentsApi {
   Future<Comment> createComment({required String uid, required String text, required String postId}) async {
     final DocumentReference<Map<String, dynamic>> ref = _firestore.collection('comments').doc();
 
-    print('inComment1');
     final Comment comment = Comment(
       id: ref.id,
       postId: postId,
@@ -38,11 +37,12 @@ class CommentsApi {
         .expand((QuerySnapshot<Map<String, dynamic>> snapshot) => snapshot.docChanges)
         .where((DocumentChange<Map<String, dynamic>> change) => change.doc.exists)
         .map((DocumentChange<Map<String, dynamic>> change) {
+      print('inApi');
       final Comment comment = Comment.fromJson(
         change.doc.data()!,
         change.type,
       );
-      if (postsIds.contains(comment.id)) {
+      if (postsIds.contains(comment.postId)) {
         return comment;
       } else {
         return null;
@@ -56,7 +56,6 @@ class CommentsApi {
       await documentRef.delete();
     } catch (e) {
       print(e);
-      print('inHere2');
     }
   }
 }

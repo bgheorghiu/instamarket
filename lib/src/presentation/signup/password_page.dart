@@ -1,12 +1,16 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
+import 'package:instamarket/constants.dart';
 import 'package:instamarket/src/actions/auth/index.dart';
 import 'package:instamarket/src/actions/index.dart';
+import 'package:instamarket/src/containers/auth/index.dart';
 import 'package:instamarket/src/mixins/dialog_mixin.dart';
+import 'package:instamarket/src/models/auth/index.dart';
 import 'package:instamarket/src/models/index.dart';
-
-import '../routes.dart';
+import 'package:instamarket/src/presentation/components/background.dart';
+import 'package:instamarket/src/presentation/components/login_question.dart';
+import 'package:instamarket/src/presentation/components/or_divider.dart';
+import 'package:instamarket/src/presentation/routes.dart';
 
 class PasswordPage extends StatefulWidget {
   const PasswordPage({Key? key}) : super(key: key);
@@ -26,68 +30,81 @@ class _PasswordPageState extends State<PasswordPage> with DialogMixin {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        appBar: AppBar(
-          title: const Text('Sign up'),
-        ),
-        body: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Form(
-            child: Builder(
-              builder: (BuildContext context) {
-                return Column(
-                  children: <Widget>[
-                    TextFormField(
-                      decoration: const InputDecoration(hintText: 'password'),
-                      obscureText: true,
-                      onChanged: (String value) {
-                        StoreProvider.of<AppState>(context).dispatch(
-                          UpdateRegistrationInfo(password: value),
-                        );
-                      },
-                      validator: (String? value) {
-                        if (value == null || value.length <= 5) {
-                          return 'Please enter a valid password';
-                        }
+    final Size size = MediaQuery.of(context).size;
 
-                        return null;
-                      },
-                    ),
-                    const Spacer(),
-                    TextButton(
-                      child: const Text('Continue'),
-                      onPressed: () {
-                        if (Form.of(context)?.validate() == true) {
-                          StoreProvider.of<AppState>(context).dispatch(Signup(_response));
-                        }
-                      },
-                    ),
-                    const Divider(),
-                    Text.rich(
-                      TextSpan(
-                        text: 'You already have an account',
-                        children: <TextSpan>[
-                          TextSpan(
-                            text: ' Login',
-                            style: const TextStyle(
-                              fontWeight: FontWeight.bold,
-                            ),
-                            recognizer: TapGestureRecognizer()
-                              ..onTap = () {
-                                Navigator.of(context).popUntil(ModalRoute.withName(AppRoutes.home));
-                              },
+    return RegistrationInfoContainer(
+      builder: (BuildContext context, RegistrationInfo info) {
+        return Scaffold(
+          body: Background(
+            back: true,
+            size: size,
+            child: SingleChildScrollView(
+              child: Form(
+                child: Builder(
+                  builder: (BuildContext context) {
+                    return Column(
+                      children: <Widget>[
+                        Container(
+                          margin: const EdgeInsets.symmetric(vertical: 10.0),
+                          padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 0.0),
+                          width: size.width * 0.8,
+                          decoration: BoxDecoration(
+                            color: kPrimaryLightColor,
+                            borderRadius: BorderRadius.circular(29.0),
                           ),
-                        ],
-                      ),
-                    ),
-                  ],
-                );
-              },
+                          child: TextFormField(
+                            obscureText: true,
+                            onChanged: (String value) {
+                              StoreProvider.of<AppState>(context).dispatch(
+                                UpdateRegistrationInfo(password: value),
+                              );
+                            },
+                            validator: (String? value) {
+                              if (value == null || value.length <= 5) {
+                                return 'Please enter a valid password';
+                              }
+
+                              return null;
+                            },
+                            cursorColor: kPrimaryColor,
+                            decoration: const InputDecoration(
+                              icon: Icon(
+                                Icons.lock,
+                                color: kPrimaryColor,
+                              ),
+                              hintText: 'Enter your password',
+                              border: InputBorder.none,
+                            ),
+                          ),
+                        ),
+                        TextButton(
+                          child: const Text(
+                            'Continue',
+                            style: TextStyle(
+                              color: kPrimaryColor,
+                              fontWeight: FontWeight.w500,
+                              fontSize: 16.0,
+                            ),
+                          ),
+                          onPressed: () {
+                            if (Form.of(context)?.validate() == true) {
+                              print('inOnPressed');
+                              print(info);
+                              StoreProvider.of<AppState>(context).dispatch(Signup(_response));
+                            }
+                          },
+                        ),
+                        const OrDivider(),
+                        const LoginQuestion(),
+                      ],
+                    );
+                  },
+                ),
+              ),
             ),
           ),
-        ),
-      ),
+        );
+      },
     );
   }
 }
