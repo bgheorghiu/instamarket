@@ -121,7 +121,7 @@ class _ChatPageState extends State<ChatPage> {
                                         currentUserId: user!.uid,
                                         isLastMessageRight: isLastMessageRight(index, messages, user.uid),
                                         isLastMessageLeft: isLastMessageLeft(index, messages, user.uid),
-                                        peerAvatar: user.photoUrl!,
+                                        peerAvatar: user.photoUrl,
                                         peerName: peerId!,
                                       );
                                     },

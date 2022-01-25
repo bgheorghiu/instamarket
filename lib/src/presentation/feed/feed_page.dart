@@ -120,11 +120,14 @@ class _FeedPageState extends State<FeedPage> {
                                               ],
                                             ),
                                           ),
-                                          Center(
-                                            child: Image.network(
-                                              post.images.first,
-                                              height: MediaQuery.of(context).size.height * .5,
-                                              fit: BoxFit.contain,
+                                          Padding(
+                                            padding: const EdgeInsets.only(top: 8.0),
+                                            child: Center(
+                                              child: Image.network(
+                                                post.images.first,
+                                                height: MediaQuery.of(context).size.height * .5,
+                                                fit: BoxFit.cover,
+                                              ),
                                             ),
                                           ),
                                           Row(

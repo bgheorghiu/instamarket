@@ -18,7 +18,7 @@ class MessageTile extends StatelessWidget {
   final String currentUserId;
   final bool isLastMessageRight;
   final bool isLastMessageLeft;
-  final String peerAvatar;
+  final String? peerAvatar;
   final String peerName;
 
   @override
@@ -111,7 +111,7 @@ class MessageTile extends StatelessWidget {
                 if (isLastMessageLeft)
                   Material(
                     child: Image.network(
-                      peerAvatar,
+                      'peerAvatar',
                       loadingBuilder: (BuildContext context, Widget child, ImageChunkEvent? loadingProgress) {
                         if (loadingProgress == null) {
                           return child;
